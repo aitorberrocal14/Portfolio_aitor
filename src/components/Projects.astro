@@ -1,0 +1,69 @@
+---
+import { projects } from '~/data/site';
+
+const software = projects.filter((p) => p.category === 'software');
+const research = projects.filter((p) => p.category === 'investigacion');
+---
+
+<section id="proyectos" class="section">
+  <div class="container">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Proyectos</p>
+      <h2 class="heading mt-4">Trabajo seleccionado</h2>
+      <p class="mt-4 text-slate-300">
+        Una muestra de proyectos en las dos ramas que combino: desarrollo de software con IA e
+        investigación social.
+      </p>
+    </div>
+
+    <div class="mt-14">
+      <div class="flex items-baseline justify-between">
+        <h3 class="font-display text-2xl text-white">Software &amp; IA</h3>
+        <span class="text-xs uppercase tracking-widest text-slate-500">{software.length} proyectos</span>
+      </div>
+      <div class="mt-6 grid md:grid-cols-2 gap-5">
+        {software.map((p) => (
+          <article class="card group">
+            <div class="flex items-center justify-between">
+              <span class="pill">{p.year}</span>
+              <span class="text-xs text-slate-500">Software</span>
+            </div>
+            <h4 class="mt-4 font-display text-xl text-white">{p.title}</h4>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">{p.description}</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              {p.tags.map((t) => <span class="pill">{t}</span>)}
+            </div>
+            {(p.url || p.repo) && (
+              <div class="mt-6 flex gap-4 text-sm">
+                {p.url && <a class="link" href={p.url} target="_blank" rel="noopener">Ver →</a>}
+                {p.repo && <a class="link" href={p.repo} target="_blank" rel="noopener">Código →</a>}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <div class="flex items-baseline justify-between">
+        <h3 class="font-display text-2xl text-white">Investigación social</h3>
+        <span class="text-xs uppercase tracking-widest text-slate-500">{research.length} proyectos</span>
+      </div>
+      <div class="mt-6 grid md:grid-cols-2 gap-5">
+        {research.map((p) => (
+          <article class="card group">
+            <div class="flex items-center justify-between">
+              <span class="pill">{p.year}</span>
+              <span class="text-xs text-slate-500">Investigación</span>
+            </div>
+            <h4 class="mt-4 font-display text-xl text-white">{p.title}</h4>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">{p.description}</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              {p.tags.map((t) => <span class="pill">{t}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

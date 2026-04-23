@@ -1,0 +1,29 @@
+---
+import { site } from '~/data/site';
+
+const nav = [
+  { href: '#sobre-mi', label: 'Sobre mí' },
+  { href: '#proyectos', label: 'Proyectos' },
+  { href: '#experiencia', label: 'Experiencia' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-white/5 bg-ink/70 backdrop-blur">
+  <div class="container flex items-center justify-between py-4">
+    <a href="#top" class="group flex items-center gap-2">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-accent to-accent-warm text-sm font-bold text-ink">
+        AB
+      </span>
+      <span class="font-display text-lg text-white group-hover:opacity-90">{site.name}</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      {nav.map((item) => (
+        <a href={item.href} class="link">{item.label}</a>
+      ))}
+    </nav>
+
+    <a href="#contacto" class="btn hidden sm:inline-flex">Contacta</a>
+  </div>
+</header>

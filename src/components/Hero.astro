@@ -1,0 +1,47 @@
+---
+import { site } from '~/data/site';
+---
+
+<section id="top" class="relative section pt-28 sm:pt-36">
+  <div class="container grid lg:grid-cols-[1.3fr,1fr] gap-12 items-center">
+    <div>
+      <p class="eyebrow">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+        Disponible para colaborar
+      </p>
+      <h1 class="heading mt-5 text-5xl sm:text-6xl">
+        Hola, soy <span class="text-accent">{site.name.split(' ')[0]}</span>.
+        <br />
+        Investigo lo social y <span class="italic text-accent-warm">construyo con IA</span>.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-slate-300 leading-relaxed">
+        {site.tagline}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+        <a href="#contacto" class="btn">Escríbeme</a>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-2">
+        <span class="pill">Sociología</span>
+        <span class="pill">Investigación social</span>
+        <span class="pill">Desarrollo de software</span>
+        <span class="pill">IA generativa</span>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="aspect-square rounded-3xl border border-white/10 bg-gradient-to-br from-ink-soft to-ink-muted p-8 shadow-2xl">
+        <div class="h-full rounded-2xl border border-white/5 bg-black/40 p-6 font-mono text-sm text-slate-300">
+          <p class="text-accent">// perfil</p>
+          <p><span class="text-accent-warm">const</span> aitor = {`{`}</p>
+          <p class="pl-4">formación: <span class="text-emerald-300">'Sociología'</span>,</p>
+          <p class="pl-4">metodologías: [<span class="text-emerald-300">'cuanti'</span>, <span class="text-emerald-300">'cuali'</span>],</p>
+          <p class="pl-4">herramientas: [<span class="text-emerald-300">'Python'</span>, <span class="text-emerald-300">'TS'</span>, <span class="text-emerald-300">'LLMs'</span>],</p>
+          <p class="pl-4">enfoque: <span class="text-emerald-300">'personas + datos + IA'</span>,</p>
+          <p>{`}`};</p>
+        </div>
+      </div>
+      <div class="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-accent/20 blur-2xl"></div>
+    </div>
+  </div>
+</section>

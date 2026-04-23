@@ -1,0 +1,44 @@
+---
+import { site } from '~/data/site';
+---
+
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="card relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent-warm/10 pointer-events-none"></div>
+      <div class="relative grid lg:grid-cols-[1.2fr,1fr] gap-10 items-center">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 class="heading mt-4">¿Hablamos?</h2>
+          <p class="mt-5 text-lg text-slate-300 max-w-xl leading-relaxed">
+            Estoy abierto a colaboraciones en <strong class="text-white">investigación social aplicada</strong>, <strong class="text-white">desarrollo de productos con IA</strong> y proyectos que crucen ambos mundos.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={`mailto:${site.email}`} class="btn-primary">Escríbeme por email</a>
+            {site.socials.linkedin && (
+              <a href={site.socials.linkedin} target="_blank" rel="noopener" class="btn">LinkedIn</a>
+            )}
+            {site.socials.github && (
+              <a href={site.socials.github} target="_blank" rel="noopener" class="btn">GitHub</a>
+            )}
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center justify-between border-b border-white/10 pb-3">
+            <span class="text-slate-400">Email</span>
+            <a class="link" href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+          <li class="flex items-center justify-between border-b border-white/10 pb-3">
+            <span class="text-slate-400">Ubicación</span>
+            <span class="text-slate-200">{site.location}</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-slate-400">Disponibilidad</span>
+            <span class="text-slate-200">Proyectos freelance y colaboraciones</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
