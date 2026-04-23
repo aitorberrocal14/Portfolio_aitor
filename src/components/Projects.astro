@@ -1,6 +1,6 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
-import ProjectCarousel from '~/components/ProjectCarousel.astro';
+import ProjectGrid from '~/components/ProjectGrid.astro';
 import { projects } from '~/data/site';
 
 const software = projects.filter((p) => p.category === 'software');
@@ -13,79 +13,19 @@ const research = projects.filter((p) => p.category === 'investigacion');
       number="03"
       label="Trabajo seleccionado"
       title="Proyectos que cruzan investigación y tecnología."
-      description="Desliza horizontalmente para recorrer cada categoría. Arrastra con el ratón, usa las flechas o el trackpad."
+      description="Lo que construyo bajo Bercay Studio y lo que investigo en entornos académicos y aplicados."
+    />
+
+    <ProjectGrid
+      kicker="— Rama 01"
+      title="Software & IA"
+      items={software}
+    />
+
+    <ProjectGrid
+      kicker="— Rama 02"
+      title="Investigación social"
+      items={research}
     />
   </div>
-
-  <ProjectCarousel
-    carouselId="carousel-software"
-    kicker="— Rama 01"
-    title="Software & IA"
-    items={software}
-  />
-
-  <ProjectCarousel
-    carouselId="carousel-research"
-    kicker="— Rama 02"
-    title="Investigación social"
-    items={research}
-  />
 </section>
-
-<script is:inline>
-  (function () {
-    // Arrow buttons
-    document.querySelectorAll('[data-scroll]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-scroll');
-        const dir = Number(btn.getAttribute('data-dir') || '1');
-        const el = document.getElementById(id);
-        if (!el) return;
-        const card = el.querySelector('article');
-        const step = card ? card.getBoundingClientRect().width + 24 : 400;
-        el.scrollBy({ left: step * dir, behavior: 'smooth' });
-      });
-    });
-
-    // Drag-to-scroll
-    document.querySelectorAll('.h-scroll').forEach((el) => {
-      let isDown = false;
-      let startX = 0;
-      let scrollLeft = 0;
-      el.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - el.offsetLeft;
-        scrollLeft = el.scrollLeft;
-      });
-      el.addEventListener('mouseleave', () => (isDown = false));
-      el.addEventListener('mouseup', () => (isDown = false));
-      el.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - el.offsetLeft;
-        el.scrollLeft = scrollLeft - (x - startX);
-      });
-    });
-
-    // Dot indicator sync
-    document.querySelectorAll('.h-scroll').forEach((el) => {
-      const id = el.id;
-      const dots = document.querySelectorAll(`[data-dot="${id}"]`);
-      if (!dots.length) return;
-      el.addEventListener(
-        'scroll',
-        () => {
-          const card = el.querySelector('article');
-          if (!card) return;
-          const cardWidth = card.getBoundingClientRect().width + 24;
-          const active = Math.round(el.scrollLeft / cardWidth);
-          dots.forEach((d, i) => {
-            const isActive = i === active;
-            d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-8 bg-navy' : 'w-4 bg-slate-300'}`;
-          });
-        },
-        { passive: true }
-      );
-    });
-  })();
-</script>
