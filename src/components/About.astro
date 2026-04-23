@@ -2,7 +2,7 @@
 import SectionHeader from '~/components/SectionHeader.astro';
 ---
 
-<section id="sobre-mi" class="section">
+<section id="sobre-mi" class="section section-divide bg-white">
   <div class="container">
     <SectionHeader
       number="01"
@@ -11,35 +11,35 @@ import SectionHeader from '~/components/SectionHeader.astro';
       description="Entender cómo las personas, las instituciones y la tecnología se moldean entre sí — y construir herramientas que ayuden a hacerlo mejor."
     />
 
-    <div class="mt-20 grid lg:grid-cols-[2fr,1fr] gap-16">
-      <div class="space-y-8 text-xl sm:text-2xl leading-relaxed text-slate-700 font-light max-w-3xl" data-reveal>
-        <p class="relative">
-          <span class="absolute -left-6 top-2 h-full w-0.5 bg-navy/20"></span>
+    <div class="mt-14 grid lg:grid-cols-[1.6fr,1fr] gap-12">
+      <div class="space-y-6 text-lg leading-relaxed text-slate-700 max-w-2xl" data-reveal>
+        <p class="relative pl-5">
+          <span class="absolute left-0 top-2 bottom-2 w-0.5 bg-navy/20"></span>
           Soy <strong class="font-semibold text-navy">sociólogo e investigador social</strong>. Me interesa la forma en que los fenómenos sociales se entrecruzan con la tecnología, y para estudiarlos combino métodos cuantitativos, cualitativos y enfoques mixtos.
         </p>
         <p>
           En paralelo, desarrollo <strong class="font-semibold text-navy">software y apps apoyándome en IA</strong>. Uso modelos de lenguaje como una palanca para prototipar rápido, automatizar trabajo repetitivo y llevar ideas de investigación a productos funcionales.
         </p>
-        <p class="text-navy">
+        <p class="text-navy font-medium">
           Esa intersección —rigor metodológico + velocidad de ejecución con IA— es el espacio donde hago mi mejor trabajo.
         </p>
       </div>
 
-      <div class="space-y-5" data-reveal style="--reveal-delay: 120ms">
+      <div class="space-y-4" data-reveal style="--reveal-delay: 120ms">
         <div class="card">
           <p class="section-number">A</p>
-          <p class="mt-3 font-display text-2xl text-navy">Investigar</p>
-          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Diseño de estudios, trabajo de campo, análisis cuantitativo y cualitativo con mirada crítica.</p>
+          <p class="mt-2 font-display text-xl text-navy">Investigar</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Diseño de estudios, trabajo de campo, análisis cuantitativo y cualitativo.</p>
         </div>
         <div class="card">
           <p class="section-number">B</p>
-          <p class="mt-3 font-display text-2xl text-navy">Analizar</p>
-          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Procesar datos, texto y discurso con Python, IA y herramientas de visualización.</p>
+          <p class="mt-2 font-display text-xl text-navy">Analizar</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Procesar datos, texto y discurso con Python, IA y visualización.</p>
         </div>
         <div class="card">
           <p class="section-number">C</p>
-          <p class="mt-3 font-display text-2xl text-navy">Construir</p>
-          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Prototipar y lanzar productos útiles con stack moderno apoyándome en LLMs.</p>
+          <p class="mt-2 font-display text-xl text-navy">Construir</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Prototipar y lanzar productos útiles con stack moderno + LLMs.</p>
         </div>
       </div>
     </div>

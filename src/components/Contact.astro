@@ -3,30 +3,30 @@ import { site } from '~/data/site';
 import SocialLinks from '~/components/SocialLinks.astro';
 ---
 
-<section id="contacto" class="section">
+<section id="contacto" class="section section-divide bg-white">
   <div class="container">
     <div class="relative rounded-[2rem] bg-navy text-white overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(1200px_400px_at_20%_0%,rgba(255,255,255,0.12),transparent)] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(1000px_400px_at_20%_0%,rgba(255,255,255,0.1),transparent)] pointer-events-none"></div>
       <div class="absolute inset-0 bg-dots opacity-[0.08] pointer-events-none"></div>
-      <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
 
-      <div class="relative p-10 sm:p-16 lg:p-20">
+      <div class="relative p-8 sm:p-12 lg:p-16">
         <div class="flex items-center gap-4" data-reveal>
           <span class="section-number text-white/40">05</span>
           <span class="h-px w-10 bg-white/30"></span>
           <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70 font-semibold">Contacto</span>
         </div>
 
-        <h2 class="mt-6 font-display text-5xl sm:text-7xl lg:text-[6rem] tracking-[-0.02em] leading-[0.95] max-w-5xl" data-reveal style="--reveal-delay: 80ms">
+        <h2 class="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1] max-w-4xl" data-reveal style="--reveal-delay: 80ms">
           Hagamos algo <span class="italic text-white/70">juntos</span>.
         </h2>
 
-        <p class="mt-8 text-xl text-white/80 max-w-2xl leading-relaxed" data-reveal style="--reveal-delay: 160ms">
+        <p class="mt-6 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed" data-reveal style="--reveal-delay: 160ms">
           Si tienes un proyecto en mente —investigación, producto con IA o ambos— cuéntamelo. Suelo responder en menos de 24 horas.
         </p>
 
-        <div class="mt-12 flex flex-wrap items-center gap-5" data-reveal style="--reveal-delay: 240ms">
-          <a href={`mailto:${site.email}`} class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-white/90">
+        <div class="mt-8 flex flex-wrap items-center gap-4" data-reveal style="--reveal-delay: 240ms">
+          <a href={`mailto:${site.email}`} class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-white/90">
             {site.email}
             <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 10h10M11 4l6 6-6 6" />
@@ -35,18 +35,18 @@ import SocialLinks from '~/components/SocialLinks.astro';
           <SocialLinks variant="large" tone="dark" />
         </div>
 
-        <div class="mt-16 pt-10 border-t border-white/15 grid sm:grid-cols-3 gap-8 text-sm" data-reveal style="--reveal-delay: 320ms">
+        <div class="mt-12 pt-8 border-t border-white/15 grid sm:grid-cols-3 gap-6 text-sm" data-reveal style="--reveal-delay: 320ms">
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Ubicación</p>
-            <p class="mt-2 text-white text-base">{site.location}</p>
+            <p class="mt-1.5 text-white">{site.location}</p>
           </div>
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Disponibilidad</p>
-            <p class="mt-2 text-white text-base">Freelance · colaboraciones</p>
+            <p class="mt-1.5 text-white">Freelance · colaboraciones</p>
           </div>
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Idiomas</p>
-            <p class="mt-2 text-white text-base">Español · Inglés</p>
+            <p class="mt-1.5 text-white">Español · Inglés</p>
           </div>
         </div>
       </div>

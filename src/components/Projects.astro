@@ -7,13 +7,13 @@ const software = projects.filter((p) => p.category === 'software');
 const research = projects.filter((p) => p.category === 'investigacion');
 ---
 
-<section id="proyectos" class="section">
+<section id="proyectos" class="section section-divide">
   <div class="container">
     <SectionHeader
       number="02"
       label="Trabajo seleccionado"
       title="Proyectos que cruzan investigación y tecnología."
-      description="Desliza para recorrer cada categoría. Puedes arrastrar, usar las flechas o scrollear con el trackpad."
+      description="Desliza horizontalmente para recorrer cada categoría. Arrastra con el ratón, usa las flechas o scrollea con el trackpad."
     />
   </div>
 
@@ -33,15 +33,59 @@ const research = projects.filter((p) => p.category === 'investigacion');
 </section>
 
 <script is:inline>
-  document.querySelectorAll('[data-scroll]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-scroll');
-      const dir = Number(btn.getAttribute('data-dir') || '1');
-      const el = document.getElementById(id);
-      if (!el) return;
-      const card = el.querySelector('article');
-      const step = card ? card.getBoundingClientRect().width + 24 : 400;
-      el.scrollBy({ left: step * dir, behavior: 'smooth' });
+  (function () {
+    // Arrow buttons
+    document.querySelectorAll('[data-scroll]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-scroll');
+        const dir = Number(btn.getAttribute('data-dir') || '1');
+        const el = document.getElementById(id);
+        if (!el) return;
+        const card = el.querySelector('article');
+        const step = card ? card.getBoundingClientRect().width + 24 : 400;
+        el.scrollBy({ left: step * dir, behavior: 'smooth' });
+      });
     });
-  });
+
+    // Drag-to-scroll
+    document.querySelectorAll('.h-scroll').forEach((el) => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      el.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+      });
+      el.addEventListener('mouseleave', () => (isDown = false));
+      el.addEventListener('mouseup', () => (isDown = false));
+      el.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - el.offsetLeft;
+        el.scrollLeft = scrollLeft - (x - startX);
+      });
+    });
+
+    // Dot indicator sync
+    document.querySelectorAll('.h-scroll').forEach((el) => {
+      const id = el.id;
+      const dots = document.querySelectorAll(`[data-dot="${id}"]`);
+      if (!dots.length) return;
+      el.addEventListener(
+        'scroll',
+        () => {
+          const card = el.querySelector('article');
+          if (!card) return;
+          const cardWidth = card.getBoundingClientRect().width + 24;
+          const active = Math.round(el.scrollLeft / cardWidth);
+          dots.forEach((d, i) => {
+            const isActive = i === active;
+            d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-8 bg-navy' : 'w-4 bg-slate-300'}`;
+          });
+        },
+        { passive: true }
+      );
+    });
+  })();
 </script>

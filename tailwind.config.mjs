@@ -18,6 +18,11 @@ export default {
           100: '#dbe4f2',
           50: '#eef2f8',
         },
+        paper: {
+          DEFAULT: '#f1f3f7',
+          soft: '#f6f7fa',
+          deep: '#e8ecf2',
+        },
       },
       container: {
         center: true,

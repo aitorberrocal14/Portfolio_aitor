@@ -14,10 +14,10 @@
   }
 
   body {
-    @apply bg-white text-slate-700 font-sans antialiased;
+    @apply bg-paper text-slate-700 font-sans antialiased;
     background-image:
-      radial-gradient(900px 500px at 85% -10%, rgba(15, 42, 74, 0.07), transparent 60%),
-      radial-gradient(700px 400px at -10% 10%, rgba(15, 42, 74, 0.05), transparent 60%);
+      radial-gradient(900px 500px at 85% -10%, rgba(15, 42, 74, 0.06), transparent 60%),
+      radial-gradient(700px 400px at -10% 10%, rgba(15, 42, 74, 0.04), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -28,11 +28,15 @@
 
 @layer components {
   .section {
-    @apply py-24 sm:py-32 scroll-mt-24;
+    @apply py-20 sm:py-28 scroll-mt-24;
   }
 
   .section-tight {
-    @apply py-16 sm:py-24 scroll-mt-24;
+    @apply py-14 sm:py-20 scroll-mt-24;
+  }
+
+  .section-divide {
+    @apply border-t border-slate-200/80;
   }
 
   .eyebrow {
@@ -44,23 +48,23 @@
   }
 
   .heading {
-    @apply font-display text-4xl sm:text-5xl text-navy tracking-tight;
+    @apply font-display text-3xl sm:text-4xl text-navy tracking-tight;
   }
 
   .heading-xl {
-    @apply font-display text-5xl sm:text-7xl lg:text-[5.5rem] text-navy tracking-[-0.02em] leading-[0.95];
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[-0.015em] leading-[1.05];
   }
 
   .heading-mega {
-    @apply font-display text-6xl sm:text-8xl lg:text-[8rem] text-navy tracking-[-0.03em] leading-[0.9];
+    @apply font-display text-4xl sm:text-5xl lg:text-6xl text-navy tracking-[-0.02em] leading-[1];
   }
 
   .card {
-    @apply rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 transition duration-500 hover:border-navy/30 hover:shadow-xl hover:shadow-navy/5 hover:-translate-y-0.5;
+    @apply rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 transition duration-500 hover:border-navy/30 hover:shadow-xl hover:shadow-navy/5 hover:-translate-y-0.5;
   }
 
   .pill {
-    @apply inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600;
+    @apply inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600;
   }
 
   .pill-solid {
@@ -84,12 +88,11 @@
   }
 
   .divider {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent;
+    @apply h-px w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent;
   }
 }
 
 @layer utilities {
-  /* Marquee */
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -104,10 +107,9 @@
     animation: marquee 55s linear infinite reverse;
   }
 
-  /* Reveal on scroll */
   [data-reveal] {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
     transition:
       opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
       transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -119,7 +121,6 @@
     transform: translateY(0);
   }
 
-  /* Horizontal carousel */
   .h-scroll {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -136,13 +137,11 @@
     scroll-snap-align: start;
   }
 
-  /* Dotted grid background (subtle) */
   .bg-dots {
     background-image: radial-gradient(rgba(15, 42, 74, 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
-  /* Text gradient */
   .text-gradient {
     background: linear-gradient(135deg, #0f2a4a 0%, #2b4a78 100%);
     -webkit-background-clip: text;
