@@ -6,9 +6,11 @@ export const site = {
     'Uno la mirada crítica y analítica de la sociología con la capacidad técnica para construir productos digitales con IA.',
   location: 'Bilbao',
   email: 'aitorberrocal14@gmail.com',
-  phone: '+34 688 634 112',
+  // Número personal: NO expuesto en la UI. Solo se usa para el enlace wa.me.
   whatsapp: '34688634112',
   currentlyAt: 'Bilbao Ekintza',
+  // Ruta relativa a /public. Cambia a 'about/aitor.jpg' cuando subas la foto real.
+  photo: 'about/aitor.svg',
   socials: {
     github: 'https://github.com/aitorberrocal14',
     linkedin: 'https://www.linkedin.com/in/aitor-berrocal-893b90329',
@@ -47,8 +49,14 @@ export type Project = {
   url?: string;
   repo?: string;
   year: string;
-  accent: string;
   highlights: string[];
+  cover: {
+    bg: string;
+    fg: string;
+    tagline: string;
+    monogram: string;
+    urlLabel?: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -62,12 +70,18 @@ export const projects: Project[] = [
     category: 'software',
     year: '2025',
     url: 'https://toca-app.bercay.studio',
-    accent: 'from-navy-700 to-navy-500',
     highlights: [
       'Planes personalizados generados con IA',
       'Autenticación, pagos con Stripe y suscripciones',
       'Desplegada en Vercel con arquitectura serverless',
     ],
+    cover: {
+      bg: '#ff6b35',
+      fg: '#ffffff',
+      tagline: 'Tu plan HYROX, en segundos.',
+      monogram: 'TÖ',
+      urlLabel: 'toca-app.bercay.studio',
+    },
   },
   {
     id: 'mozkor',
@@ -79,12 +93,18 @@ export const projects: Project[] = [
     category: 'software',
     year: '2025',
     url: 'https://mozkor-app.bercay.studio',
-    accent: 'from-navy-600 to-navy-400',
     highlights: [
       'Modelo de datos relacional en PostgreSQL',
       'Autenticación y almacenamiento con Supabase',
       'UI cuidada construida en Next.js + TypeScript',
     ],
+    cover: {
+      bg: '#c69214',
+      fg: '#fff9e6',
+      tagline: 'Trackea. Entiende. Decide.',
+      monogram: 'MZ',
+      urlLabel: 'mozkor-app.bercay.studio',
+    },
   },
   {
     id: 'bercay',
@@ -96,28 +116,40 @@ export const projects: Project[] = [
     category: 'software',
     year: '2026',
     url: 'https://bercay.studio',
-    accent: 'from-navy-800 to-navy-600',
     highlights: [
       'Marca e identidad propia',
       'Sitio web como hub de proyectos',
       'Propuestas comerciales asociadas',
     ],
+    cover: {
+      bg: '#0f2a4a',
+      fg: '#dbe4f2',
+      tagline: 'Research + Product Studio.',
+      monogram: 'BS',
+      urlLabel: 'bercay.studio',
+    },
   },
   {
     id: 'tfm',
-    title: 'Resignificación de espacios — UPV/EHU',
-    subtitle: 'TFM · Máster en Modelos y Áreas de Investigación',
+    title: 'Resignificación de espacios',
+    subtitle: 'TFM · Máster en Ciencias Sociales · UPV/EHU',
     description:
       'Análisis del Proyecto de Resignificación y Reconfiguración de los Espacios de la Facultad de Ciencias Sociales y de la Comunicación de la EHU, en colaboración con el grupo Innok Lab y Campus Bizia Lab.',
     tags: ['Cartografía emocional', 'Entrevistas', 'Observación', 'Análisis visual'],
     category: 'investigacion',
     year: '2024–2025',
-    accent: 'from-navy-700 to-navy-500',
     highlights: [
       'Cartografía emocional como técnica central',
       'Entrevistas en profundidad y observación',
       'Análisis de material fotográfico del estudio',
     ],
+    cover: {
+      bg: '#5d4e37',
+      fg: '#f3ecdb',
+      tagline: 'Cómo habita una facultad.',
+      monogram: 'TFM',
+      urlLabel: 'UPV/EHU · 2025',
+    },
   },
   {
     id: 'turismo-bilbao',
@@ -128,12 +160,18 @@ export const projects: Project[] = [
     tags: ['QGIS', 'Power BI', 'Excel', 'Cartografía'],
     category: 'investigacion',
     year: '2025–2026',
-    accent: 'from-navy-600 to-navy-400',
     highlights: [
       'Mapeo de establecimientos turísticos',
       'Dashboards e informes interactivos en Power BI',
       'Visualizaciones territoriales con QGIS',
     ],
+    cover: {
+      bg: '#0e7490',
+      fg: '#e0f3f7',
+      tagline: 'Bilbao turística, en datos.',
+      monogram: 'BI',
+      urlLabel: 'Bilbao Ekintza',
+    },
   },
 ];
 

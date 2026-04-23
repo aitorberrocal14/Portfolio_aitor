@@ -1,5 +1,8 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
+import { site } from '~/data/site';
+
+const photoSrc = `${import.meta.env.BASE_URL}${site.photo}`;
 ---
 
 <section id="sobre-mi" class="section section-divide bg-white">
@@ -11,35 +14,53 @@ import SectionHeader from '~/components/SectionHeader.astro';
       description="Un pie en la investigación social y otro en el desarrollo de producto con IA — y me interesa especialmente lo que pasa entre los dos."
     />
 
-    <div class="mt-14 grid lg:grid-cols-[1.6fr,1fr] gap-12">
-      <div class="space-y-6 text-lg leading-relaxed text-slate-700 max-w-2xl" data-reveal>
-        <p class="relative pl-5">
-          <span class="absolute left-0 top-2 bottom-2 w-0.5 bg-navy/20"></span>
-          Soy <strong class="font-semibold text-navy">sociólogo especializado en investigación social</strong>, con experiencia en metodologías cuantitativas, cualitativas y mixtas. Autor del TFM sobre la <em class="text-navy-700 not-italic">resignificación de los espacios</em> de la Facultad de Ciencias Sociales de la UPV/EHU.
-        </p>
-        <p>
-          En paralelo, diseño y desarrollo <strong class="font-semibold text-navy">aplicaciones web full-stack con integración de IA</strong>: TÖCA y Mozkor, bajo la marca propia <a href="https://bercay.studio" class="underline decoration-navy/30 underline-offset-4 hover:decoration-navy" target="_blank" rel="noopener">Bercay Studio</a>.
-        </p>
-        <p class="text-navy font-medium">
-          Mi trabajo se construye en la intersección entre ciencias sociales y tecnología: mirada crítica + capacidad de ejecución.
-        </p>
+    <div class="mt-14 grid lg:grid-cols-[auto,1fr] gap-10 lg:gap-14 items-start">
+      <div class="relative mx-auto lg:mx-0" data-reveal>
+        <div class="relative w-64 sm:w-72 aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200 shadow-lg shadow-navy/5">
+          <img
+            src={photoSrc}
+            alt={`Retrato de ${site.shortName}`}
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-4 -left-4 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-md text-xs">
+          <p class="font-mono text-slate-400">Bilbao · 2026</p>
+          <p class="mt-0.5 text-navy font-semibold">{site.shortName}</p>
+        </div>
+        <div class="absolute -top-3 -right-3 h-20 w-20 rounded-full bg-navy/10 blur-2xl pointer-events-none"></div>
       </div>
 
-      <div class="space-y-4" data-reveal style="--reveal-delay: 120ms">
-        <div class="card">
-          <p class="section-number">A</p>
-          <p class="mt-2 font-display text-xl text-navy">Investigar</p>
-          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Diseño metodológico, trabajo de campo, análisis cuanti y cuali, informes.</p>
+      <div class="space-y-8">
+        <div class="space-y-5 text-lg leading-relaxed text-slate-700 max-w-2xl" data-reveal style="--reveal-delay: 120ms">
+          <p class="relative pl-5">
+            <span class="absolute left-0 top-2 bottom-2 w-0.5 bg-navy/20"></span>
+            Soy <strong class="font-semibold text-navy">sociólogo especializado en investigación social</strong>, con experiencia en metodologías cuantitativas, cualitativas y mixtas. Autor del TFM sobre la <em class="text-navy-700 not-italic">resignificación de los espacios</em> de la Facultad de Ciencias Sociales de la UPV/EHU.
+          </p>
+          <p>
+            En paralelo, diseño y desarrollo <strong class="font-semibold text-navy">aplicaciones web full-stack con integración de IA</strong>: TÖCA y Mozkor, bajo la marca propia <a href="https://bercay.studio" target="_blank" rel="noopener" class="underline decoration-navy/30 underline-offset-4 hover:decoration-navy">Bercay Studio</a>.
+          </p>
+          <p class="text-navy font-medium">
+            Mi trabajo se construye en la intersección entre ciencias sociales y tecnología: mirada crítica + capacidad de ejecución.
+          </p>
         </div>
-        <div class="card">
-          <p class="section-number">B</p>
-          <p class="mt-2 font-display text-xl text-navy">Analizar</p>
-          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">SPSS, Jamovi, Power BI, QGIS. Cartografías y visualizaciones territoriales.</p>
-        </div>
-        <div class="card">
-          <p class="section-number">C</p>
-          <p class="mt-2 font-display text-xl text-navy">Construir</p>
-          <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Next.js, Supabase, Stripe y LLMs (Claude · OpenAI · Gemini).</p>
+
+        <div class="grid sm:grid-cols-3 gap-4" data-reveal style="--reveal-delay: 220ms">
+          <div class="card">
+            <p class="section-number">A</p>
+            <p class="mt-2 font-display text-lg text-navy">Investigar</p>
+            <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Diseño metodológico, trabajo de campo, análisis e informes.</p>
+          </div>
+          <div class="card">
+            <p class="section-number">B</p>
+            <p class="mt-2 font-display text-lg text-navy">Analizar</p>
+            <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">SPSS, Jamovi, Power BI, QGIS. Cartografías y visualizaciones.</p>
+          </div>
+          <div class="card">
+            <p class="section-number">C</p>
+            <p class="mt-2 font-display text-lg text-navy">Construir</p>
+            <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Next.js, Supabase, Stripe y LLMs (Claude · OpenAI · Gemini).</p>
+          </div>
         </div>
       </div>
     </div>
