@@ -1,5 +1,6 @@
 ---
 import { site } from '~/data/site';
+import SocialLinks from '~/components/SocialLinks.astro';
 ---
 
 <section id="contacto" class="section">
@@ -13,14 +14,9 @@ import { site } from '~/data/site';
           <p class="mt-5 text-lg text-slate-300 max-w-xl leading-relaxed">
             Estoy abierto a colaboraciones en <strong class="text-white">investigación social aplicada</strong>, <strong class="text-white">desarrollo de productos con IA</strong> y proyectos que crucen ambos mundos.
           </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href={`mailto:${site.email}`} class="btn-primary">Escríbeme por email</a>
-            {site.socials.linkedin && (
-              <a href={site.socials.linkedin} target="_blank" rel="noopener" class="btn">LinkedIn</a>
-            )}
-            {site.socials.github && (
-              <a href={site.socials.github} target="_blank" rel="noopener" class="btn">GitHub</a>
-            )}
+          <div class="mt-8 flex flex-wrap items-center gap-5">
+            <a href={`mailto:${site.email}`} class="btn-primary">Escríbeme</a>
+            <SocialLinks variant="large" />
           </div>
         </div>
 

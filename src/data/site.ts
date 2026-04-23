@@ -4,11 +4,12 @@ export const site = {
   tagline:
     'Uno los métodos de la investigación social con el desarrollo de software e IA para crear productos con sentido.',
   location: 'España',
-  email: 'tu-email@ejemplo.com',
+  email: 'aitorberrocal13@gmail.com',
+  // Número de WhatsApp en formato internacional sin "+" ni espacios (ej: 34612345678)
+  whatsapp: '34600000000',
   socials: {
     github: 'https://github.com/aitorberrocal14',
-    linkedin: 'https://www.linkedin.com/in/',
-    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/aitor-berrocal-lorda-893b90329',
   },
 };
 
