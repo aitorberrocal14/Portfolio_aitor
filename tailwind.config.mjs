@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -9,14 +8,15 @@ export default {
         display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
       },
       colors: {
-        ink: {
-          DEFAULT: '#0b0c10',
-          soft: '#111217',
-          muted: '#1b1d24',
-        },
-        accent: {
-          DEFAULT: '#7c9cff',
-          warm: '#f5a97f',
+        navy: {
+          DEFAULT: '#0f2a4a',
+          900: '#0a1f38',
+          800: '#0f2a4a',
+          700: '#1e3a5f',
+          600: '#2b4a78',
+          500: '#3d6098',
+          100: '#dbe4f2',
+          50: '#eef2f8',
         },
       },
       container: {

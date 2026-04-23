@@ -5,33 +5,38 @@ import SocialLinks from '~/components/SocialLinks.astro';
 
 <section id="contacto" class="section">
   <div class="container">
-    <div class="card relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent-warm/10 pointer-events-none"></div>
-      <div class="relative grid lg:grid-cols-[1.2fr,1fr] gap-10 items-center">
+    <div class="card relative overflow-hidden bg-navy text-white border-navy">
+      <div class="absolute inset-0 bg-[radial-gradient(800px_300px_at_80%_0%,rgba(255,255,255,0.08),transparent)] pointer-events-none"></div>
+      <div class="relative grid lg:grid-cols-[1.2fr,1fr] gap-10 items-center p-4 sm:p-6">
         <div>
-          <p class="eyebrow">Contacto</p>
-          <h2 class="heading mt-4">¿Hablamos?</h2>
-          <p class="mt-5 text-lg text-slate-300 max-w-xl leading-relaxed">
+          <p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/70 font-semibold">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
+            Contacto
+          </p>
+          <h2 class="font-display text-4xl sm:text-5xl text-white tracking-tight mt-4">¿Hablamos?</h2>
+          <p class="mt-5 text-lg text-white/80 max-w-xl leading-relaxed">
             Estoy abierto a colaboraciones en <strong class="text-white">investigación social aplicada</strong>, <strong class="text-white">desarrollo de productos con IA</strong> y proyectos que crucen ambos mundos.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-5">
-            <a href={`mailto:${site.email}`} class="btn-primary">Escríbeme</a>
-            <SocialLinks variant="large" />
+            <a href={`mailto:${site.email}`} class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-white/90">
+              Escríbeme
+            </a>
+            <SocialLinks variant="large" tone="dark" />
           </div>
         </div>
 
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center justify-between border-b border-white/10 pb-3">
-            <span class="text-slate-400">Email</span>
-            <a class="link" href={`mailto:${site.email}`}>{site.email}</a>
+          <li class="flex items-center justify-between border-b border-white/15 pb-3">
+            <span class="text-white/60">Email</span>
+            <a class="text-white hover:text-white/80 transition-colors" href={`mailto:${site.email}`}>{site.email}</a>
           </li>
-          <li class="flex items-center justify-between border-b border-white/10 pb-3">
-            <span class="text-slate-400">Ubicación</span>
-            <span class="text-slate-200">{site.location}</span>
+          <li class="flex items-center justify-between border-b border-white/15 pb-3">
+            <span class="text-white/60">Ubicación</span>
+            <span class="text-white">{site.location}</span>
           </li>
           <li class="flex items-center justify-between">
-            <span class="text-slate-400">Disponibilidad</span>
-            <span class="text-slate-200">Proyectos freelance y colaboraciones</span>
+            <span class="text-white/60">Disponibilidad</span>
+            <span class="text-white">Proyectos freelance y colaboraciones</span>
           </li>
         </ul>
       </div>
