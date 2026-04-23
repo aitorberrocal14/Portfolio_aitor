@@ -4,9 +4,25 @@ import SocialLinks from '~/components/SocialLinks.astro';
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 py-10 mt-10">
-  <div class="container flex flex-col sm:flex-row items-center justify-between gap-5 text-sm text-slate-500">
-    <p>© {year} {site.name}. Hecho con Astro + Tailwind.</p>
-    <SocialLinks />
+<footer class="border-t border-slate-200 mt-10">
+  <div class="container py-16">
+    <div class="grid lg:grid-cols-[1.5fr,1fr] gap-10 items-end">
+      <div>
+        <p class="section-number">Aitor Berrocal</p>
+        <p class="mt-3 font-display text-3xl sm:text-5xl text-navy tracking-tight leading-tight max-w-2xl">
+          Investigación social + producto con IA.
+        </p>
+      </div>
+      <div class="flex lg:justify-end">
+        <SocialLinks />
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-200">
+    <div class="container py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>© {year} {site.name}. Todos los derechos reservados.</p>
+      <p>Hecho con Astro, Tailwind y mucho Fraunces.</p>
+    </div>
   </div>
 </footer>

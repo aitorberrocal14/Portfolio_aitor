@@ -1,0 +1,101 @@
+---
+import type { Project } from '~/data/site';
+
+export interface Props {
+  title: string;
+  kicker: string;
+  items: Project[];
+  carouselId: string;
+}
+
+const { title, kicker, items, carouselId }: Props = Astro.props;
+---
+
+<div class="mt-16" data-reveal>
+  <div class="container flex items-end justify-between gap-6 mb-8">
+    <div>
+      <p class="section-number">{kicker}</p>
+      <h3 class="font-display text-3xl sm:text-4xl text-navy tracking-tight mt-2">{title}</h3>
+    </div>
+
+    <div class="hidden sm:flex items-center gap-2">
+      <button
+        type="button"
+        data-scroll={carouselId}
+        data-dir="-1"
+        class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-30 disabled:pointer-events-none"
+        aria-label="Anterior"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 4L7 10l6 6" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-scroll={carouselId}
+        data-dir="1"
+        class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-30 disabled:pointer-events-none"
+        aria-label="Siguiente"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 4l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id={carouselId}
+    class="h-scroll overflow-x-auto flex gap-5 sm:gap-6 scroll-smooth pb-6 pl-[max(1.25rem,calc((100vw-1120px)/2+1.25rem))] pr-6"
+  >
+    {items.map((p, i) => (
+      <article
+        class="snap-start group relative flex-none w-[82%] sm:w-[420px] lg:w-[460px] rounded-3xl overflow-hidden border border-slate-200 bg-white transition duration-500 hover:shadow-2xl hover:shadow-navy/10 hover:-translate-y-1"
+      >
+        <div class={`relative h-56 bg-gradient-to-br ${p.accent} overflow-hidden`}>
+          <div class="absolute inset-0 bg-dots opacity-20"></div>
+          <div class="absolute top-5 left-5 right-5 flex justify-between items-start">
+            <span class="rounded-full bg-white/20 backdrop-blur px-3 py-1 text-xs font-medium text-white">
+              {String(i + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
+            </span>
+            <span class="rounded-full bg-white/20 backdrop-blur px-3 py-1 text-xs font-medium text-white">
+              {p.year}
+            </span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 text-white">
+            <p class="text-xs uppercase tracking-[0.2em] text-white/70">{p.subtitle}</p>
+            <h4 class="mt-1 font-display text-3xl leading-tight">{p.title}</h4>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-7">
+          <p class="text-slate-600 leading-relaxed">{p.description}</p>
+
+          {p.highlights.length > 0 && (
+            <ul class="mt-5 space-y-2 text-sm text-slate-600">
+              {p.highlights.map((h) => (
+                <li class="flex gap-2">
+                  <span class="text-navy mt-1 leading-none">—</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            {p.tags.map((t) => <span class="pill">{t}</span>)}
+          </div>
+
+          {(p.url || p.repo) && (
+            <div class="mt-6 flex gap-5 text-sm border-t border-slate-100 pt-5">
+              {p.url && <a class="link-arrow" href={p.url} target="_blank" rel="noopener">Ver proyecto →</a>}
+              {p.repo && <a class="link-arrow" href={p.repo} target="_blank" rel="noopener">Código →</a>}
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
+
+    <div class="flex-none w-6" aria-hidden="true"></div>
+  </div>
+</div>

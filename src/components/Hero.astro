@@ -1,47 +1,55 @@
 ---
-import { site } from '~/data/site';
+import { site, stats } from '~/data/site';
 ---
 
-<section id="top" class="relative section pt-28 sm:pt-36">
-  <div class="container grid lg:grid-cols-[1.3fr,1fr] gap-12 items-center">
-    <div>
-      <p class="eyebrow">
-        <span class="inline-block h-1.5 w-1.5 rounded-full bg-navy"></span>
-        Disponible para colaborar
+<section id="top" class="relative overflow-hidden pt-32 sm:pt-40 pb-24 sm:pb-32">
+  <div class="absolute inset-0 bg-dots opacity-30 pointer-events-none"></div>
+  <div class="absolute top-1/3 -right-20 h-80 w-80 rounded-full bg-navy/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 -left-20 h-72 w-72 rounded-full bg-navy/5 blur-3xl pointer-events-none"></div>
+
+  <div class="container relative">
+    <div class="flex items-center gap-3 mb-10" data-reveal>
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span class="text-sm font-medium text-slate-600">Disponible para nuevos proyectos · {site.location}</span>
+    </div>
+
+    <h1 class="heading-mega max-w-6xl" data-reveal style="--reveal-delay: 80ms">
+      Investigo lo social<br />
+      y <span class="italic text-navy-700">construyo</span> con IA<span class="text-navy-500">.</span>
+    </h1>
+
+    <div class="mt-10 grid lg:grid-cols-[1.4fr,1fr] gap-10 items-end">
+      <p class="max-w-2xl text-xl sm:text-2xl text-slate-600 leading-relaxed" data-reveal style="--reveal-delay: 180ms">
+        Soy <span class="text-navy font-medium">{site.name}</span>. Sociólogo e investigador social que desarrolla software y apps apoyándose en modelos de lenguaje.
+        Combino <em class="text-navy-700 not-italic font-medium">rigor metodológico</em> con <em class="text-navy-700 not-italic font-medium">velocidad de ejecución</em>.
       </p>
-      <h1 class="heading mt-5 text-5xl sm:text-6xl">
-        Hola, soy <span class="text-navy-700">{site.name.split(' ')[0]}</span>.
-        <br />
-        Investigo lo social y <span class="italic text-navy-600">construyo con IA</span>.
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
-        {site.tagline}
-      </p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-        <a href="#contacto" class="btn">Escríbeme</a>
-      </div>
-      <div class="mt-10 flex flex-wrap gap-2">
-        <span class="pill">Sociología</span>
-        <span class="pill">Investigación social</span>
-        <span class="pill">Desarrollo de software</span>
-        <span class="pill">IA generativa</span>
+
+      <div class="flex flex-wrap gap-3 lg:justify-end" data-reveal style="--reveal-delay: 260ms">
+        <a href="#proyectos" class="btn-primary group">
+          Ver proyectos
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 10h10M11 4l6 6-6 6" />
+          </svg>
+        </a>
+        <a href="#contacto" class="btn">Hablemos</a>
       </div>
     </div>
 
-    <div class="relative">
-      <div class="aspect-square rounded-3xl border border-slate-200 bg-gradient-to-br from-navy-50 to-white p-8 shadow-lg shadow-navy/5">
-        <div class="h-full rounded-2xl border border-slate-200 bg-white p-6 font-mono text-sm text-slate-700">
-          <p class="text-slate-400">// perfil</p>
-          <p><span class="text-navy">const</span> aitor = {`{`}</p>
-          <p class="pl-4">formación: <span class="text-emerald-700">'Sociología'</span>,</p>
-          <p class="pl-4">metodologías: [<span class="text-emerald-700">'cuanti'</span>, <span class="text-emerald-700">'cuali'</span>],</p>
-          <p class="pl-4">herramientas: [<span class="text-emerald-700">'Python'</span>, <span class="text-emerald-700">'TS'</span>, <span class="text-emerald-700">'LLMs'</span>],</p>
-          <p class="pl-4">enfoque: <span class="text-emerald-700">'personas + datos + IA'</span>,</p>
-          <p>{`}`};</p>
+    <div class="mt-20 grid grid-cols-3 gap-6 max-w-3xl" data-reveal style="--reveal-delay: 340ms">
+      {stats.map((s) => (
+        <div class="border-t border-slate-200 pt-4">
+          <p class="font-display text-3xl sm:text-4xl text-navy">{s.value}</p>
+          <p class="mt-2 text-xs sm:text-sm text-slate-500 leading-snug">{s.label}</p>
         </div>
-      </div>
-      <div class="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-navy/10 blur-2xl"></div>
+      ))}
     </div>
+
+    <a href="#marquee" class="mt-20 hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-400 hover:text-navy transition-colors" aria-label="Desplázate">
+      <span class="inline-block h-8 w-px bg-slate-300 animate-pulse"></span>
+      Scroll
+    </a>
   </div>
 </section>

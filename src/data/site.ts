@@ -13,48 +13,191 @@ export const site = {
   },
 };
 
+export const marqueeItems = [
+  'Sociología',
+  'Investigación social',
+  'Métodos mixtos',
+  'Análisis de datos',
+  'NLP',
+  'IA generativa',
+  'Prompt engineering',
+  'Desarrollo web',
+  'TypeScript',
+  'Python',
+  'Astro',
+  'Next.js',
+  'UX con datos',
+  'Producto + personas',
+];
+
 export type Project = {
+  id: string;
   title: string;
+  subtitle: string;
   description: string;
   tags: string[];
   category: 'software' | 'investigacion';
   url?: string;
   repo?: string;
-  year?: string;
+  year: string;
+  accent: string;
+  highlights: string[];
 };
 
 export const projects: Project[] = [
   {
-    title: 'App móvil con IA generativa',
+    id: 'mozkor',
+    title: 'Mozkor.app',
+    subtitle: 'Tracker B2B de consumo',
     description:
-      'Aplicación construida apoyándome en modelos de lenguaje para automatizar flujos repetitivos y acelerar la entrega de valor al usuario final.',
-    tags: ['Next.js', 'LLMs', 'Prompt design', 'UX'],
+      'Aplicación B2B para hostelería que digitaliza el seguimiento de consumo por cliente y ayuda a la toma de decisiones en tiempo real.',
+    tags: ['Next.js', 'Supabase', 'TypeScript', 'Producto'],
     category: 'software',
     year: '2025',
+    accent: 'from-navy-700 to-navy-500',
+    highlights: [
+      'Diseño de producto end-to-end',
+      'Dashboard con métricas en vivo',
+      'Modelo de datos relacional',
+    ],
   },
   {
-    title: 'Análisis cuantitativo de datos sociales',
+    id: 'oniria',
+    title: 'Oniria',
+    subtitle: 'Dream tracker con IA',
     description:
-      'Estudio sobre dinámicas sociales combinando encuestas, entrevistas y procesamiento asistido por IA para codificar respuestas abiertas a gran escala.',
-    tags: ['Python', 'Pandas', 'NLP', 'Sociología'],
+      'App para registrar y analizar sueños usando IA para detectar patrones recurrentes, símbolos y conexiones con el estado anímico.',
+    tags: ['IA', 'React Native', 'LLMs', 'Psicología'],
+    category: 'software',
+    year: '2025',
+    accent: 'from-navy-600 to-navy-400',
+    highlights: [
+      'Análisis semántico con LLMs',
+      'Privacidad y cifrado',
+      'Onboarding conversacional',
+    ],
+  },
+  {
+    id: 'bercay',
+    title: 'Bercay Studio',
+    subtitle: 'Web corporativa',
+    description:
+      'Sitio web para el estudio Bercay diseñado como vitrina de trabajos y canal de captación de clientes.',
+    tags: ['Astro', 'Tailwind', 'SEO', 'Motion'],
+    category: 'software',
+    year: '2025',
+    accent: 'from-navy-800 to-navy-600',
+    highlights: ['100/100 Lighthouse', 'Contenido editable en MDX', 'Motion sutil'],
+  },
+  {
+    id: 'toca',
+    title: 'Toca.app',
+    subtitle: 'Seguimiento fitness',
+    description:
+      'Aplicación de fitness enfocada en planificación semanal y adherencia, con coach IA que adapta rutinas.',
+    tags: ['IA', 'TypeScript', 'Producto', 'Mobile'],
+    category: 'software',
+    year: '2025',
+    accent: 'from-navy-500 to-navy-300',
+    highlights: ['Coach IA personalizado', 'Planificador semanal', 'Notificaciones inteligentes'],
+  },
+  {
+    id: 'discurso',
+    title: 'Polarización digital',
+    subtitle: 'Análisis de discurso online',
+    description:
+      'Estudio sobre dinámicas de polarización en comunidades online, combinando etnografía digital con análisis asistido por IA.',
+    tags: ['Etnografía', 'NLP', 'IA', 'Discurso'],
     category: 'investigacion',
     year: '2024',
+    accent: 'from-navy-700 to-navy-500',
+    highlights: [
+      'Corpus de +20k mensajes',
+      'Codificación con LLMs',
+      'Mapas de discurso',
+    ],
   },
   {
-    title: 'Asistente conversacional para investigación',
+    id: 'encuestas',
+    title: 'Dinámicas sociales',
+    subtitle: 'Estudio cuantitativo',
     description:
-      'Herramienta interna que ayuda a sistematizar literatura académica, resumir artículos y generar códigos iniciales para análisis cualitativo.',
-    tags: ['RAG', 'OpenAI', 'Astro', 'Supabase'],
-    category: 'software',
+      'Investigación por encuesta con trabajo de campo y análisis estadístico para caracterizar actitudes sobre tecnología y sociedad.',
+    tags: ['Encuesta', 'SPSS', 'Python', 'Estadística'],
+    category: 'investigacion',
+    year: '2024',
+    accent: 'from-navy-600 to-navy-400',
+    highlights: ['Muestreo probabilístico', 'Análisis multivariante', 'Informe público'],
+  },
+  {
+    id: 'rag-academico',
+    title: 'Asistente académico',
+    subtitle: 'RAG para literatura científica',
+    description:
+      'Herramienta interna que sistematiza literatura académica, resume artículos y genera códigos iniciales para análisis cualitativo.',
+    tags: ['RAG', 'OpenAI', 'Investigación', 'Productividad'],
+    category: 'investigacion',
     year: '2025',
+    accent: 'from-navy-800 to-navy-600',
+    highlights: ['Indexado de +500 papers', 'Citas trazables', 'Codificación asistida'],
   },
   {
-    title: 'Informe etnográfico digital',
+    id: 'etnografia',
+    title: 'Etnografía digital',
+    subtitle: 'Comunidades online',
     description:
-      'Trabajo de campo en comunidades online con análisis de discurso asistido por IA para detectar patrones narrativos y polarización.',
-    tags: ['Etnografía', 'Análisis de discurso', 'IA'],
+      'Trabajo de campo en plataformas digitales para entender prácticas cotidianas y lenguajes compartidos en comunidades específicas.',
+    tags: ['Etnografía', 'Observación', 'Cualitativa'],
     category: 'investigacion',
     year: '2023',
+    accent: 'from-navy-500 to-navy-300',
+    highlights: ['Inmersión +6 meses', 'Diario de campo', 'Informe etnográfico'],
+  },
+];
+
+export type Service = {
+  number: string;
+  title: string;
+  description: string;
+  deliverables: string[];
+};
+
+export const services: Service[] = [
+  {
+    number: '01',
+    title: 'Investigación social',
+    description:
+      'Diseño estudios a medida, trabajo de campo y análisis con métodos cuantitativos, cualitativos o mixtos.',
+    deliverables: [
+      'Diseño metodológico',
+      'Trabajo de campo',
+      'Análisis y visualización',
+      'Informe ejecutivo',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Desarrollo con IA',
+    description:
+      'Construyo productos web y apps apalancados en modelos de lenguaje, desde el prototipo hasta producción.',
+    deliverables: [
+      'Discovery + prototipo',
+      'Arquitectura y stack',
+      'Integración de LLMs',
+      'Deploy y mantenimiento',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Consultoría híbrida',
+    description:
+      'Cuando un problema necesita las dos miradas: entender a las personas y construir la solución.',
+    deliverables: [
+      'Research operativo',
+      'Traducción a producto',
+      'Prototipado rápido',
+      'Acompañamiento estratégico',
+    ],
   },
 ];
 
@@ -87,4 +230,10 @@ export const experience: ExperienceItem[] = [
     description:
       'Formación en métodos de investigación social, estadística, teoría sociológica y análisis de datos.',
   },
+];
+
+export const stats = [
+  { value: '5+', label: 'años combinando investigación y tecnología' },
+  { value: '12', label: 'proyectos en software e investigación' },
+  { value: '∞', label: 'curiosidad aplicada' },
 ];

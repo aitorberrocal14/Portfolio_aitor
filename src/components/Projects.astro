@@ -1,4 +1,6 @@
 ---
+import SectionHeader from '~/components/SectionHeader.astro';
+import ProjectCarousel from '~/components/ProjectCarousel.astro';
 import { projects } from '~/data/site';
 
 const software = projects.filter((p) => p.category === 'software');
@@ -7,63 +9,39 @@ const research = projects.filter((p) => p.category === 'investigacion');
 
 <section id="proyectos" class="section">
   <div class="container">
-    <div class="max-w-2xl">
-      <p class="eyebrow">Proyectos</p>
-      <h2 class="heading mt-4">Trabajo seleccionado</h2>
-      <p class="mt-4 text-slate-600">
-        Una muestra de proyectos en las dos ramas que combino: desarrollo de software con IA e
-        investigación social.
-      </p>
-    </div>
-
-    <div class="mt-14">
-      <div class="flex items-baseline justify-between">
-        <h3 class="font-display text-2xl text-navy">Software &amp; IA</h3>
-        <span class="text-xs uppercase tracking-widest text-slate-400">{software.length} proyectos</span>
-      </div>
-      <div class="mt-6 grid md:grid-cols-2 gap-5">
-        {software.map((p) => (
-          <article class="card">
-            <div class="flex items-center justify-between">
-              <span class="pill">{p.year}</span>
-              <span class="text-xs text-slate-400">Software</span>
-            </div>
-            <h4 class="mt-4 font-display text-xl text-navy">{p.title}</h4>
-            <p class="mt-3 text-slate-600 text-sm leading-relaxed">{p.description}</p>
-            <div class="mt-5 flex flex-wrap gap-2">
-              {p.tags.map((t) => <span class="pill">{t}</span>)}
-            </div>
-            {(p.url || p.repo) && (
-              <div class="mt-6 flex gap-4 text-sm">
-                {p.url && <a class="link" href={p.url} target="_blank" rel="noopener">Ver →</a>}
-                {p.repo && <a class="link" href={p.repo} target="_blank" rel="noopener">Código →</a>}
-              </div>
-            )}
-          </article>
-        ))}
-      </div>
-    </div>
-
-    <div class="mt-16">
-      <div class="flex items-baseline justify-between">
-        <h3 class="font-display text-2xl text-navy">Investigación social</h3>
-        <span class="text-xs uppercase tracking-widest text-slate-400">{research.length} proyectos</span>
-      </div>
-      <div class="mt-6 grid md:grid-cols-2 gap-5">
-        {research.map((p) => (
-          <article class="card">
-            <div class="flex items-center justify-between">
-              <span class="pill">{p.year}</span>
-              <span class="text-xs text-slate-400">Investigación</span>
-            </div>
-            <h4 class="mt-4 font-display text-xl text-navy">{p.title}</h4>
-            <p class="mt-3 text-slate-600 text-sm leading-relaxed">{p.description}</p>
-            <div class="mt-5 flex flex-wrap gap-2">
-              {p.tags.map((t) => <span class="pill">{t}</span>)}
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
+    <SectionHeader
+      number="02"
+      label="Trabajo seleccionado"
+      title="Proyectos que cruzan investigación y tecnología."
+      description="Desliza para recorrer cada categoría. Puedes arrastrar, usar las flechas o scrollear con el trackpad."
+    />
   </div>
+
+  <ProjectCarousel
+    carouselId="carousel-software"
+    kicker="— Rama 01"
+    title="Software & IA"
+    items={software}
+  />
+
+  <ProjectCarousel
+    carouselId="carousel-research"
+    kicker="— Rama 02"
+    title="Investigación social"
+    items={research}
+  />
 </section>
+
+<script is:inline>
+  document.querySelectorAll('[data-scroll]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-scroll');
+      const dir = Number(btn.getAttribute('data-dir') || '1');
+      const el = document.getElementById(id);
+      if (!el) return;
+      const card = el.querySelector('article');
+      const step = card ? card.getBoundingClientRect().width + 24 : 400;
+      el.scrollBy({ left: step * dir, behavior: 'smooth' });
+    });
+  });
+</script>

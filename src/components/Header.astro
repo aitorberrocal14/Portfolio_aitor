@@ -2,28 +2,38 @@
 import { site } from '~/data/site';
 
 const nav = [
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#sobre-mi', label: 'Sobre mí', number: '01' },
+  { href: '#proyectos', label: 'Proyectos', number: '02' },
+  { href: '#servicios', label: 'Servicios', number: '03' },
+  { href: '#experiencia', label: 'Experiencia', number: '04' },
+  { href: '#contacto', label: 'Contacto', number: '05' },
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur">
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/75 backdrop-blur-md">
   <div class="container flex items-center justify-between py-4">
-    <a href="#top" class="group flex items-center gap-2">
-      <span class="grid h-8 w-8 place-items-center rounded-full bg-navy text-sm font-bold text-white">
+    <a href="#top" class="group flex items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-full bg-navy text-sm font-bold text-white transition group-hover:scale-105">
         AB
       </span>
-      <span class="font-display text-lg text-navy group-hover:opacity-80">{site.name}</span>
+      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight">{site.name}</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm">
+    <nav class="hidden lg:flex items-center gap-6 text-sm">
       {nav.map((item) => (
-        <a href={item.href} class="link">{item.label}</a>
+        <a href={item.href} class="group relative flex items-center gap-1.5 text-slate-600 hover:text-navy transition-colors">
+          <span class="font-mono text-[10px] text-slate-400 group-hover:text-navy/60 transition-colors">{item.number}</span>
+          <span>{item.label}</span>
+        </a>
       ))}
     </nav>
 
-    <a href="#contacto" class="btn hidden sm:inline-flex">Contacta</a>
+    <a href="#contacto" class="btn hidden sm:inline-flex">
+      Hablemos
+      <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 10h10M11 4l6 6-6 6" />
+      </svg>
+    </a>
   </div>
 </header>
+<div class="h-[68px]" aria-hidden="true"></div>

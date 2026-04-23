@@ -5,40 +5,50 @@ import SocialLinks from '~/components/SocialLinks.astro';
 
 <section id="contacto" class="section">
   <div class="container">
-    <div class="card relative overflow-hidden bg-navy text-white border-navy">
-      <div class="absolute inset-0 bg-[radial-gradient(800px_300px_at_80%_0%,rgba(255,255,255,0.08),transparent)] pointer-events-none"></div>
-      <div class="relative grid lg:grid-cols-[1.2fr,1fr] gap-10 items-center p-4 sm:p-6">
-        <div>
-          <p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/70 font-semibold">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
-            Contacto
-          </p>
-          <h2 class="font-display text-4xl sm:text-5xl text-white tracking-tight mt-4">¿Hablamos?</h2>
-          <p class="mt-5 text-lg text-white/80 max-w-xl leading-relaxed">
-            Estoy abierto a colaboraciones en <strong class="text-white">investigación social aplicada</strong>, <strong class="text-white">desarrollo de productos con IA</strong> y proyectos que crucen ambos mundos.
-          </p>
-          <div class="mt-8 flex flex-wrap items-center gap-5">
-            <a href={`mailto:${site.email}`} class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-white/90">
-              Escríbeme
-            </a>
-            <SocialLinks variant="large" tone="dark" />
-          </div>
+    <div class="relative rounded-[2rem] bg-navy text-white overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_400px_at_20%_0%,rgba(255,255,255,0.12),transparent)] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-dots opacity-[0.08] pointer-events-none"></div>
+      <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+
+      <div class="relative p-10 sm:p-16 lg:p-20">
+        <div class="flex items-center gap-4" data-reveal>
+          <span class="section-number text-white/40">05</span>
+          <span class="h-px w-10 bg-white/30"></span>
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70 font-semibold">Contacto</span>
         </div>
 
-        <ul class="space-y-3 text-sm">
-          <li class="flex items-center justify-between border-b border-white/15 pb-3">
-            <span class="text-white/60">Email</span>
-            <a class="text-white hover:text-white/80 transition-colors" href={`mailto:${site.email}`}>{site.email}</a>
-          </li>
-          <li class="flex items-center justify-between border-b border-white/15 pb-3">
-            <span class="text-white/60">Ubicación</span>
-            <span class="text-white">{site.location}</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-white/60">Disponibilidad</span>
-            <span class="text-white">Proyectos freelance y colaboraciones</span>
-          </li>
-        </ul>
+        <h2 class="mt-6 font-display text-5xl sm:text-7xl lg:text-[6rem] tracking-[-0.02em] leading-[0.95] max-w-5xl" data-reveal style="--reveal-delay: 80ms">
+          Hagamos algo <span class="italic text-white/70">juntos</span>.
+        </h2>
+
+        <p class="mt-8 text-xl text-white/80 max-w-2xl leading-relaxed" data-reveal style="--reveal-delay: 160ms">
+          Si tienes un proyecto en mente —investigación, producto con IA o ambos— cuéntamelo. Suelo responder en menos de 24 horas.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center gap-5" data-reveal style="--reveal-delay: 240ms">
+          <a href={`mailto:${site.email}`} class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-white/90">
+            {site.email}
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 10h10M11 4l6 6-6 6" />
+            </svg>
+          </a>
+          <SocialLinks variant="large" tone="dark" />
+        </div>
+
+        <div class="mt-16 pt-10 border-t border-white/15 grid sm:grid-cols-3 gap-8 text-sm" data-reveal style="--reveal-delay: 320ms">
+          <div>
+            <p class="text-white/50 uppercase tracking-widest text-xs">Ubicación</p>
+            <p class="mt-2 text-white text-base">{site.location}</p>
+          </div>
+          <div>
+            <p class="text-white/50 uppercase tracking-widest text-xs">Disponibilidad</p>
+            <p class="mt-2 text-white text-base">Freelance · colaboraciones</p>
+          </div>
+          <div>
+            <p class="text-white/50 uppercase tracking-widest text-xs">Idiomas</p>
+            <p class="mt-2 text-white text-base">Español · Inglés</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

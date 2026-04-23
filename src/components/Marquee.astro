@@ -1,0 +1,19 @@
+---
+import { marqueeItems } from '~/data/site';
+
+// Duplicate list for seamless loop
+const items = [...marqueeItems, ...marqueeItems];
+---
+
+<section id="marquee" class="relative overflow-hidden py-14 border-y border-slate-200 bg-slate-50/50">
+  <div class="flex whitespace-nowrap animate-marquee gap-10">
+    {items.map((item) => (
+      <span class="flex items-center gap-10 font-display text-4xl sm:text-5xl text-navy/80">
+        <span>{item}</span>
+        <svg class="h-6 w-6 text-navy/30 flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      </span>
+    ))}
+  </div>
+</section>
