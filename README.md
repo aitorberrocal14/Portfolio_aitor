@@ -40,6 +40,6 @@ Para activarlo:
 
 1. En GitHub → **Settings → Pages → Source: GitHub Actions**.
 2. Hacer push a `main`.
-3. El sitio quedará disponible en `https://aitorberrocal14.github.io/portfolio_aitor/`.
+3. El sitio quedará disponible en `https://aitorberrocal14.github.io/Portfolio_aitor/`.
 
 El `base` del sitio está configurado en `astro.config.mjs`. Si cambias el nombre del repo, actualízalo allí.
