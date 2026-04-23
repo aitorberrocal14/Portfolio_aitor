@@ -1,0 +1,27 @@
+---
+import SectionHeader from '~/components/SectionHeader.astro';
+import { tools } from '~/data/site';
+---
+
+<section id="herramientas" class="section section-divide">
+  <div class="container">
+    <SectionHeader
+      number="05"
+      label="Herramientas"
+      title="Caja de herramientas."
+      description="Lo que uso en el día a día para investigar, analizar y construir."
+    />
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {tools.map((group, i) => (
+        <div class="card flex flex-col" data-reveal style={`--reveal-delay: ${i * 80}ms`}>
+          <p class="section-number">{String(i + 1).padStart(2, '0')}</p>
+          <h3 class="mt-2 font-display text-lg text-navy">{group.label}</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {group.items.map((it) => <span class="pill">{it}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

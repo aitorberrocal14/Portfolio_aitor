@@ -1,33 +1,40 @@
 export const site = {
-  name: 'Aitor Berrocal',
-  role: 'Sociólogo · Investigador social · Desarrollador con IA',
+  name: 'Aitor Berrocal Lorda',
+  shortName: 'Aitor Berrocal',
+  role: 'Sociólogo · Investigador social · Desarrollador de productos digitales',
   tagline:
-    'Uno los métodos de la investigación social con el desarrollo de software e IA para crear productos con sentido.',
-  location: 'España',
-  email: 'aitorberrocal13@gmail.com',
-  // Número de WhatsApp en formato internacional sin "+" ni espacios (ej: 34612345678)
-  whatsapp: '34600000000',
+    'Uno la mirada crítica y analítica de la sociología con la capacidad técnica para construir productos digitales con IA.',
+  location: 'Bilbao',
+  email: 'aitorberrocal14@gmail.com',
+  phone: '+34 688 634 112',
+  whatsapp: '34688634112',
+  currentlyAt: 'Bilbao Ekintza',
   socials: {
     github: 'https://github.com/aitorberrocal14',
-    linkedin: 'https://www.linkedin.com/in/aitor-berrocal-lorda-893b90329',
+    linkedin: 'https://www.linkedin.com/in/aitor-berrocal-893b90329',
   },
+  sites: [
+    { label: 'bercay.studio', url: 'https://bercay.studio' },
+    { label: 'toca-app.bercay.studio', url: 'https://toca-app.bercay.studio' },
+    { label: 'mozkor-app.bercay.studio', url: 'https://mozkor-app.bercay.studio' },
+  ],
 };
 
 export const marqueeItems = [
   'Sociología',
   'Investigación social',
   'Métodos mixtos',
-  'Análisis de datos',
-  'NLP',
+  'Cartografía emocional',
+  'QGIS',
+  'Power BI',
+  'SPSS',
+  'Jamovi',
+  'Python',
+  'Next.js',
+  'TypeScript',
+  'Supabase',
   'IA generativa',
   'Prompt engineering',
-  'Desarrollo web',
-  'TypeScript',
-  'Python',
-  'Astro',
-  'Next.js',
-  'UX con datos',
-  'Producto + personas',
 ];
 
 export type Project = {
@@ -46,112 +53,87 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'mozkor',
-    title: 'Mozkor.app',
-    subtitle: 'Tracker B2B de consumo',
+    id: 'toca',
+    title: 'TÖCA',
+    subtitle: 'Entrenamiento con IA · HYROX & CrossFit',
     description:
-      'Aplicación B2B para hostelería que digitaliza el seguimiento de consumo por cliente y ayuda a la toma de decisiones en tiempo real.',
-    tags: ['Next.js', 'Supabase', 'TypeScript', 'Producto'],
+      'Aplicación que genera planes de entrenamiento personalizados mediante IA para deportistas de HYROX y CrossFit. Ciclo completo: idea, diseño técnico, desarrollo full-stack, lanzamiento y mantenimiento.',
+    tags: ['Next.js', 'Supabase', 'Stripe', 'LLMs', 'TypeScript'],
     category: 'software',
     year: '2025',
+    url: 'https://toca-app.bercay.studio',
     accent: 'from-navy-700 to-navy-500',
     highlights: [
-      'Diseño de producto end-to-end',
-      'Dashboard con métricas en vivo',
-      'Modelo de datos relacional',
+      'Planes personalizados generados con IA',
+      'Autenticación, pagos con Stripe y suscripciones',
+      'Desplegada en Vercel con arquitectura serverless',
     ],
   },
   {
-    id: 'oniria',
-    title: 'Oniria',
-    subtitle: 'Dream tracker con IA',
+    id: 'mozkor',
+    title: 'Mozkor',
+    subtitle: 'Tracker de bebidas',
     description:
-      'App para registrar y analizar sueños usando IA para detectar patrones recurrentes, símbolos y conexiones con el estado anímico.',
-    tags: ['IA', 'React Native', 'LLMs', 'Psicología'],
+      'Aplicación de trackeo y gestión de bebidas desarrollada de forma autónoma full-stack, con base de datos relacional, autenticación y despliegue en producción.',
+    tags: ['Next.js', 'Supabase', 'PostgreSQL', 'Vercel'],
     category: 'software',
     year: '2025',
+    url: 'https://mozkor-app.bercay.studio',
     accent: 'from-navy-600 to-navy-400',
     highlights: [
-      'Análisis semántico con LLMs',
-      'Privacidad y cifrado',
-      'Onboarding conversacional',
+      'Modelo de datos relacional en PostgreSQL',
+      'Autenticación y almacenamiento con Supabase',
+      'UI cuidada construida en Next.js + TypeScript',
     ],
   },
   {
     id: 'bercay',
     title: 'Bercay Studio',
-    subtitle: 'Web corporativa',
+    subtitle: 'Marca paraguas de proyectos propios',
     description:
-      'Sitio web para el estudio Bercay diseñado como vitrina de trabajos y canal de captación de clientes.',
-    tags: ['Astro', 'Tailwind', 'SEO', 'Motion'],
+      'Marca bajo la que desarrollo y presento proyectos propios y comerciales en producto digital e investigación. Web, identidad y gestión integral: diseño, desarrollo, despliegue y modelo de negocio.',
+    tags: ['Astro', 'Branding', 'Producto', 'Estrategia'],
     category: 'software',
-    year: '2025',
+    year: '2026',
+    url: 'https://bercay.studio',
     accent: 'from-navy-800 to-navy-600',
-    highlights: ['100/100 Lighthouse', 'Contenido editable en MDX', 'Motion sutil'],
-  },
-  {
-    id: 'toca',
-    title: 'Toca.app',
-    subtitle: 'Seguimiento fitness',
-    description:
-      'Aplicación de fitness enfocada en planificación semanal y adherencia, con coach IA que adapta rutinas.',
-    tags: ['IA', 'TypeScript', 'Producto', 'Mobile'],
-    category: 'software',
-    year: '2025',
-    accent: 'from-navy-500 to-navy-300',
-    highlights: ['Coach IA personalizado', 'Planificador semanal', 'Notificaciones inteligentes'],
-  },
-  {
-    id: 'discurso',
-    title: 'Polarización digital',
-    subtitle: 'Análisis de discurso online',
-    description:
-      'Estudio sobre dinámicas de polarización en comunidades online, combinando etnografía digital con análisis asistido por IA.',
-    tags: ['Etnografía', 'NLP', 'IA', 'Discurso'],
-    category: 'investigacion',
-    year: '2024',
-    accent: 'from-navy-700 to-navy-500',
     highlights: [
-      'Corpus de +20k mensajes',
-      'Codificación con LLMs',
-      'Mapas de discurso',
+      'Marca e identidad propia',
+      'Sitio web como hub de proyectos',
+      'Propuestas comerciales asociadas',
     ],
   },
   {
-    id: 'encuestas',
-    title: 'Dinámicas sociales',
-    subtitle: 'Estudio cuantitativo',
+    id: 'tfm',
+    title: 'Resignificación de espacios — UPV/EHU',
+    subtitle: 'TFM · Máster en Modelos y Áreas de Investigación',
     description:
-      'Investigación por encuesta con trabajo de campo y análisis estadístico para caracterizar actitudes sobre tecnología y sociedad.',
-    tags: ['Encuesta', 'SPSS', 'Python', 'Estadística'],
+      'Análisis del Proyecto de Resignificación y Reconfiguración de los Espacios de la Facultad de Ciencias Sociales y de la Comunicación de la EHU, en colaboración con el grupo Innok Lab y Campus Bizia Lab.',
+    tags: ['Cartografía emocional', 'Entrevistas', 'Observación', 'Análisis visual'],
     category: 'investigacion',
-    year: '2024',
+    year: '2024–2025',
+    accent: 'from-navy-700 to-navy-500',
+    highlights: [
+      'Cartografía emocional como técnica central',
+      'Entrevistas en profundidad y observación',
+      'Análisis de material fotográfico del estudio',
+    ],
+  },
+  {
+    id: 'turismo-bilbao',
+    title: 'Distribución turística de Bilbao',
+    subtitle: 'Bilbao Ekintza · Técnico de Promoción Turística',
+    description:
+      'Investigación y análisis de datos sobre la distribución de los establecimientos turísticos de Bilbao (hoteles, pensiones, VUT, albergues, apartamentos). Cartografías y dashboards para apoyar la toma de decisiones.',
+    tags: ['QGIS', 'Power BI', 'Excel', 'Cartografía'],
+    category: 'investigacion',
+    year: '2025–2026',
     accent: 'from-navy-600 to-navy-400',
-    highlights: ['Muestreo probabilístico', 'Análisis multivariante', 'Informe público'],
-  },
-  {
-    id: 'rag-academico',
-    title: 'Asistente académico',
-    subtitle: 'RAG para literatura científica',
-    description:
-      'Herramienta interna que sistematiza literatura académica, resume artículos y genera códigos iniciales para análisis cualitativo.',
-    tags: ['RAG', 'OpenAI', 'Investigación', 'Productividad'],
-    category: 'investigacion',
-    year: '2025',
-    accent: 'from-navy-800 to-navy-600',
-    highlights: ['Indexado de +500 papers', 'Citas trazables', 'Codificación asistida'],
-  },
-  {
-    id: 'etnografia',
-    title: 'Etnografía digital',
-    subtitle: 'Comunidades online',
-    description:
-      'Trabajo de campo en plataformas digitales para entender prácticas cotidianas y lenguajes compartidos en comunidades específicas.',
-    tags: ['Etnografía', 'Observación', 'Cualitativa'],
-    category: 'investigacion',
-    year: '2023',
-    accent: 'from-navy-500 to-navy-300',
-    highlights: ['Inmersión +6 meses', 'Diario de campo', 'Informe etnográfico'],
+    highlights: [
+      'Mapeo de establecimientos turísticos',
+      'Dashboards e informes interactivos en Power BI',
+      'Visualizaciones territoriales con QGIS',
+    ],
   },
 ];
 
@@ -167,35 +149,35 @@ export const services: Service[] = [
     number: '01',
     title: 'Investigación social',
     description:
-      'Diseño estudios a medida, trabajo de campo y análisis con métodos cuantitativos, cualitativos o mixtos.',
+      'Diseño y ejecuto estudios con metodologías cuantitativas, cualitativas o mixtas. Desde el diseño metodológico hasta el informe final.',
     deliverables: [
       'Diseño metodológico',
-      'Trabajo de campo',
-      'Análisis y visualización',
-      'Informe ejecutivo',
+      'Trabajo de campo (entrevistas, grupos, cartografía)',
+      'Análisis e interpretación',
+      'Informe sociológico final',
     ],
   },
   {
     number: '02',
-    title: 'Desarrollo con IA',
+    title: 'Producto digital con IA',
     description:
-      'Construyo productos web y apps apalancados en modelos de lenguaje, desde el prototipo hasta producción.',
+      'Construyo aplicaciones web full-stack con integración de modelos de lenguaje, desde la idea hasta producción y mantenimiento.',
     deliverables: [
-      'Discovery + prototipo',
-      'Arquitectura y stack',
-      'Integración de LLMs',
-      'Deploy y mantenimiento',
+      'Arquitectura y stack Next.js · Supabase',
+      'Integración de LLMs (Claude · OpenAI · Gemini)',
+      'Pagos con Stripe y autenticación',
+      'Despliegue y mantenimiento',
     ],
   },
   {
     number: '03',
     title: 'Consultoría híbrida',
     description:
-      'Cuando un problema necesita las dos miradas: entender a las personas y construir la solución.',
+      'Cuando un problema necesita las dos miradas: entender a las personas con rigor metodológico y construir la solución con tecnología.',
     deliverables: [
       'Research operativo',
       'Traducción a producto',
-      'Prototipado rápido',
+      'Prototipado rápido con IA',
       'Acompañamiento estratégico',
     ],
   },
@@ -210,30 +192,108 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    period: '2024 — actualidad',
-    role: 'Desarrollador de software con IA',
-    org: 'Proyectos propios',
+    period: 'Nov. 2025 — actualidad',
+    role: 'Técnico de Promoción Turística',
+    org: 'Bilbao Ekintza · Beca Plan de Empleo',
     description:
-      'Diseño y desarrollo de apps y herramientas apalancadas en modelos de lenguaje, desde el prototipo hasta la puesta en producción.',
+      'Investigación y análisis de datos del sector turístico de Bilbao. Cartografías y visualizaciones con QGIS, Power BI y Excel para apoyar la toma de decisiones en promoción turística.',
   },
   {
-    period: '2022 — 2024',
-    role: 'Investigador social',
-    org: 'Proyectos académicos y consultoría',
+    period: '2026 — actualidad',
+    role: 'Fundador',
+    org: 'Bercay Studio · Marca propia',
     description:
-      'Investigación cuantitativa y cualitativa sobre fenómenos sociales contemporáneos, con foco en la relación entre tecnología y sociedad.',
+      'Marca paraguas bajo la que desarrollo proyectos propios y comerciales en producto digital e investigación. TÖCA y Mozkor como productos actuales. Gestión integral: diseño, desarrollo, despliegue y modelo de negocio.',
   },
   {
-    period: '2018 — 2022',
-    role: 'Grado en Sociología',
-    org: 'Universidad',
+    period: 'Oct. 2024 — Oct. 2025',
+    role: 'Investigador en prácticas (TFM)',
+    org: 'Innok Lab · UPV/EHU',
     description:
-      'Formación en métodos de investigación social, estadística, teoría sociológica y análisis de datos.',
+      'Desarrollo del TFM sobre resignificación de espacios de la Facultad de Ciencias Sociales, en colaboración con Campus Bizia Lab. Cartografía emocional, entrevistas, observación y análisis visual.',
+  },
+  {
+    period: '2023 — 2025',
+    role: 'Responsable / Monitor socioeducativo',
+    org: 'BIRA Educación y Deporte',
+    description:
+      'Coordinación de grupos de jóvenes y apoyo en actividades socioeducativas.',
+  },
+];
+
+export type EducationItem = {
+  period: string;
+  title: string;
+  org: string;
+  note?: string;
+};
+
+export const education: EducationItem[] = [
+  {
+    period: 'Oct. 2024 — Oct. 2025',
+    title: 'Máster en Modelos y Áreas de Investigación en Ciencias Sociales',
+    org: 'Euskal Herriko Unibertsitatea · UPV/EHU',
+  },
+  {
+    period: 'Sept. 2018 — Sept. 2024',
+    title: 'Grado en Sociología',
+    org: 'Euskal Herriko Unibertsitatea · UPV/EHU',
+    note: 'Mención en Procesos, Redes y Estructuras Sociales',
+  },
+  {
+    period: '2015 — 2017',
+    title: 'Bachillerato',
+    org: 'Colegio Calasancio Escolapios · Bilbao',
+  },
+];
+
+export const certifications = [
+  'Análisis de Big Data en Redes Sociales — UPV/EHU (2024)',
+  'Prevención de Riesgos Laborales (2023)',
+  'Manipulador de Alimentos (2024)',
+  'Permiso de conducir B',
+];
+
+export const languages = [
+  { name: 'Castellano', level: 'Nativo' },
+  { name: 'Euskera', level: 'Avanzado · B2 (2025)' },
+  { name: 'Inglés', level: 'Avanzado · B2 (2016)' },
+];
+
+export type ToolGroup = {
+  label: string;
+  items: string[];
+};
+
+export const tools: ToolGroup[] = [
+  {
+    label: 'Análisis de datos',
+    items: ['SPSS', 'Jamovi', 'Excel'],
+  },
+  {
+    label: 'Visualización y cartografía',
+    items: ['Power BI', 'QGIS'],
+  },
+  {
+    label: 'Cualitativa',
+    items: ['Whisper', 'Otter.ai'],
+  },
+  {
+    label: 'Desarrollo',
+    items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'],
+  },
+  {
+    label: 'IA',
+    items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'],
+  },
+  {
+    label: 'Gestión',
+    items: ['Notion', 'Trello', 'Slack', 'MS Teams'],
   },
 ];
 
 export const stats = [
-  { value: '5+', label: 'años combinando investigación y tecnología' },
-  { value: '12', label: 'proyectos en software e investigación' },
-  { value: '∞', label: 'curiosidad aplicada' },
+  { value: '3+', label: 'productos digitales propios en marcha' },
+  { value: 'TFM', label: 'defendido en UPV/EHU (2025)' },
+  { value: 'Bilbao', label: 'base de operaciones' },
 ];

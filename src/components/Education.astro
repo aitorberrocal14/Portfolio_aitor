@@ -1,0 +1,57 @@
+---
+import SectionHeader from '~/components/SectionHeader.astro';
+import { education, certifications, languages } from '~/data/site';
+---
+
+<section id="formacion" class="section section-divide bg-white">
+  <div class="container">
+    <SectionHeader
+      number="06"
+      label="Formación"
+      title="Credenciales."
+      description="Formación académica en sociología, certificaciones aplicadas y competencia lingüística."
+    />
+
+    <div class="mt-14 grid lg:grid-cols-[1.6fr,1fr] gap-12">
+      <ol class="space-y-6" data-reveal>
+        {education.map((item, i) => (
+          <li class="flex gap-5 border-b border-slate-200 pb-6 last:border-b-0">
+            <span class="font-mono text-xs text-slate-400 pt-1.5 w-24 flex-none">{String(i + 1).padStart(2, '0')}</span>
+            <div class="flex-1">
+              <p class="section-number">{item.period}</p>
+              <h3 class="mt-2 font-display text-xl text-navy leading-snug">{item.title}</h3>
+              <p class="mt-1 text-sm text-slate-600">{item.org}</p>
+              {item.note && <p class="mt-1 text-sm text-slate-500 italic">{item.note}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div class="space-y-8" data-reveal style="--reveal-delay: 100ms">
+        <div>
+          <p class="eyebrow mb-4">Certificaciones</p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            {certifications.map((c) => (
+              <li class="flex gap-2">
+                <span class="text-navy mt-1 leading-none">—</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow mb-4">Idiomas</p>
+          <ul class="space-y-3">
+            {languages.map((l) => (
+              <li class="flex items-baseline justify-between gap-3 border-b border-slate-100 pb-2">
+                <span class="text-navy font-medium">{l.name}</span>
+                <span class="text-xs text-slate-500 text-right">{l.level}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

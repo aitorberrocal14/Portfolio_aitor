@@ -7,4 +7,11 @@ export default defineConfig({
   base: '/Portfolio_aitor',
   trailingSlash: 'ignore',
   integrations: [tailwind()],
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'eu', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });

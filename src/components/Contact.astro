@@ -1,6 +1,8 @@
 ---
-import { site } from '~/data/site';
+import { site, languages } from '~/data/site';
 import SocialLinks from '~/components/SocialLinks.astro';
+
+const idiomasStr = languages.map((l) => l.name).join(' · ');
 ---
 
 <section id="contacto" class="section section-divide bg-white">
@@ -12,7 +14,7 @@ import SocialLinks from '~/components/SocialLinks.astro';
 
       <div class="relative p-8 sm:p-12 lg:p-16">
         <div class="flex items-center gap-4" data-reveal>
-          <span class="section-number text-white/40">05</span>
+          <span class="section-number text-white/40">07</span>
           <span class="h-px w-10 bg-white/30"></span>
           <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70 font-semibold">Contacto</span>
         </div>
@@ -35,10 +37,14 @@ import SocialLinks from '~/components/SocialLinks.astro';
           <SocialLinks variant="large" tone="dark" />
         </div>
 
-        <div class="mt-12 pt-8 border-t border-white/15 grid sm:grid-cols-3 gap-6 text-sm" data-reveal style="--reveal-delay: 320ms">
+        <div class="mt-12 pt-8 border-t border-white/15 grid sm:grid-cols-4 gap-6 text-sm" data-reveal style="--reveal-delay: 320ms">
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Ubicación</p>
             <p class="mt-1.5 text-white">{site.location}</p>
+          </div>
+          <div>
+            <p class="text-white/50 uppercase tracking-widest text-xs">Teléfono</p>
+            <p class="mt-1.5 text-white">{site.phone}</p>
           </div>
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Disponibilidad</p>
@@ -46,7 +52,7 @@ import SocialLinks from '~/components/SocialLinks.astro';
           </div>
           <div>
             <p class="text-white/50 uppercase tracking-widest text-xs">Idiomas</p>
-            <p class="mt-1.5 text-white">Español · Inglés</p>
+            <p class="mt-1.5 text-white">{idiomasStr}</p>
           </div>
         </div>
       </div>
