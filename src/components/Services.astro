@@ -1,19 +1,21 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
-import { services } from '~/data/site';
+import { getDict } from '~/i18n';
+
+const t = getDict(Astro.url).services;
 ---
 
 <section id="servicios" class="section section-divide bg-white">
   <div class="container">
     <SectionHeader
-      number="02"
-      label="Cómo trabajo"
-      title="Tres formas de colaborar."
-      description="Dependiendo del punto de partida, entro por una u otra puerta: investigación, producto o ambas."
+      number={t.number}
+      label={t.kicker}
+      title={t.title}
+      description={t.description}
     />
 
     <div class="mt-14 grid md:grid-cols-3 gap-5">
-      {services.map((s, i) => (
+      {t.items.map((s, i) => (
         <article class="card group relative flex flex-col" data-reveal style={`--reveal-delay: ${i * 100}ms`}>
           <div class="flex items-start justify-between">
             <span class="font-mono text-sm text-slate-400">{s.number}</span>

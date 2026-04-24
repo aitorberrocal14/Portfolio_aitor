@@ -1,18 +1,20 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
-import { experience } from '~/data/site';
+import { getDict } from '~/i18n';
+
+const t = getDict(Astro.url).experience;
 ---
 
 <section id="experiencia" class="section section-divide">
   <div class="container">
     <SectionHeader
-      number="04"
-      label="Trayectoria"
-      title="Dónde he estado trabajando."
+      number={t.number}
+      label={t.kicker}
+      title={t.title}
     />
 
     <ol class="mt-14 relative border-l-2 border-slate-200 space-y-10 pl-7 max-w-3xl">
-      {experience.map((item, i) => (
+      {t.items.map((item, i) => (
         <li class="relative" data-reveal style={`--reveal-delay: ${i * 100}ms`}>
           <span class="absolute -left-[37px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-white border-2 border-navy">
             <span class="h-1.5 w-1.5 rounded-full bg-navy"></span>

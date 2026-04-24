@@ -1,6 +1,9 @@
 ---
 import { site } from '~/data/site';
 import SocialLinks from '~/components/SocialLinks.astro';
+import { getDict } from '~/i18n';
+
+const t = getDict(Astro.url).footer;
 const year = new Date().getFullYear();
 ---
 
@@ -8,9 +11,9 @@ const year = new Date().getFullYear();
   <div class="container py-12">
     <div class="grid lg:grid-cols-[1.5fr,1fr] gap-8 items-end">
       <div>
-        <p class="section-number">Aitor Berrocal</p>
+        <p class="section-number">{site.shortName}</p>
         <p class="mt-2 font-display text-2xl sm:text-3xl text-navy tracking-tight leading-tight max-w-xl">
-          Investigación social + producto con IA.
+          {t.tagline}
         </p>
       </div>
       <div class="flex lg:justify-end">
@@ -21,8 +24,8 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-slate-200">
     <div class="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-      <p>© {year} {site.name}. Todos los derechos reservados.</p>
-      <p>Hecho con Astro, Tailwind y mucho Fraunces.</p>
+      <p>© {year} {site.name}. {t.rights}</p>
+      <p>{t.builtWith}</p>
     </div>
   </div>
 </footer>

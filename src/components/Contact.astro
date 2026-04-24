@@ -1,8 +1,11 @@
 ---
-import { site, languages } from '~/data/site';
+import { site } from '~/data/site';
 import SocialLinks from '~/components/SocialLinks.astro';
+import { getDict } from '~/i18n';
 
-const idiomasStr = languages.map((l) => l.name).join(' · ');
+const dict = getDict(Astro.url);
+const t = dict.contact;
+const idiomasStr = dict.education.languages.map((l) => l.name).join(' · ');
 ---
 
 <section id="contacto" class="section section-divide bg-white">
@@ -14,17 +17,17 @@ const idiomasStr = languages.map((l) => l.name).join(' · ');
 
       <div class="relative p-8 sm:p-12 lg:p-16">
         <div class="flex items-center gap-4" data-reveal>
-          <span class="section-number text-white/40">07</span>
+          <span class="section-number text-white/40">{t.number}</span>
           <span class="h-px w-10 bg-white/30"></span>
-          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70 font-semibold">Contacto</span>
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70 font-semibold">{t.kicker}</span>
         </div>
 
         <h2 class="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1] max-w-4xl" data-reveal style="--reveal-delay: 80ms">
-          Hagamos algo <span class="italic text-white/70">juntos</span>.
+          {t.title} <span class="italic text-white/70">{t.titleItalic}</span>.
         </h2>
 
         <p class="mt-6 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed" data-reveal style="--reveal-delay: 160ms">
-          Si tienes un proyecto en mente —investigación, producto con IA o ambos— cuéntamelo. Suelo responder en menos de 24 horas.
+          {t.description}
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-4" data-reveal style="--reveal-delay: 240ms">
@@ -39,15 +42,15 @@ const idiomasStr = languages.map((l) => l.name).join(' · ');
 
         <div class="mt-12 pt-8 border-t border-white/15 grid sm:grid-cols-3 gap-6 text-sm" data-reveal style="--reveal-delay: 320ms">
           <div>
-            <p class="text-white/50 uppercase tracking-widest text-xs">Ubicación</p>
+            <p class="text-white/50 uppercase tracking-widest text-xs">{t.labels.location}</p>
             <p class="mt-1.5 text-white">{site.location}</p>
           </div>
           <div>
-            <p class="text-white/50 uppercase tracking-widest text-xs">Disponibilidad</p>
-            <p class="mt-1.5 text-white">Freelance · colaboraciones</p>
+            <p class="text-white/50 uppercase tracking-widest text-xs">{t.labels.availability}</p>
+            <p class="mt-1.5 text-white">{t.labels.availabilityValue}</p>
           </div>
           <div>
-            <p class="text-white/50 uppercase tracking-widest text-xs">Idiomas</p>
+            <p class="text-white/50 uppercase tracking-widest text-xs">{t.labels.languages}</p>
             <p class="mt-1.5 text-white">{idiomasStr}</p>
           </div>
         </div>

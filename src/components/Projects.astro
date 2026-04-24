@@ -1,31 +1,47 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
 import ProjectGrid from '~/components/ProjectGrid.astro';
-import { projects } from '~/data/site';
+import { getDict } from '~/i18n';
+import { projectMeta } from '~/data/site';
 
-const software = projects.filter((p) => p.category === 'software');
-const research = projects.filter((p) => p.category === 'investigacion');
+const t = getDict(Astro.url).projects;
+const merge = (item: typeof t.items[number]) => ({ ...item, ...projectMeta[item.id] });
+
+const software = (['toca', 'mozkor', 'bercay'] as const)
+  .map((id) => t.items.find((i) => i.id === id)!)
+  .map(merge);
+const research = (['tfm', 'turismo-bilbao'] as const)
+  .map((id) => t.items.find((i) => i.id === id)!)
+  .map(merge);
 ---
 
 <section id="proyectos" class="section section-divide">
   <div class="container">
     <SectionHeader
-      number="03"
-      label="Trabajo seleccionado"
-      title="Proyectos que cruzan investigación y tecnología."
-      description="Lo que construyo bajo Bercay Studio y lo que investigo en entornos académicos y aplicados."
+      number={t.number}
+      label={t.kicker}
+      title={t.title}
+      description={t.description}
     />
 
     <ProjectGrid
-      kicker="— Rama 01"
-      title="Software & IA"
+      kicker={t.softwareKicker}
+      title={t.softwareTitle}
       items={software}
+      countLabel={t.countLabel(software.length)}
+      openLabel={t.openLabel}
+      visitLabel={t.visitLabel}
+      noUrlLabel={t.noUrlLabel}
     />
 
     <ProjectGrid
-      kicker="— Rama 02"
-      title="Investigación social"
+      kicker={t.researchKicker}
+      title={t.researchTitle}
       items={research}
+      countLabel={t.countLabel(research.length)}
+      openLabel={t.openLabel}
+      visitLabel={t.visitLabel}
+      noUrlLabel={t.noUrlLabel}
     />
   </div>
 </section>

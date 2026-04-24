@@ -1,0 +1,298 @@
+// Itzulpen-zirriborroa. Mesedez, errebisatu eta zuzendu nire euskara.
+export const eu = {
+  meta: {
+    role: 'Soziologoa · Gizarte ikertzailea · Produktu digitalen garatzailea',
+    tagline:
+      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak AArekin eraikitzeko gaitasun teknikoa elkartzen ditut.',
+    keywords:
+      'soziologoa, gizarte ikerketa, AA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+  },
+  nav: {
+    about: 'Niri buruz',
+    services: 'Zerbitzuak',
+    projects: 'Proiektuak',
+    experience: 'Esperientzia',
+    tools: 'Tresnak',
+    education: 'Ikasketak',
+    contact: 'Kontaktua',
+    cta: 'Hitz egin dezagun',
+    skipToContent: 'Edukira jauzi',
+    openMenu: 'Menua ireki',
+    closeMenu: 'Menua itxi',
+  },
+  hero: {
+    availability: 'Lan egiteko prest',
+    titleA: 'Gizartea ikertzen dut',
+    titleB: 'eraikitzen',
+    titleC: 'AArekin',
+    lead: [
+      { kind: 'text', value: 'Ni naiz ' },
+      { kind: 'name', value: 'Aitor Berrocal Lorda' },
+      { kind: 'text', value: '. Soziologoa, gizarte ikertzailea eta AArekin produktu digitalen garatzailea. ' },
+      { kind: 'em', value: 'Zorroztasun metodologikoa' },
+      { kind: 'text', value: ' eta ' },
+      { kind: 'em', value: 'exekuzio abiadura' },
+      { kind: 'text', value: ' uztartzen ditut.' },
+    ],
+    ctaPrimary: 'Proiektuak ikusi',
+    ctaSecondary: 'Hitz egin dezagun',
+  },
+  about: {
+    number: '01',
+    kicker: 'Niri buruz',
+    title: 'Bi hizkuntza, jakin-min bera.',
+    description:
+      'Hanka bat gizarte ikerketan eta bestea AArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
+    paragraphs: [
+      '**Gizarte ikerketan espezializatutako soziologoa** naiz, metodologia kuantitatibo, kualitatibo eta mistoetan esperientziaduna. EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko _espazioen birsignifikazioari_ buruzko Master Amaierako Lanaren egilea.',
+      'Aldi berean, **AArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
+      'Nire lana gizarte zientzien eta teknologiaren arteko gurutzagunean eraikitzen da: begirada kritikoa + exekuzio gaitasuna.',
+    ],
+    cards: [
+      { k: 'A', title: 'Ikertu', body: 'Diseinu metodologikoa, lan eremua, analisia eta txostenak.' },
+      { k: 'B', title: 'Aztertu', body: 'SPSS, Jamovi, Power BI, QGIS. Kartografiak eta bistaratzeak.' },
+      { k: 'C', title: 'Eraiki', body: 'Next.js, Supabase, Stripe eta LLMak (Claude · OpenAI · Gemini).' },
+    ],
+    photoBadgeNow: 'Bilbo · 2026',
+  },
+  services: {
+    number: '02',
+    kicker: 'Nola lan egiten dut',
+    title: 'Lankidetzeko hiru modu.',
+    description:
+      'Abiapuntuaren arabera, ate batetik edo bestetik sartzen naiz: ikerketa, produktua, edo biak.',
+    items: [
+      {
+        number: '01',
+        title: 'Gizarte ikerketa',
+        description:
+          'Metodologia kuantitatibo, kualitatibo edo mistoekin azterlanak diseinatu eta gauzatzen ditut. Diseinu metodologikotik txosten finalera arte.',
+        deliverables: [
+          'Diseinu metodologikoa',
+          'Lan eremua (elkarrizketak, taldeak, kartografia)',
+          'Analisia eta interpretazioa',
+          'Azken txosten soziologikoa',
+        ],
+      },
+      {
+        number: '02',
+        title: 'Produktu digitala AArekin',
+        description:
+          'Hizkuntza-ereduen integrazioarekin web aplikazio full-stack eraikitzen ditut, ideiatik produkziora eta mantentzera arte.',
+        deliverables: [
+          'Arkitektura eta Next.js · Supabase stack',
+          'LLMen integrazioa (Claude · OpenAI · Gemini)',
+          'Stripe ordainketak eta autentifikazioa',
+          'Hedapena eta mantentzea',
+        ],
+      },
+      {
+        number: '03',
+        title: 'Aholkularitza hibridoa',
+        description:
+          'Arazoak bi begirada behar dituenean: pertsonak ulertzea zorroztasun metodologikoarekin eta soluzioa teknologiarekin eraikitzea.',
+        deliverables: [
+          'Ikerketa operatiboa',
+          'Produkturako itzulpena',
+          'Prototipo azkarra AArekin',
+          'Laguntza estrategikoa',
+        ],
+      },
+    ],
+  },
+  projects: {
+    number: '03',
+    kicker: 'Aukeratutako lanak',
+    title: 'Ikerketa eta teknologia gurutzatzen dituzten proiektuak.',
+    description:
+      'Bercay Studio markaren azpian eraikitzen dudana eta esparru akademiko eta aplikatuetan ikertzen dudana.',
+    softwareKicker: '— Adarra 01',
+    softwareTitle: 'Software & AA',
+    researchKicker: '— Adarra 02',
+    researchTitle: 'Gizarte ikerketa',
+    countLabel: (n: number) => `${n} proiektu`,
+    openLabel: 'Ireki',
+    visitLabel: 'Webgunea bisitatu',
+    noUrlLabel: 'Esteka gabe',
+    items: [
+      {
+        id: 'toca',
+        title: 'TÖCA',
+        subtitle: 'Entrenamendua AArekin · HYROX & CrossFit',
+        description:
+          'HYROX eta CrossFit kirolarientzat AAren bidez entrenamendu plan pertsonalizatuak sortzen dituen aplikazioa. Ziklo osoa: ideia, diseinu teknikoa, garapen full-stack, abiarazpena eta mantentzea.',
+        tags: ['Next.js', 'Supabase', 'Stripe', 'LLMs', 'TypeScript'],
+        highlights: [
+          'AAren bidez sortutako plan pertsonalizatuak',
+          'Autentifikazioa, Stripe ordainketak eta harpidetzak',
+          'Vercel-en hedatua, arkitektura serverless',
+        ],
+        cover: { tagline: 'Zure HYROX plana, segundotan.', urlLabel: 'toca-app.bercay.studio' },
+      },
+      {
+        id: 'mozkor',
+        title: 'Mozkor',
+        subtitle: 'Edari trackerra',
+        description:
+          'Edarien jarraipenerako eta kudeaketarako aplikazioa, modu autonomoan full-stack garatua, datu-base erlazional, autentifikazio eta produkzio-hedapenarekin.',
+        tags: ['Next.js', 'Supabase', 'PostgreSQL', 'Vercel'],
+        highlights: [
+          'Datu eredu erlazionala PostgreSQLn',
+          'Autentifikazioa eta biltegiratzea Supabaserekin',
+          'UI zaindua Next.js + TypeScripten',
+        ],
+        cover: { tagline: 'Jarraitu. Ulertu. Erabaki.', urlLabel: 'mozkor-app.bercay.studio' },
+      },
+      {
+        id: 'bercay',
+        title: 'Bercay Studio',
+        subtitle: 'Proiektu propioen marka aterkia',
+        description:
+          'Produktu digitalean eta ikerketan proiektu propioak eta komertzialak garatzen eta aurkezten ditudan marka. Webgunea, identitatea eta kudeaketa integrala: diseinua, garapena, hedapena eta negozio eredua.',
+        tags: ['Astro', 'Branding', 'Produktua', 'Estrategia'],
+        highlights: [
+          'Marka eta identitate propioa',
+          'Webgunea proiektuen hub gisa',
+          'Lotutako proposamen komertzialak',
+        ],
+        cover: { tagline: 'Research + Product Studio.', urlLabel: 'bercay.studio' },
+      },
+      {
+        id: 'tfm',
+        title: 'Espazioen birsignifikazioa',
+        subtitle: 'MAL · Gizarte Zientzietako Masterra · UPV/EHU',
+        description:
+          'EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko Espazioak Birsignifikatzeko eta Birkonfiguratzeko Proiektuaren analisia, Innok Lab eta Campus Bizia Lab taldeekin elkarlanean.',
+        tags: ['Kartografia emozionala', 'Elkarrizketak', 'Behaketa', 'Analisi bisuala'],
+        highlights: [
+          'Kartografia emozionala teknika nagusi gisa',
+          'Sakoneko elkarrizketak eta behaketa',
+          'Azterlanaren material fotografikoaren analisia',
+        ],
+        cover: { tagline: 'Nola bizitzen den fakultate bat.', urlLabel: 'UPV/EHU · 2025' },
+      },
+      {
+        id: 'turismo-bilbao',
+        title: 'Bilboko turismo banaketa',
+        subtitle: 'Bilbao Ekintza · Turismo Sustapeneko Teknikaria',
+        description:
+          'Bilboko establezimendu turistikoen banaketari buruzko ikerketa eta datu analisia (hotelak, ostatuak, ETB, aterpetxeak, apartamentuak). Erabakiak hartzen laguntzeko kartografiak eta dashboardak.',
+        tags: ['QGIS', 'Power BI', 'Excel', 'Kartografia'],
+        highlights: [
+          'Establezimendu turistikoen mapaketa',
+          'Power BIn dashboard eta txosten interaktiboak',
+          'Lurralde bistaratzeak QGISekin',
+        ],
+        cover: { tagline: 'Bilboko turismoa, datuetan.', urlLabel: 'Bilbao Ekintza' },
+      },
+    ],
+  },
+  experience: {
+    number: '04',
+    kicker: 'Ibilbidea',
+    title: 'Non aritu naizen lanean.',
+    items: [
+      {
+        period: '2025eko aza. — gaur arte',
+        role: 'Turismo Sustapeneko Teknikaria',
+        org: 'Bilbao Ekintza · Enplegu Plan Beka',
+        description:
+          'Bilboko sektore turistikoaren ikerketa eta datu analisia. QGIS, Power BI eta Excelekin kartografiak eta bistaratzeak, turismo sustapenean erabakiak hartzen laguntzeko.',
+      },
+      {
+        period: '2026 — gaur arte',
+        role: 'Sortzailea',
+        org: 'Bercay Studio · Marka propioa',
+        description:
+          'Produktu digitalean eta ikerketan proiektu propioak eta komertzialak garatzen ditudan marka aterkia. TÖCA eta Mozkor egungo produktu gisa. Kudeaketa integrala: diseinua, garapena, hedapena eta negozio eredua.',
+      },
+      {
+        period: '2024ko urr. — 2025eko urr.',
+        role: 'Ikertzaile praktiketan (MAL)',
+        org: 'Innok Lab · UPV/EHU',
+        description:
+          'Gizarte Zientzien Fakultateko espazioen birsignifikazioari buruzko Master Amaierako Lanaren garapena, Campus Bizia Labekin elkarlanean. Kartografia emozionala, elkarrizketak, behaketa eta analisi bisuala.',
+      },
+      {
+        period: '2023 — 2025',
+        role: 'Arduradun / Hezitzaile sozioedukatzailea',
+        org: 'BIRA Hezkuntza eta Kirola',
+        description: 'Gazte taldeen koordinazioa eta jarduera sozioedukatzaileetan laguntza.',
+      },
+    ],
+  },
+  tools: {
+    number: '05',
+    kicker: 'Tresnak',
+    title: 'Lan tresnak.',
+    description: 'Egunerokoan ikertu, aztertu eta eraikitzeko erabiltzen dudana.',
+    groups: [
+      { label: 'Datuen analisia', items: ['SPSS', 'Jamovi', 'Excel'] },
+      { label: 'Bistaratzea eta kartografia', items: ['Power BI', 'QGIS'] },
+      { label: 'Kualitatiboa', items: ['Whisper', 'Otter.ai'] },
+      { label: 'Garapena', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
+      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'Kudeaketa', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
+    ],
+  },
+  education: {
+    number: '06',
+    kicker: 'Ikasketak',
+    title: 'Kredentzialak.',
+    description: 'Soziologiako prestakuntza akademikoa, ziurtagiri aplikatuak eta hizkuntza gaitasuna.',
+    items: [
+      {
+        period: '2024ko urr. — 2025eko urr.',
+        title: 'Gizarte Zientzietako Ikerketa Eredu eta Arloen Masterra',
+        org: 'Euskal Herriko Unibertsitatea · UPV/EHU',
+      },
+      {
+        period: '2018ko ira. — 2024ko ira.',
+        title: 'Soziologia Gradua',
+        org: 'Euskal Herriko Unibertsitatea · UPV/EHU',
+        note: 'Aipamena Prozesu, Sare eta Egitura Sozialetan',
+      },
+      {
+        period: '2015 — 2017',
+        title: 'Batxilergoa',
+        org: 'Calasancio Eskolapioak Ikastetxea · Bilbo',
+      },
+    ],
+    certificationsLabel: 'Ziurtagiriak',
+    certifications: [
+      'Sare Sozialetako Big Data Analisia — UPV/EHU (2024)',
+      'Lan Arriskuen Prebentzioa (2023)',
+      'Elikagaien Manipulatzailea (2024)',
+      'B gidatzeko baimena',
+    ],
+    languagesLabel: 'Hizkuntzak',
+    languages: [
+      { name: 'Gaztelania', level: 'Ama hizkuntza' },
+      { name: 'Euskara', level: 'Aurreratua · B2 (2025)' },
+      { name: 'Ingelesa', level: 'Aurreratua · B2 (2016)' },
+    ],
+  },
+  contact: {
+    number: '07',
+    kicker: 'Kontaktua',
+    title: 'Egin dezagun zerbait',
+    titleItalic: 'elkarrekin',
+    description:
+      'Buruan proiekturen bat baduzu —ikerketa, AArekin produktua edo biak— kontatu iezadazu. Normalean 24 ordutan baino gutxiagoan erantzuten dut.',
+    labels: {
+      location: 'Kokapena',
+      availability: 'Eskuragarritasuna',
+      availabilityValue: 'Freelance · lankidetzak',
+      languages: 'Hizkuntzak',
+    },
+  },
+  footer: {
+    tagline: 'Gizarte ikerketa + AArekin produktua.',
+    rights: 'Eskubide guztiak erreserbatuta.',
+    builtWith: 'Astro, Tailwind eta Fraunces askorekin egina.',
+  },
+  projectsData: {
+    online: 'Online',
+    livePreview: 'Live preview',
+  },
+} as const;

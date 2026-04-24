@@ -1,19 +1,21 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
-import { tools } from '~/data/site';
+import { getDict } from '~/i18n';
+
+const t = getDict(Astro.url).tools;
 ---
 
 <section id="herramientas" class="section section-divide">
   <div class="container">
     <SectionHeader
-      number="05"
-      label="Herramientas"
-      title="Caja de herramientas."
-      description="Lo que uso en el día a día para investigar, analizar y construir."
+      number={t.number}
+      label={t.kicker}
+      title={t.title}
+      description={t.description}
     />
 
     <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {tools.map((group, i) => (
+      {t.groups.map((group, i) => (
         <div class="card flex flex-col" data-reveal style={`--reveal-delay: ${i * 80}ms`}>
           <p class="section-number">{String(i + 1).padStart(2, '0')}</p>
           <h3 class="mt-2 font-display text-lg text-navy">{group.label}</h3>

@@ -1,0 +1,25 @@
+---
+import { getLang, languageMeta, type Lang } from '~/i18n';
+
+const current = getLang(Astro.url);
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const langs: Lang[] = ['es', 'eu', 'en'];
+
+const url = (l: Lang) => (l === 'es' ? base : `${base}${l}/`);
+---
+
+<div class="inline-flex items-center rounded-full border border-slate-300 bg-white p-0.5 text-xs font-mono">
+  {langs.map((l) => (
+    <a
+      href={url(l)}
+      aria-label={languageMeta[l].name}
+      class={`px-2.5 py-1 rounded-full transition ${
+        current === l
+          ? 'bg-navy text-white'
+          : 'text-slate-500 hover:text-navy'
+      }`}
+    >
+      {languageMeta[l].short}
+    </a>
+  ))}
+</div>

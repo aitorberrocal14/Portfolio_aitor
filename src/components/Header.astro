@@ -1,23 +1,30 @@
 ---
 import { site } from '~/data/site';
+import LanguageSwitcher from '~/components/LanguageSwitcher.astro';
+import { getDict, getLang } from '~/i18n';
+
+const t = getDict(Astro.url).nav;
+const lang = getLang(Astro.url);
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const root = lang === 'es' ? base : `${base}${lang}/`;
 
 const nav = [
-  { href: '#sobre-mi', label: 'Sobre mí', number: '01', target: 'sobre-mi' },
-  { href: '#servicios', label: 'Servicios', number: '02', target: 'servicios' },
-  { href: '#proyectos', label: 'Proyectos', number: '03', target: 'proyectos' },
-  { href: '#experiencia', label: 'Experiencia', number: '04', target: 'experiencia' },
-  { href: '#herramientas', label: 'Herramientas', number: '05', target: 'herramientas' },
-  { href: '#formacion', label: 'Formación', number: '06', target: 'formacion' },
+  { href: `${root}#sobre-mi`, label: t.about, number: '01', target: 'sobre-mi' },
+  { href: `${root}#servicios`, label: t.services, number: '02', target: 'servicios' },
+  { href: `${root}#proyectos`, label: t.projects, number: '03', target: 'proyectos' },
+  { href: `${root}#experiencia`, label: t.experience, number: '04', target: 'experiencia' },
+  { href: `${root}#herramientas`, label: t.tools, number: '05', target: 'herramientas' },
+  { href: `${root}#formacion`, label: t.education, number: '06', target: 'formacion' },
 ];
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
   <div class="container flex items-center justify-between py-4">
-    <a href="#top" class="group flex items-center gap-2.5">
+    <a href={`${root}#top`} class="group flex items-center gap-2.5">
       <span class="grid h-9 w-9 place-items-center rounded-full bg-navy text-sm font-bold text-white transition group-hover:scale-105">
         AB
       </span>
-      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight">{site.shortName}</span>
+      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight hidden sm:inline">{site.shortName}</span>
     </a>
 
     <nav class="hidden lg:flex items-center gap-5 text-sm">
@@ -35,8 +42,9 @@ const nav = [
     </nav>
 
     <div class="flex items-center gap-2">
-      <a href="#contacto" class="btn hidden sm:inline-flex">
-        Hablemos
+      <LanguageSwitcher />
+      <a href={`${root}#contacto`} class="btn hidden sm:inline-flex">
+        {t.cta}
         <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 10h10M11 4l6 6-6 6" />
         </svg>
@@ -45,7 +53,7 @@ const nav = [
         type="button"
         id="mobile-menu-toggle"
         class="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy"
-        aria-label="Abrir menú"
+        aria-label={t.openMenu}
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
@@ -82,11 +90,11 @@ const nav = [
         </a>
       ))}
       <a
-        href="#contacto"
+        href={`${root}#contacto`}
         data-mobile-link
         class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white"
       >
-        Hablemos
+        {t.cta}
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 10h10M11 4l6 6-6 6" />
         </svg>
@@ -108,7 +116,6 @@ const nav = [
     const setOpen = (v) => {
       open = v;
       btn.setAttribute('aria-expanded', v ? 'true' : 'false');
-      btn.setAttribute('aria-label', v ? 'Cerrar menú' : 'Abrir menú');
       menu.setAttribute('aria-hidden', v ? 'false' : 'true');
       if (v) {
         menu.style.maxHeight = menu.scrollHeight + 'px';
