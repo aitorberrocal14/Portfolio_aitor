@@ -1,6 +1,6 @@
 export const site = {
   name: 'Aitor Berrocal Lorda',
-  shortName: 'Aitor Berrocal',
+  shortName: 'Aitor Berrocal Lorda',
   role: 'Sociólogo · Investigador social · Desarrollador de productos digitales',
   tagline:
     'Uno la mirada crítica y analítica de la sociología con la capacidad técnica para construir productos digitales con IA.',
@@ -10,7 +10,7 @@ export const site = {
   whatsapp: '34688634112',
   currentlyAt: 'Bilbao Ekintza',
   // Ruta relativa a /public. Cambia a 'about/aitor.jpg' cuando subas la foto real.
-  photo: 'about/aitor.svg',
+  photo: 'about/aitor.jpg',
   socials: {
     github: 'https://github.com/aitorberrocal14',
     linkedin: 'https://www.linkedin.com/in/aitor-berrocal-893b90329',
