@@ -1,5 +1,4 @@
 ---
-import { site } from '~/data/site';
 import LanguageSwitcher from '~/components/LanguageSwitcher.astro';
 import { getDict, getLang } from '~/i18n';
 
@@ -19,29 +18,33 @@ const nav = [
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
-  <div class="container flex items-center justify-between py-4">
-    <a href={`${root}#top`} class="group flex items-center gap-2.5">
+  <div class="container flex items-center justify-between gap-4 py-4">
+    <a href={`${root}#top`} class="group flex items-center gap-2.5 flex-none">
       <span class="grid h-9 w-9 place-items-center rounded-full bg-navy text-sm font-bold text-white transition group-hover:scale-105">
         AB
       </span>
-      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight hidden sm:inline">{site.shortName}</span>
+      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight hidden sm:inline lg:hidden">
+        Aitor Berrocal
+      </span>
+      <span class="font-display text-lg text-navy group-hover:opacity-80 tracking-tight hidden lg:inline">
+        Aitor Berrocal Lorda
+      </span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-5 text-sm">
+    <nav class="hidden lg:flex items-center gap-6 text-sm flex-1 justify-center">
       {nav.map((item) => (
         <a
           href={item.href}
           data-nav-link={item.target}
-          class="group relative flex items-center gap-1.5 text-slate-600 hover:text-navy transition-colors py-1.5 data-[active=true]:text-navy"
+          class="group relative text-slate-600 hover:text-navy transition-colors py-1.5 data-[active=true]:text-navy whitespace-nowrap"
         >
-          <span class="font-mono text-[10px] text-slate-400 group-hover:text-navy/60 group-data-[active=true]:text-navy/70 transition-colors">{item.number}</span>
           <span>{item.label}</span>
           <span class="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-navy scale-x-0 origin-left transition-transform duration-300 group-data-[active=true]:scale-x-100"></span>
         </a>
       ))}
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 flex-none">
       <LanguageSwitcher />
       <a href={`${root}#contacto`} class="btn hidden sm:inline-flex">
         {t.cta}

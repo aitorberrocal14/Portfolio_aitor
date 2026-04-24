@@ -4,22 +4,92 @@ import { getLang, languageMeta, type Lang } from '~/i18n';
 const current = getLang(Astro.url);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const langs: Lang[] = ['es', 'eu', 'en'];
-
 const url = (l: Lang) => (l === 'es' ? base : `${base}${l}/`);
 ---
 
-<div class="inline-flex items-center rounded-full border border-slate-300 bg-white p-0.5 text-xs font-mono">
-  {langs.map((l) => (
-    <a
-      href={url(l)}
-      aria-label={languageMeta[l].name}
-      class={`px-2.5 py-1 rounded-full transition ${
-        current === l
-          ? 'bg-navy text-white'
-          : 'text-slate-500 hover:text-navy'
-      }`}
+<div class="relative" data-lang-switcher>
+  <button
+    type="button"
+    data-lang-trigger
+    class="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 hover:border-navy hover:text-navy transition-colors"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-label={`${languageMeta[current].name} · ${languageMeta[current].short}`}
+  >
+    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c2.5 2.7 4 6.1 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6.1-4-9s1.5-6.3 4-9z" />
+    </svg>
+    <span class="font-mono text-[11px]">{languageMeta[current].short}</span>
+    <svg
+      class="h-3 w-3 transition-transform duration-200"
+      data-lang-chevron
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
     >
-      {languageMeta[l].short}
-    </a>
-  ))}
+      <path d="M6 8l4 4 4-4" />
+    </svg>
+  </button>
+
+  <div
+    data-lang-menu
+    class="absolute right-0 top-[calc(100%+6px)] min-w-[160px] rounded-xl border border-slate-200 bg-white shadow-lg shadow-navy/10 p-1 opacity-0 pointer-events-none scale-95 origin-top-right transition duration-150"
+    role="menu"
+  >
+    {langs.map((l) => (
+      <a
+        href={url(l)}
+        role="menuitem"
+        aria-current={current === l ? 'page' : undefined}
+        class={`flex items-center justify-between gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+          current === l
+            ? 'bg-navy/5 text-navy font-semibold'
+            : 'text-slate-600 hover:bg-slate-50 hover:text-navy'
+        }`}
+      >
+        <span>{languageMeta[l].name}</span>
+        <span class="font-mono text-[10px] text-slate-400">{languageMeta[l].short}</span>
+      </a>
+    ))}
+  </div>
 </div>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-lang-switcher]').forEach((root) => {
+      const trigger = root.querySelector('[data-lang-trigger]');
+      const menu = root.querySelector('[data-lang-menu]');
+      const chevron = root.querySelector('[data-lang-chevron]');
+      if (!trigger || !menu) return;
+
+      let open = false;
+      const setOpen = (v) => {
+        open = v;
+        trigger.setAttribute('aria-expanded', v ? 'true' : 'false');
+        if (v) {
+          menu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+        } else {
+          menu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+        }
+        if (chevron) chevron.classList.toggle('rotate-180', v);
+      };
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setOpen(!open);
+      });
+      document.addEventListener('click', (e) => {
+        if (!root.contains(e.target)) setOpen(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    });
+  })();
+</script>
