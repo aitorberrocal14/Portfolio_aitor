@@ -2,7 +2,7 @@ export const site = {
   name: 'Aitor Berrocal Lorda',
   shortName: 'Aitor Berrocal Lorda',
   location: 'Bilbao',
-  email: 'aitorberrocal14@gmail.com',
+  email: 'aitorberrocal13@gmail.com',
   // Número personal: NO expuesto en la UI. Solo se usa para el enlace wa.me.
   whatsapp: '34688634112',
   photo: 'about/aitor.jpg',
