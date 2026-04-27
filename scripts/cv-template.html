@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CV — Aitor Berrocal Lorda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2a4a;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #e9ecf1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 16px auto;
+    background: var(--bg);
+    padding: 11mm 12mm;
+    box-shadow: 0 8px 32px rgba(15, 42, 74, 0.12);
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 5mm 8mm;
+    overflow: hidden;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    border-bottom: 1.2px solid var(--navy);
+    padding-bottom: 3mm;
+  }
+  .header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 28pt;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .header .role {
+    margin-top: 2.2mm;
+    font-size: 9pt;
+    color: var(--muted);
+    letter-spacing: 0.2px;
+  }
+
+  .sidebar { font-size: 8.4pt; line-height: 1.4; min-width: 0; }
+  .sidebar .block { margin-bottom: 3.2mm; }
+  .sidebar .block:last-child { margin-bottom: 0; }
+
+  .main { font-size: 9pt; line-height: 1.4; min-width: 0; }
+  .main .block { margin-bottom: 3mm; }
+  .main .block:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 10.5pt;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 1mm;
+    margin-bottom: 1.6mm;
+    border-bottom: 0.5px solid var(--line);
+  }
+  .sidebar .section-title { font-size: 9.2pt; }
+
+  /* CONTACT */
+  .contact { list-style: none; display: flex; flex-direction: column; gap: 1mm; }
+  .contact li {
+    display: flex; align-items: flex-start; gap: 1.6mm;
+    font-size: 7.8pt; color: var(--ink); word-break: break-word; line-height: 1.3;
+  }
+  .contact svg {
+    flex-shrink: 0; width: 9px; height: 9px; margin-top: 1.5px;
+    color: var(--navy); stroke: var(--navy);
+  }
+  .contact a { color: var(--ink); text-decoration: none; }
+
+  /* LANGS */
+  .lang-list { list-style: none; }
+  .lang-list li {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.5mm 0; border-bottom: 0.3px dotted var(--line); font-size: 8.2pt;
+  }
+  .lang-list li:last-child { border-bottom: none; }
+  .lang-list .lang-name { font-weight: 500; color: var(--navy); }
+  .lang-list .lang-level { font-size: 7.5pt; color: var(--muted); }
+
+  /* SIDEBAR GROUPS */
+  .skill-group { margin-bottom: 1.4mm; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group .label {
+    font-weight: 600; font-size: 7.6pt; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.3mm;
+  }
+  .skill-group .value { font-size: 8pt; color: var(--ink); line-height: 1.3; }
+
+  .plain-list { list-style: none; }
+  .plain-list li {
+    font-size: 8pt; padding: 0.3mm 0; line-height: 1.3;
+    position: relative; padding-left: 2.6mm;
+  }
+  .plain-list li::before {
+    content: ""; position: absolute; left: 0; top: 1.8mm;
+    width: 1mm; height: 1mm; background: var(--navy); transform: rotate(45deg);
+  }
+
+  /* PROFILE */
+  .profile {
+    font-size: 8.8pt; line-height: 1.45; color: var(--ink);
+    text-align: justify; hyphens: auto;
+  }
+  .profile em { font-style: italic; color: var(--navy); }
+
+  /* JOBS */
+  .timeline { position: relative; }
+  .job {
+    position: relative; padding-left: 4mm; padding-bottom: 1.8mm;
+    border-left: 1px solid var(--line);
+  }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -2.5px; top: 1mm;
+    width: 4.5px; height: 4.5px; background: var(--navy); border-radius: 50%;
+  }
+  .job .period {
+    font-size: 7.5pt; color: var(--muted); font-weight: 500;
+    letter-spacing: 0.3px; text-transform: uppercase;
+  }
+  .job .position {
+    font-size: 9.4pt; font-weight: 600; color: var(--navy);
+    margin-top: 0.2mm; line-height: 1.2;
+  }
+  .job .org {
+    font-size: 8.4pt; color: var(--ink); font-style: italic;
+    margin-top: 0.1mm; margin-bottom: 0.6mm;
+  }
+  .job ul { list-style: none; margin-top: 0.4mm; }
+  .job ul li {
+    font-size: 8.4pt; padding: 0.15mm 0 0.15mm 3.5mm;
+    position: relative; line-height: 1.35;
+  }
+  .job ul li::before {
+    content: ""; position: absolute; left: 0; top: 2mm;
+    width: 1.8mm; height: 0.5px; background: var(--navy);
+  }
+
+  /* EDU */
+  .edu-item { padding: 0.8mm 0; border-bottom: 0.3px solid var(--line); }
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu-item:first-child { padding-top: 0; }
+  .edu-item .edu-title {
+    font-size: 8.8pt; font-weight: 600; color: var(--navy); line-height: 1.2;
+  }
+  .edu-item .edu-meta { font-size: 8.2pt; color: var(--ink); margin-top: 0.1mm; }
+  .edu-item .edu-period { font-size: 7.6pt; color: var(--muted); margin-top: 0.1mm; }
+
+  /* OTHER EXP */
+  .other-exp { list-style: none; }
+  .other-exp li {
+    font-size: 8.4pt; color: var(--ink); line-height: 1.35;
+    padding-left: 2.6mm; position: relative;
+  }
+  .other-exp li::before {
+    content: "—"; position: absolute; left: 0;
+    color: var(--navy); font-weight: 500;
+  }
+  .other-exp .role-name { font-weight: 500; color: var(--navy); }
+
+  /* VOLUNTEER */
+  .volunteer-list { list-style: none; display: flex; flex-direction: column; gap: 0.8mm; }
+  .volunteer-list li { font-size: 7.8pt; line-height: 1.3; }
+  .volunteer-list .v-org { font-weight: 600; color: var(--navy); display: block; }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      height: 297mm;
+      page-break-after: avoid;
+      break-after: avoid;
+      overflow: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .block, .job, .edu-item, .skill-group { break-inside: avoid; }
+    .section-title { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="header">
+    <h1>Aitor Berrocal Lorda</h1>
+    <div class="role">Sociólogo · Investigador social · Desarrollador de productos digitales</div>
+  </header>
+
+  <aside class="sidebar">
+
+    <div class="block">
+      <h2 class="section-title">Contacto</h2>
+      <ul class="contact">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Bilbao, España</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+34 688 634 112</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:aitorberrocal13@gmail.com">aitorberrocal13@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://linkedin.com/in/aitor-berrocal-893b90329">linkedin.com/in/aitor-berrocal</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <a href="https://github.com/aitorberrocal14">github.com/aitorberrocal14</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://bercay.studio">bercay.studio</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Idiomas</h2>
+      <ul class="lang-list">
+        <li><span class="lang-name">Castellano</span><span class="lang-level">Nativo</span></li>
+        <li><span class="lang-name">Euskera</span><span class="lang-level">B2 · 2025</span></li>
+        <li><span class="lang-name">Inglés</span><span class="lang-level">B2 · 2016</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Herramientas</h2>
+      <div class="skill-group"><div class="label">Datos · GIS</div><div class="value">SPSS · Jamovi · Excel · Power BI · QGIS</div></div>
+      <div class="skill-group"><div class="label">Inv. cualitativa</div><div class="value">Whisper · Otter.ai</div></div>
+      <div class="skill-group"><div class="label">Desarrollo</div><div class="value">Next.js · React · TypeScript · Supabase · Vercel · Stripe · WordPress</div></div>
+      <div class="skill-group"><div class="label">IA</div><div class="value">Claude · ChatGPT · Gemini · Prompt engineering</div></div>
+      <div class="skill-group"><div class="label">Productividad</div><div class="value">Office · Google Workspace · Canva · CapCut · Notion · Trello · Slack · Teams</div></div>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Voluntariado</h2>
+      <ul class="volunteer-list">
+        <li><span class="v-org">Itaka Escolapios</span>Monitor de tiempo libre (2017–2021).</li>
+        <li><span class="v-org">Colegio La Cartuja · Granada</span>Apoyo educativo en contextos de exclusión social.</li>
+        <li><span class="v-org">Emakume Migratu Feministak</span>Formador digital. Talleres de informática e IA con enfoque ético.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Certificaciones</h2>
+      <ul class="plain-list">
+        <li>Big Data en Redes Sociales — UPV/EHU (2024)</li>
+        <li>Prevención de Riesgos Laborales (2023)</li>
+        <li>Manipulador de Alimentos (2024)</li>
+        <li>Permiso de conducir B</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <div class="block">
+      <h2 class="section-title">Perfil profesional</h2>
+      <p class="profile">
+        Sociólogo especializado en investigación social, con experiencia en metodologías cuantitativas, cualitativas y mixtas, y capacidad para diseñar y desarrollar productos digitales propios (aplicaciones web full-stack con integración de IA). Autor del TFM <em>«Análisis del Proyecto de Resignificación y Reconfiguración de los Espacios de la Facultad de Ciencias Sociales y de la Comunicación de la EHU»</em>. Combino la mirada crítica y analítica de la sociología con la capacidad técnica para construir productos digitales en la intersección entre ciencias sociales y tecnología.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Experiencia profesional</h2>
+      <div class="timeline">
+        <div class="job">
+          <div class="period">Nov. 2025 — Actualidad</div>
+          <div class="position">Técnico de Promoción Turística</div>
+          <div class="org">Bilbao Ekintza · Beca Plan de Empleo</div>
+          <ul>
+            <li>Investigación y análisis de datos aplicados al sector turístico de Bilbao.</li>
+            <li>Análisis de la distribución de establecimientos turísticos: hoteles, pensiones, VUT, albergues, apartamentos.</li>
+            <li>Cartografías y visualizaciones con QGIS, Power BI y Excel para apoyar la toma de decisiones en promoción turística.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="period">2026 — Actualidad</div>
+          <div class="position">Fundador — Bercay Studio</div>
+          <div class="org">Marca propia · Producto digital e investigación</div>
+          <ul>
+            <li>Productos: <strong>TÖCA</strong> (entrenamientos personalizados con IA para HYROX y CrossFit) y <strong>Mozkor</strong> (tracking de bebidas).</li>
+            <li>Gestión integral: diseño, desarrollo, despliegue, modelo de negocio y propuestas comerciales.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="period">Oct. 2024 — Oct. 2025</div>
+          <div class="position">Investigador en prácticas — Innok Lab (TFM)</div>
+          <div class="org">Universidad del País Vasco (UPV/EHU)</div>
+          <ul>
+            <li>TFM en colaboración con Campus Bizia Lab.</li>
+            <li>Cartografía emocional, entrevistas en profundidad, observación y análisis de material fotográfico.</li>
+            <li>Análisis e interpretación de datos y elaboración del informe final.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <div class="period">2023 — 2025</div>
+          <div class="position">Responsable / Monitor socioeducativo</div>
+          <div class="org">BIRA Educación y Deporte</div>
+          <ul>
+            <li>Coordinación de grupos de jóvenes y apoyo en actividades socioeducativas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Formación</h2>
+      <div class="edu-item">
+        <div class="edu-title">Máster en Modelos y Áreas de Investigación en Ciencias Sociales</div>
+        <div class="edu-meta">UPV/EHU · Oct. 2024 — Oct. 2025</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-title">Grado en Sociología</div>
+        <div class="edu-meta">Mención en Procesos, Redes y Estructuras Sociales · UPV/EHU · 2018 — 2024</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-title">Bachillerato</div>
+        <div class="edu-meta">Colegio Calasancio Escolapios, Bilbao · 2015 — 2017</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2 class="section-title">Otra experiencia</h2>
+      <ul class="other-exp">
+        <li><span class="role-name">Atención al cliente</span> — Mercadona <span style="color:var(--muted);">(2023–2025)</span> · <span class="role-name">Técnico de comedor</span> — Gasca <span style="color:var(--muted);">(2024–2025)</span> · <span class="role-name">Camarero de eventos</span> — Aramark <span style="color:var(--muted);">(2022–2024)</span> · <span class="role-name">Promotor</span> — Fideliza S.L. <span style="color:var(--muted);">(2017)</span></li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

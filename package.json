@@ -16,6 +16,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "pdfkit": "^0.18.0"
+    "pdfkit": "^0.18.0",
+    "puppeteer": "^24.42.0"
   }
 }
