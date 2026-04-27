@@ -6,6 +6,8 @@ export const site = {
   // Número personal: NO expuesto en la UI. Solo se usa para el enlace wa.me.
   whatsapp: '34688634112',
   photo: 'about/aitor.jpg',
+  // Sube tu CV a public/cv.pdf y déjalo así. Se podrá descargar desde Sobre mí y Header.
+  cv: 'cv.pdf',
   socials: {
     github: 'https://github.com/aitorberrocal14',
     linkedin: 'https://www.linkedin.com/in/aitor-berrocal-893b90329',

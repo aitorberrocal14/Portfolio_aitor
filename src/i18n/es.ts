@@ -18,6 +18,7 @@ export const es = {
     skipToContent: 'Saltar al contenido',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
+    downloadCv: 'Descargar CV',
   },
   hero: {
     availability: 'Disponible para colaborar',
@@ -53,6 +54,7 @@ export const es = {
       { k: 'C', title: 'Construir', body: 'Next.js, Supabase, Stripe y LLMs (Claude · OpenAI · Gemini).' },
     ],
     photoBadgeNow: 'Bilbao · 2026',
+    cvLabel: 'Descargar CV (PDF)',
   },
   services: {
     number: '02',

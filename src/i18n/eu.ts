@@ -1,11 +1,11 @@
-// Itzulpen-zirriborroa. Mesedez, errebisatu eta zuzendu nire euskara.
+// Euskara: lehenengo zirriborro errebisatu hartuta. Astiro berrikusi.
 export const eu = {
   meta: {
     role: 'Soziologoa · Gizarte ikertzailea · Produktu digitalen garatzailea',
     tagline:
-      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak AArekin eraikitzeko gaitasun teknikoa elkartzen ditut.',
+      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak IArekin eraikitzeko gaitasun teknikoa uztartzen ditut.',
     keywords:
-      'soziologoa, gizarte ikerketa, AA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+      'soziologoa, gizarte ikerketa, IA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
   nav: {
     about: 'Niri buruz',
@@ -19,19 +19,19 @@ export const eu = {
     skipToContent: 'Edukira jauzi',
     openMenu: 'Menua ireki',
     closeMenu: 'Menua itxi',
+    downloadCv: 'CV deskargatu',
   },
   hero: {
     availability: 'Lan egiteko prest',
-    titleA: 'Gizartea ikertzen dut',
-    titleB: 'eraikitzen',
-    titleC: 'AArekin',
+    titleA: 'Gizartea ikertu eta',
+    titleB: 'IArekin',
+    titleC: 'eraiki',
     lead: [
-      { kind: 'text', value: 'Ni naiz ' },
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: '. Soziologoa, gizarte ikertzailea eta AArekin produktu digitalen garatzailea. ' },
+      { kind: 'text', value: ' naiz. Soziologoa, gizarte ikertzailea eta IArekin produktu digitalen garatzailea. ' },
       { kind: 'em', value: 'Zorroztasun metodologikoa' },
       { kind: 'text', value: ' eta ' },
-      { kind: 'em', value: 'exekuzio abiadura' },
+      { kind: 'em', value: 'exekutatzeko abiadura' },
       { kind: 'text', value: ' uztartzen ditut.' },
     ],
     ctaPrimary: 'Proiektuak ikusi',
@@ -42,23 +42,24 @@ export const eu = {
     kicker: 'Niri buruz',
     title: 'Bi hizkuntza, jakin-min bera.',
     description:
-      'Hanka bat gizarte ikerketan eta bestea AArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
+      'Oin bat gizarte ikerketan eta bestea IArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
     paragraphs: [
-      '**Gizarte ikerketan espezializatutako soziologoa** naiz, metodologia kuantitatibo, kualitatibo eta mistoetan esperientziaduna. EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko _espazioen birsignifikazioari_ buruzko Master Amaierako Lanaren egilea.',
-      'Aldi berean, **AArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
-      'Nire lana gizarte zientzien eta teknologiaren arteko gurutzagunean eraikitzen da: begirada kritikoa + exekuzio gaitasuna.',
+      '**Gizarte ikerketan espezializatutako soziologoa** naiz, metodologia kuantitatibo, kualitatibo eta mistoetan eskarmentuduna. EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko _espazioen esanahi-berritzeari_ buruzko Master Amaierako Lanaren egilea.',
+      'Aldi berean, **IArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
+      'Nire lana gizarte zientzien eta teknologiaren arteko elkargunean eraikitzen da: begirada kritikoa + exekuzio gaitasuna.',
     ],
     cards: [
-      { k: 'A', title: 'Ikertu', body: 'Diseinu metodologikoa, lan eremua, analisia eta txostenak.' },
+      { k: 'A', title: 'Ikertu', body: 'Diseinu metodologikoa, landa-lana, analisia eta txostenak.' },
       { k: 'B', title: 'Aztertu', body: 'SPSS, Jamovi, Power BI, QGIS. Kartografiak eta bistaratzeak.' },
       { k: 'C', title: 'Eraiki', body: 'Next.js, Supabase, Stripe eta LLMak (Claude · OpenAI · Gemini).' },
     ],
     photoBadgeNow: 'Bilbo · 2026',
+    cvLabel: 'CV deskargatu (PDF)',
   },
   services: {
     number: '02',
     kicker: 'Nola lan egiten dut',
-    title: 'Lankidetzeko hiru modu.',
+    title: 'Elkarlanerako hiru bide.',
     description:
       'Abiapuntuaren arabera, ate batetik edo bestetik sartzen naiz: ikerketa, produktua, edo biak.',
     items: [
@@ -69,16 +70,16 @@ export const eu = {
           'Metodologia kuantitatibo, kualitatibo edo mistoekin azterlanak diseinatu eta gauzatzen ditut. Diseinu metodologikotik txosten finalera arte.',
         deliverables: [
           'Diseinu metodologikoa',
-          'Lan eremua (elkarrizketak, taldeak, kartografia)',
+          'Landa-lana (elkarrizketak, taldeak, kartografia)',
           'Analisia eta interpretazioa',
           'Azken txosten soziologikoa',
         ],
       },
       {
         number: '02',
-        title: 'Produktu digitala AArekin',
+        title: 'Produktu digitala IArekin',
         description:
-          'Hizkuntza-ereduen integrazioarekin web aplikazio full-stack eraikitzen ditut, ideiatik produkziora eta mantentzera arte.',
+          'Hizkuntza-ereduak integratuta, web aplikazio full-stack-ak eraikitzen ditut, ideiatik ekoizpenera eta mantentze-lanetara arte.',
         deliverables: [
           'Arkitektura eta Next.js · Supabase stack',
           'LLMen integrazioa (Claude · OpenAI · Gemini)',
@@ -90,11 +91,11 @@ export const eu = {
         number: '03',
         title: 'Aholkularitza hibridoa',
         description:
-          'Arazoak bi begirada behar dituenean: pertsonak ulertzea zorroztasun metodologikoarekin eta soluzioa teknologiarekin eraikitzea.',
+          'Arazoak bi begirada eskatzen dituenean: pertsonak ulertzea zorroztasun metodologikoarekin eta soluzioa teknologiarekin eraikitzea.',
         deliverables: [
           'Ikerketa operatiboa',
           'Produkturako itzulpena',
-          'Prototipo azkarra AArekin',
+          'Prototipo azkarra IArekin',
           'Laguntza estrategikoa',
         ],
       },
@@ -103,11 +104,11 @@ export const eu = {
   projects: {
     number: '03',
     kicker: 'Aukeratutako lanak',
-    title: 'Ikerketa eta teknologia gurutzatzen dituzten proiektuak.',
+    title: 'Ikerketa eta teknologia elkartzen dituzten proiektuak.',
     description:
       'Bercay Studio markaren azpian eraikitzen dudana eta esparru akademiko eta aplikatuetan ikertzen dudana.',
     softwareKicker: '— Adarra 01',
-    softwareTitle: 'Software & AA',
+    softwareTitle: 'Software & IA',
     researchKicker: '— Adarra 02',
     researchTitle: 'Gizarte ikerketa',
     countLabel: (n: number) => `${n} proiektu`,
@@ -118,16 +119,16 @@ export const eu = {
       {
         id: 'toca',
         title: 'TÖCA',
-        subtitle: 'Entrenamendua AArekin · HYROX & CrossFit',
+        subtitle: 'Entrenamendua IArekin · HYROX & CrossFit',
         description:
-          'HYROX eta CrossFit kirolarientzat AAren bidez entrenamendu plan pertsonalizatuak sortzen dituen aplikazioa. Ziklo osoa: ideia, diseinu teknikoa, garapen full-stack, abiarazpena eta mantentzea.',
+          'HYROX eta CrossFit kirolarientzat IAren bidez entrenamendu plan pertsonalizatuak sortzen dituen aplikazioa. Ziklo osoa: ideia, diseinu teknikoa, garapen full-stack, abiarazpena eta mantentzea.',
         tags: ['Next.js', 'Supabase', 'Stripe', 'LLMs', 'TypeScript'],
         highlights: [
-          'AAren bidez sortutako plan pertsonalizatuak',
+          'IAren bidez sortutako plan pertsonalizatuak',
           'Autentifikazioa, Stripe ordainketak eta harpidetzak',
           'Vercel-en hedatua, arkitektura serverless',
         ],
-        cover: { tagline: 'Zure HYROX plana, segundotan.', urlLabel: 'toca-app.bercay.studio' },
+        cover: { tagline: 'Zure HYROX plana, segundutan.', urlLabel: 'toca-app.bercay.studio' },
       },
       {
         id: 'mozkor',
@@ -159,10 +160,10 @@ export const eu = {
       },
       {
         id: 'tfm',
-        title: 'Espazioen birsignifikazioa',
+        title: 'Espazioen esanahi-berritzea',
         subtitle: 'MAL · Gizarte Zientzietako Masterra · UPV/EHU',
         description:
-          'EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko Espazioak Birsignifikatzeko eta Birkonfiguratzeko Proiektuaren analisia, Innok Lab eta Campus Bizia Lab taldeekin elkarlanean.',
+          'EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko Espazioak esanahi berritzeko eta Birkonfiguratzeko Proiektuaren analisia, Innok Lab eta Campus Bizia Lab taldeekin elkarlanean.',
         tags: ['Kartografia emozionala', 'Elkarrizketak', 'Behaketa', 'Analisi bisuala'],
         highlights: [
           'Kartografia emozionala teknika nagusi gisa',
@@ -211,13 +212,13 @@ export const eu = {
         role: 'Ikertzaile praktiketan (MAL)',
         org: 'Innok Lab · UPV/EHU',
         description:
-          'Gizarte Zientzien Fakultateko espazioen birsignifikazioari buruzko Master Amaierako Lanaren garapena, Campus Bizia Labekin elkarlanean. Kartografia emozionala, elkarrizketak, behaketa eta analisi bisuala.',
+          'Gizarte Zientzien Fakultateko espazioen esanahi-berritzeari buruzko Master Amaierako Lanaren garapena, Campus Bizia Labekin elkarlanean. Kartografia emozionala, elkarrizketak, behaketa eta analisi bisuala.',
       },
       {
         period: '2023 — 2025',
         role: 'Arduradun / Hezitzaile sozioedukatzailea',
         org: 'BIRA Hezkuntza eta Kirola',
-        description: 'Gazte taldeen koordinazioa eta jarduera sozioedukatzaileetan laguntza.',
+        description: 'Gazte taldeen koordinazioa eta jarduera sozio-hezitzaileetan laguntzea.',
       },
     ],
   },
@@ -231,14 +232,14 @@ export const eu = {
       { label: 'Bistaratzea eta kartografia', items: ['Power BI', 'QGIS'] },
       { label: 'Kualitatiboa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Garapena', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
       { label: 'Kudeaketa', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },
   education: {
     number: '06',
     kicker: 'Ikasketak',
-    title: 'Kredentzialak.',
+    title: 'Egiaztagiriak.',
     description: 'Soziologiako prestakuntza akademikoa, ziurtagiri aplikatuak eta hizkuntza gaitasuna.',
     items: [
       {
@@ -250,7 +251,7 @@ export const eu = {
         period: '2018ko ira. — 2024ko ira.',
         title: 'Soziologia Gradua',
         org: 'Euskal Herriko Unibertsitatea · UPV/EHU',
-        note: 'Aipamena Prozesu, Sare eta Egitura Sozialetan',
+        note: 'Prozesu, Sare eta Egitura Sozialen Aipamena',
       },
       {
         period: '2015 — 2017',
@@ -263,11 +264,11 @@ export const eu = {
       'Sare Sozialetako Big Data Analisia — UPV/EHU (2024)',
       'Lan Arriskuen Prebentzioa (2023)',
       'Elikagaien Manipulatzailea (2024)',
-      'B gidatzeko baimena',
+      'B motako gidabaimena',
     ],
     languagesLabel: 'Hizkuntzak',
     languages: [
-      { name: 'Gaztelania', level: 'Ama hizkuntza' },
+      { name: 'Gaztelania', level: 'Ama-hizkuntza' },
       { name: 'Euskara', level: 'Aurreratua · B2 (2025)' },
       { name: 'Ingelesa', level: 'Aurreratua · B2 (2016)' },
     ],
@@ -278,7 +279,7 @@ export const eu = {
     title: 'Egin dezagun zerbait',
     titleItalic: 'elkarrekin',
     description:
-      'Buruan proiekturen bat baduzu —ikerketa, AArekin produktua edo biak— kontatu iezadazu. Normalean 24 ordutan baino gutxiagoan erantzuten dut.',
+      'Buruan proiekturen bat baduzu —ikerketa, IArekin produktua edo biak— kontatu iezadazu. Normalean 24 ordu baino lehen erantzuten dut.',
     labels: {
       location: 'Kokapena',
       availability: 'Eskuragarritasuna',
@@ -287,9 +288,9 @@ export const eu = {
     },
   },
   footer: {
-    tagline: 'Gizarte ikerketa + AArekin produktua.',
+    tagline: 'Gizarte ikerketa + IArekin produktua.',
     rights: 'Eskubide guztiak erreserbatuta.',
-    builtWith: 'Astro, Tailwind eta Fraunces askorekin egina.',
+    builtWith: 'Astro, Tailwind eta Fraunces-ekin, gogoz egina.',
   },
   projectsData: {
     online: 'Online',
