@@ -291,7 +291,6 @@ export const eu = {
     tagline: 'Gizarte ikerketa + AArekin produktua.',
     rights: 'Eskubide guztiak erreserbatuta.',
     builtWith: 'Astro, Tailwind eta Fraunces-ekin, gogoz egina.',
-    glossary: 'AA = Adimen Artifiziala',
   },
   projectsData: {
     online: 'Online',

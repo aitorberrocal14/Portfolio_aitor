@@ -292,7 +292,6 @@ export const es = {
     tagline: 'Investigación social + producto con IA.',
     rights: 'Todos los derechos reservados.',
     builtWith: 'Hecho con Astro, Tailwind y mucho Fraunces.',
-    glossary: '',
   },
   projectsData: {
     online: 'Online',
