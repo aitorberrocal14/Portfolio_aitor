@@ -3,9 +3,9 @@ export const eu = {
   meta: {
     role: 'Soziologoa · Gizarte ikertzailea · Produktu digitalen garatzailea',
     tagline:
-      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak IArekin eraikitzeko gaitasun teknikoa uztartzen ditut.',
+      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak AArekin eraikitzeko gaitasun teknikoa uztartzen ditut.',
     keywords:
-      'soziologoa, gizarte ikerketa, IA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+      'soziologoa, gizarte ikerketa, AA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
   nav: {
     about: 'Niri buruz',
@@ -24,11 +24,11 @@ export const eu = {
   hero: {
     availability: 'Lan egiteko prest',
     titleA: 'Gizartea ikertu eta',
-    titleB: 'IArekin',
+    titleB: 'AArekin',
     titleC: 'eraiki',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' naiz. Soziologoa, gizarte ikertzailea eta IArekin produktu digitalen garatzailea. ' },
+      { kind: 'text', value: ' naiz. Soziologoa, gizarte ikertzailea eta AArekin produktu digitalen garatzailea. ' },
       { kind: 'em', value: 'Zorroztasun metodologikoa' },
       { kind: 'text', value: ' eta ' },
       { kind: 'em', value: 'exekutatzeko abiadura' },
@@ -42,10 +42,10 @@ export const eu = {
     kicker: 'Niri buruz',
     title: 'Bi hizkuntza, jakin-min bera.',
     description:
-      'Oin bat gizarte ikerketan eta bestea IArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
+      'Oin bat gizarte ikerketan eta bestea AArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
     paragraphs: [
       '**Gizarte ikerketan espezializatutako soziologoa** naiz, metodologia kuantitatibo, kualitatibo eta mistoetan eskarmentuduna. EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko _espazioen esanahi-berritzeari_ buruzko Master Amaierako Lanaren egilea.',
-      'Aldi berean, **IArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
+      'Aldi berean, **AArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
       'Nire lana gizarte zientzien eta teknologiaren arteko elkargunean eraikitzen da: begirada kritikoa + exekuzio gaitasuna.',
     ],
     cards: [
@@ -77,7 +77,7 @@ export const eu = {
       },
       {
         number: '02',
-        title: 'Produktu digitala IArekin',
+        title: 'Produktu digitala AArekin',
         description:
           'Hizkuntza-ereduak integratuta, web aplikazio full-stack-ak eraikitzen ditut, ideiatik ekoizpenera eta mantentze-lanetara arte.',
         deliverables: [
@@ -95,7 +95,7 @@ export const eu = {
         deliverables: [
           'Ikerketa operatiboa',
           'Produkturako itzulpena',
-          'Prototipo azkarra IArekin',
+          'Prototipo azkarra AArekin',
           'Laguntza estrategikoa',
         ],
       },
@@ -108,7 +108,7 @@ export const eu = {
     description:
       'Bercay Studio markaren azpian eraikitzen dudana eta esparru akademiko eta aplikatuetan ikertzen dudana.',
     softwareKicker: '— Adarra 01',
-    softwareTitle: 'Software & IA',
+    softwareTitle: 'Software & AA',
     researchKicker: '— Adarra 02',
     researchTitle: 'Gizarte ikerketa',
     countLabel: (n: number) => `${n} proiektu`,
@@ -119,12 +119,12 @@ export const eu = {
       {
         id: 'toca',
         title: 'TÖCA',
-        subtitle: 'Entrenamendua IArekin · HYROX & CrossFit',
+        subtitle: 'Entrenamendua AArekin · HYROX & CrossFit',
         description:
-          'HYROX eta CrossFit kirolarientzat IAren bidez entrenamendu plan pertsonalizatuak sortzen dituen aplikazioa. Ziklo osoa: ideia, diseinu teknikoa, garapen full-stack, abiarazpena eta mantentzea.',
+          'HYROX eta CrossFit kirolarientzat AAren bidez entrenamendu plan pertsonalizatuak sortzen dituen aplikazioa. Ziklo osoa: ideia, diseinu teknikoa, garapen full-stack, abiarazpena eta mantentzea.',
         tags: ['Next.js', 'Supabase', 'Stripe', 'LLMs', 'TypeScript'],
         highlights: [
-          'IAren bidez sortutako plan pertsonalizatuak',
+          'AAren bidez sortutako plan pertsonalizatuak',
           'Autentifikazioa, Stripe ordainketak eta harpidetzak',
           'Vercel-en hedatua, arkitektura serverless',
         ],
@@ -232,7 +232,7 @@ export const eu = {
       { label: 'Bistaratzea eta kartografia', items: ['Power BI', 'QGIS'] },
       { label: 'Kualitatiboa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Garapena', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
       { label: 'Kudeaketa', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },
@@ -279,7 +279,7 @@ export const eu = {
     title: 'Egin dezagun zerbait',
     titleItalic: 'elkarrekin',
     description:
-      'Buruan proiekturen bat baduzu —ikerketa, IArekin produktua edo biak— kontatu iezadazu. Normalean 24 ordu baino lehen erantzuten dut.',
+      'Buruan proiekturen bat baduzu —ikerketa, AArekin produktua edo biak— kontatu iezadazu. Normalean 24 ordu baino lehen erantzuten dut.',
     labels: {
       location: 'Kokapena',
       availability: 'Eskuragarritasuna',
@@ -288,9 +288,10 @@ export const eu = {
     },
   },
   footer: {
-    tagline: 'Gizarte ikerketa + IArekin produktua.',
+    tagline: 'Gizarte ikerketa + AArekin produktua.',
     rights: 'Eskubide guztiak erreserbatuta.',
     builtWith: 'Astro, Tailwind eta Fraunces-ekin, gogoz egina.',
+    glossary: 'AA = Adimen Artifiziala',
   },
   projectsData: {
     online: 'Online',

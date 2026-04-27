@@ -287,6 +287,7 @@ export const en = {
     tagline: 'Social research + AI product.',
     rights: 'All rights reserved.',
     builtWith: 'Built with Astro, Tailwind and lots of Fraunces.',
+    glossary: '',
   },
   projectsData: {
     online: 'Online',
