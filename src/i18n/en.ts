@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    role: 'Sociologist · Social researcher · AI expert · Digital product builder',
+    role: 'Sociologist · Social researcher · Applied AI work · Digital product builder',
     tagline:
-      'Rigorous social research, applied AI expertise and the ability to ship LLM-powered products in production.',
+      'Rigorous social research, applied AI integration and the ability to ship LLM-powered products in production.',
     keywords:
       'sociologist, social research, AI research, AI policy, AI governance, AI safety, prompt engineering, LLMs, digital methods, think tank, Bilbao, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
@@ -27,10 +27,8 @@ export const en = {
     titleC: 'with AI.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' — sociologist and social researcher, AI expert and builder of digital products powered by LLMs. I combine ' },
+      { kind: 'text', value: ' — sociologist and social researcher, with applied AI knowledge and hands-on experience building digital products with LLMs. I combine ' },
       { kind: 'em', value: 'methodological rigor' },
-      { kind: 'text', value: ', ' },
-      { kind: 'em', value: 'AI judgment' },
       { kind: 'text', value: ' and ' },
       { kind: 'em', value: 'shipping ability' },
       { kind: 'text', value: '.' },
@@ -46,13 +44,13 @@ export const en = {
       'Three sides that reinforce each other: the sociologist’s lens, applied AI judgment, and real-world building practice.',
     paragraphs: [
       "I'm a **sociologist trained in social research**, with a Master's in applied research methods (UPV/EHU) and hands-on experience in quantitative, qualitative and mixed methods. Author of a Master's Thesis on the _resignification of spaces_ at the Faculty of Social Sciences.",
-      'I also work as an **applied AI expert**: prompt engineering, LLM integration (Claude, OpenAI, Gemini), output evaluation and active engagement with the AI safety and governance field.',
+      'I work with AI in an applied way: prompt engineering, LLM integration (Claude, OpenAI, Gemini) and practical evaluation of outputs. I follow the AI safety and governance field as an active reader.',
       "And I build: **TÖCA, Mozkor and other products** with AI under my own brand [Bercay Studio](https://bercay.studio). Real products, in production, with real users.",
-      "I'm especially interested in **social-research roles at AI labs, governance think tanks and institutes studying the societal impact of technology**, where these three sides come together.",
+      "My professional interest sits at the intersection of **social science, digital methods and AI**, and in how people relate to AI systems in their everyday life.",
     ],
     cards: [
       { k: 'A', title: 'Research', body: 'Mixed methods, fieldwork, analysis and reporting with academic rigor.' },
-      { k: 'B', title: 'Apply AI', body: 'Prompt engineering, LLMs, output evaluation and AI safety judgment.' },
+      { k: 'B', title: 'Work with AI', body: 'Prompt engineering, LLM integration and practical output evaluation.' },
       { k: 'C', title: 'Build', body: 'Full-stack web products with AI in production: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbao · 2026',
@@ -230,7 +228,7 @@ export const en = {
       { label: 'Visualization & mapping', items: ['Power BI', 'QGIS'] },
       { label: 'Qualitative', items: ['Whisper', 'Otter.ai'] },
       { label: 'Development', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'AI', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLM evaluation', 'AI safety/governance'] },
+      { label: 'AI', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLM integration', 'Output evaluation'] },
       { label: 'Productivity', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },

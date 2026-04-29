@@ -1,8 +1,8 @@
 export const es = {
   meta: {
-    role: 'Sociólogo · Investigador social · Experto en IA · Creador de productos digitales',
+    role: 'Sociólogo · Investigador social · Trabajo aplicado con IA · Creador de productos digitales',
     tagline:
-      'Investigación social rigurosa, conocimiento aplicado de IA y capacidad real de construir productos con LLMs en producción.',
+      'Investigación social rigurosa, integración aplicada de IA y capacidad real de construir productos con LLMs en producción.',
     keywords:
       'sociólogo, investigación social, AI research, AI policy, AI governance, AI safety, prompt engineering, LLMs, métodos digitales, think tank, Bilbao, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
@@ -27,10 +27,8 @@ export const es = {
     titleC: 'con IA.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' — sociólogo e investigador social, experto en IA y creador de productos digitales con LLMs. Combino ' },
+      { kind: 'text', value: ' — sociólogo e investigador social, con conocimiento aplicado de IA y experiencia construyendo productos digitales con LLMs. Combino ' },
       { kind: 'em', value: 'rigor metodológico' },
-      { kind: 'text', value: ', ' },
-      { kind: 'em', value: 'criterio sobre IA' },
       { kind: 'text', value: ' y ' },
       { kind: 'em', value: 'capacidad de ejecución' },
       { kind: 'text', value: '.' },
@@ -46,13 +44,13 @@ export const es = {
       'Tres facetas que se refuerzan: la mirada del sociólogo, el criterio sobre IA y la práctica real de construir con ella.',
     paragraphs: [
       'Soy **sociólogo formado en investigación social**, con un máster en herramientas de investigación aplicada (UPV/EHU) y experiencia en metodologías cuantitativas, cualitativas y mixtas. Autor de un TFM sobre la _resignificación de los espacios_ de la Facultad de Ciencias Sociales.',
-      'En paralelo trabajo como **experto aplicado en IA**: prompt engineering, integración de LLMs (Claude, OpenAI, Gemini), evaluación de outputs y seguimiento del campo de AI safety y governance.',
+      'Trabajo de forma aplicada con IA: prompt engineering, integración de LLMs (Claude, OpenAI, Gemini) y evaluación práctica de outputs. Sigo de cerca el campo de AI safety y governance como lector activo.',
       'Y construyo: **TÖCA, Mozkor y otros productos** con IA bajo la marca propia [Bercay Studio](https://bercay.studio). Productos reales, en producción, con usuarios.',
-      'Me interesan especialmente los puestos de **investigación social en laboratorios de IA, think tanks de governance e institutos de impacto social de la tecnología**, donde estas tres facetas se cruzan.',
+      'Mi interés profesional está en el cruce entre **ciencias sociales, métodos digitales e IA**, y en cómo las personas se relacionan con sistemas de IA en su vida cotidiana.',
     ],
     cards: [
       { k: 'A', title: 'Investigar', body: 'Métodos mixtos, trabajo de campo, análisis e informes con rigor académico.' },
-      { k: 'B', title: 'Aplicar IA', body: 'Prompt engineering, LLMs, evaluación de outputs y criterio sobre AI safety.' },
+      { k: 'B', title: 'Trabajar con IA', body: 'Prompt engineering, integración de LLMs y evaluación práctica de outputs.' },
       { k: 'C', title: 'Construir', body: 'Productos web full-stack con IA en producción: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbao · 2026',
@@ -234,7 +232,7 @@ export const es = {
       { label: 'Visualización y cartografía', items: ['Power BI', 'QGIS'] },
       { label: 'Cualitativa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Desarrollo', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'Evaluación de LLMs', 'AI safety/governance'] },
+      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'Integración de LLMs', 'Evaluación de outputs'] },
       { label: 'Gestión', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },

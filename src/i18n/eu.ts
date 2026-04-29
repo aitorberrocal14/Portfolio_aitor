@@ -1,9 +1,9 @@
 // Euskara: lehenengo zirriborro errebisatu hartuta. Astiro berrikusi.
 export const eu = {
   meta: {
-    role: 'Soziologoa · Gizarte ikertzailea · AAn aditua · Produktu digitalen sortzailea',
+    role: 'Soziologoa · Gizarte ikertzailea · AArekin lan aplikatua · Produktu digitalen sortzailea',
     tagline:
-      'Gizarte ikerketa zorrotza, AAren ezagutza aplikatua eta LLMekin produktuak ekoizpenean ateratzeko gaitasuna.',
+      'Gizarte ikerketa zorrotza, AAren integrazio aplikatua eta LLMekin produktuak ekoizpenean ateratzeko gaitasuna.',
     keywords:
       'soziologoa, gizarte ikerketa, AI research, AI policy, AI governance, AI safety, prompt engineering, LLM, metodo digitalak, think tank, Bilbo, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
@@ -28,10 +28,8 @@ export const eu = {
     titleC: 'lan egiten dut.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' naiz. Soziologoa eta gizarte ikertzailea, AAn aditua eta LLMekin produktu digitalen sortzailea. ' },
+      { kind: 'text', value: ' naiz. Soziologoa eta gizarte ikertzailea, AAren ezagutza aplikatua duena eta LLMekin produktu digitalak eraikitzen dituena. ' },
       { kind: 'em', value: 'Zorroztasun metodologikoa' },
-      { kind: 'text', value: ', ' },
-      { kind: 'em', value: 'AAri buruzko irizpidea' },
       { kind: 'text', value: ' eta ' },
       { kind: 'em', value: 'exekutatzeko gaitasuna' },
       { kind: 'text', value: ' uztartzen ditut.' },
@@ -47,13 +45,13 @@ export const eu = {
       'Elkar indartzen duten hiru alderdi: soziologoaren begirada, AAri buruzko irizpide aplikatua eta produktua eraikitzeko praktika.',
     paragraphs: [
       '**Gizarte ikerketan trebatutako soziologoa** naiz, ikerketa aplikatuko tresnetan masterra eginda (EHU) eta metodologia kuantitatibo, kualitatibo eta mistoetan eskarmentuduna. Gizarte Zientzien Fakultateko _espazioen esanahi-berritzeari_ buruzko TFMaren egilea.',
-      'Aldi berean, **AAn aditu aplikatu** gisa lan egiten dut: prompt engineering, LLMen integrazioa (Claude, OpenAI, Gemini), outputen ebaluazioa eta AI safety eta governance arloen jarraipena.',
+      'AArekin modu aplikatuan lan egiten dut: prompt engineering, LLMen integrazioa (Claude, OpenAI, Gemini) eta outputen ebaluazio praktikoa. AI safety eta governance arloen jarraipena egiten dut irakurle aktibo gisa.',
       'Eta eraikitzen dut: **TÖCA, Mozkor eta beste produktu batzuk** AArekin, [Bercay Studio](https://bercay.studio) marka propioaren azpian. Benetako produktuak, ekoizpenean, benetako erabiltzaileekin.',
-      'Bereziki interesatzen zaizkit **AA laborategietako, governance think tanketako eta teknologiaren gizarte-eraginari buruzko institutuetako gizarte-ikerketako lanpostuak**, hiru alderdi hauek elkartzen direnean.',
+      'Nire interes profesionala **gizarte zientzien, metodo digitalen eta AAren** elkargunean dago, eta pertsonek egunerokoan AA sistemekin nola harremanetan jartzen diren ikertzeko.',
     ],
     cards: [
       { k: 'A', title: 'Ikertu', body: 'Metodo mistoak, landa-lana, analisia eta txostenak zorroztasun akademikoz.' },
-      { k: 'B', title: 'AA aplikatu', body: 'Prompt engineering, LLMak, outputen ebaluazioa eta AI safety irizpidea.' },
+      { k: 'B', title: 'AArekin lan egin', body: 'Prompt engineering, LLMen integrazioa eta outputen ebaluazio praktikoa.' },
       { k: 'C', title: 'Eraiki', body: 'AArekin web produktu full-stack ekoizpenean: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbo · 2026',
@@ -235,7 +233,7 @@ export const eu = {
       { label: 'Bistaratzea eta kartografia', items: ['Power BI', 'QGIS'] },
       { label: 'Kualitatiboa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Garapena', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLMen ebaluazioa', 'AI safety/governance'] },
+      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLMen integrazioa', 'Outputen ebaluazioa'] },
       { label: 'Kudeaketa', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },
