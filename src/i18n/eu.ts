@@ -9,7 +9,7 @@ export const eu = {
   },
   nav: {
     about: 'Niri buruz',
-    services: 'Zerbitzuak',
+    services: 'Lan-arloak',
     projects: 'Proiektuak',
     experience: 'Esperientzia',
     tools: 'Tresnak',

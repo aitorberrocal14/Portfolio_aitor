@@ -8,7 +8,7 @@ export const en = {
   },
   nav: {
     about: 'About',
-    services: 'Services',
+    services: 'Areas of work',
     projects: 'Projects',
     experience: 'Experience',
     tools: 'Tools',
