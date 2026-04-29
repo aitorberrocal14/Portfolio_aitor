@@ -15,6 +15,7 @@ export const eu = {
     tools: 'Tresnak',
     education: 'Ikasketak',
     contact: 'Kontaktua',
+    notes: 'Oharrak',
     cta: 'Hitz egin dezagun',
     skipToContent: 'Edukira jauzi',
     openMenu: 'Menua ireki',
@@ -101,6 +102,7 @@ export const eu = {
     openLabel: 'Ireki',
     visitLabel: 'Webgunea bisitatu',
     noUrlLabel: 'Esteka gabe',
+    notesCta: 'Nire oharrak eta idatziak →',
     items: [
       {
         id: 'toca',
@@ -277,6 +279,17 @@ export const eu = {
     tagline: 'Gizarte ikerketa + AArekin produktua.',
     rights: 'Eskubide guztiak erreserbatuta.',
     builtWith: 'Astro, Tailwind eta Fraunces-ekin, gogoz egina.',
+    notesLink: 'Oharrak',
+  },
+  notesPage: {
+    kicker: 'Oharrak',
+    title: 'Oharrak eta idatziak.',
+    description:
+      'Gizarte ikerketari, AAri eta produktuari buruzko ohar solteak. Ozenki pentsatzeko nire modua.',
+    empty: 'Edukia laster hemen.',
+    backToList: '← Ohar guztiak',
+    backToHome: '← Hasierara itzuli',
+    readMore: 'Irakurri →',
   },
   projectsData: {
     online: 'Online',

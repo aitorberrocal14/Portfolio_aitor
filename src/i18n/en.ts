@@ -14,6 +14,7 @@ export const en = {
     tools: 'Tools',
     education: 'Education',
     contact: 'Contact',
+    notes: 'Notes',
     cta: 'Get in touch',
     skipToContent: 'Skip to content',
     openMenu: 'Open menu',
@@ -100,6 +101,7 @@ export const en = {
     openLabel: 'Open',
     visitLabel: 'Visit site',
     noUrlLabel: 'No link',
+    notesCta: 'My notes and writing →',
     items: [
       {
         id: 'toca',
@@ -272,6 +274,17 @@ export const en = {
     tagline: 'Social research + AI product.',
     rights: 'All rights reserved.',
     builtWith: 'Built with Astro, Tailwind and a lot of Fraunces.',
+    notesLink: 'Notes',
+  },
+  notesPage: {
+    kicker: 'Notes',
+    title: 'Notes and writing.',
+    description:
+      'Loose notes on social research, AI and product. My way of thinking out loud.',
+    empty: 'Content coming soon.',
+    backToList: '← All notes',
+    backToHome: '← Back to home',
+    readMore: 'Read →',
   },
   projectsData: {
     online: 'Online',

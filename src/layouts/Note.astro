@@ -1,0 +1,54 @@
+---
+import Base from '~/layouts/Base.astro';
+import { getDict, getLang, notesUrl } from '~/i18n';
+
+export interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  tags?: readonly string[] | string[];
+}
+
+const { title, description, date, tags = [] }: Props = Astro.props;
+const lang = getLang(Astro.url);
+const t = getDict(Astro.url).notesPage;
+const base = import.meta.env.BASE_URL;
+const indexHref = notesUrl(lang, base);
+const dateLabel = date.toLocaleDateString(
+  lang === 'es' ? 'es-ES' : lang === 'eu' ? 'eu-ES' : 'en-US',
+  { day: '2-digit', month: 'long', year: 'numeric' }
+);
+---
+
+<Base title={title} description={description}>
+  <article class="section">
+    <div class="container max-w-3xl">
+      <a href={indexHref} class="link inline-flex items-center gap-1.5 text-sm">
+        {t.backToList}
+      </a>
+
+      <header class="mt-6 border-b border-slate-200 pb-8">
+        <p class="section-number">{dateLabel}</p>
+        <h1 class="heading-xl mt-3">{title}</h1>
+        {description && (
+          <p class="mt-4 text-lg text-slate-600 leading-relaxed max-w-2xl">{description}</p>
+        )}
+        {tags.length > 0 && (
+          <div class="mt-5 flex flex-wrap gap-2">
+            {tags.map((t) => <span class="pill">{t}</span>)}
+          </div>
+        )}
+      </header>
+
+      <div class="prose prose-slate prose-headings:font-display prose-headings:text-navy prose-headings:tracking-tight prose-a:text-navy prose-strong:text-navy prose-li:my-1 max-w-none mt-10 text-slate-700 leading-relaxed">
+        <slot />
+      </div>
+
+      <div class="mt-16 border-t border-slate-200 pt-6">
+        <a href={indexHref} class="link inline-flex items-center gap-1.5 text-sm">
+          {t.backToList}
+        </a>
+      </div>
+    </div>
+  </article>
+</Base>

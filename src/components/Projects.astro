@@ -1,11 +1,12 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
 import ProjectGrid from '~/components/ProjectGrid.astro';
-import { getDict } from '~/i18n';
+import { getDict, getLang, notesUrl } from '~/i18n';
 import { projectMeta } from '~/data/site';
 
 const t = getDict(Astro.url).projects;
 const merge = (item: typeof t.items[number]) => ({ ...item, ...projectMeta[item.id] });
+const notesHref = notesUrl(getLang(Astro.url), import.meta.env.BASE_URL);
 
 const software = (['toca', 'mozkor', 'bercay'] as const)
   .map((id) => t.items.find((i) => i.id === id)!)
@@ -43,5 +44,9 @@ const research = (['tfm', 'turismo-bilbao'] as const)
       visitLabel={t.visitLabel}
       noUrlLabel={t.noUrlLabel}
     />
+
+    <div class="mt-12 pt-8 border-t border-slate-200 flex justify-end" data-reveal>
+      <a href={notesHref} class="link-arrow text-base">{t.notesCta}</a>
+    </div>
   </div>
 </section>

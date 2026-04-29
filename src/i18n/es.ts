@@ -14,6 +14,7 @@ export const es = {
     tools: 'Herramientas',
     education: 'Formación',
     contact: 'Contacto',
+    notes: 'Notas',
     cta: 'Hablemos',
     skipToContent: 'Saltar al contenido',
     openMenu: 'Abrir menú',
@@ -100,6 +101,7 @@ export const es = {
     openLabel: 'Abrir',
     visitLabel: 'Visitar sitio',
     noUrlLabel: 'Sin enlace',
+    notesCta: 'Mis notas y escritos →',
     items: [
       {
         id: 'toca',
@@ -277,6 +279,17 @@ export const es = {
     tagline: 'Investigación social + producto con IA.',
     rights: 'Todos los derechos reservados.',
     builtWith: 'Hecho con Astro, Tailwind y mucho Fraunces.',
+    notesLink: 'Notas',
+  },
+  notesPage: {
+    kicker: 'Notas',
+    title: 'Apuntes y escritos.',
+    description:
+      'Notas sueltas sobre investigación social, IA y producto. Mi forma de pensar en voz alta.',
+    empty: 'Pronto habrá contenido aquí.',
+    backToList: '← Todas las notas',
+    backToHome: '← Volver al inicio',
+    readMore: 'Leer →',
   },
   projectsData: {
     online: 'Online',

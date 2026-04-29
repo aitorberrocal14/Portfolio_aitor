@@ -31,4 +31,17 @@ export function buildLangUrl(currentUrl: URL, targetLang: Lang, baseUrl: string)
   return `${base}${targetLang}/`;
 }
 
+export const notesSegment: Record<Lang, string> = {
+  es: 'notas',
+  eu: 'oharrak',
+  en: 'notes',
+};
+
+/** Build the URL for the notes index in a given locale. */
+export function notesUrl(lang: Lang, baseUrl: string): string {
+  const base = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  const root = lang === defaultLang ? base : `${base}${lang}/`;
+  return `${root}${notesSegment[lang]}/`;
+}
+
 export type Dict = typeof es;
