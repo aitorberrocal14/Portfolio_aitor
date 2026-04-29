@@ -58,46 +58,31 @@ export const en = {
   },
   services: {
     number: '02',
-    kicker: 'Ways to work together',
-    title: 'Three ways to work together.',
+    kicker: 'Areas of work',
+    title: 'What I work on.',
     description:
-      'Social research, applied AI work or digital product building. Open to collaborations with teams working at the intersection of social science, digital methods and AI.',
+      'My work moves between three areas that overlap more than they seem to: social research, applied AI work, and digital product building. They are not separate buckets — most projects pull on two or three of them at once.',
     items: [
       {
         number: '01',
         title: 'Social research',
         description:
-          'I design and run studies with quantitative, qualitative or mixed methods. Especially useful when AI or the digital is itself part of what we want to understand.',
-        deliverables: [
-          'Research design and analysis plan',
-          'Fieldwork (interviews, focus groups, mapping, observation)',
-          'Quantitative, qualitative or mixed analysis',
-          'Final sociological report or paper',
-        ],
+          "Designing and running studies with quantitative, qualitative and mixed methods. I trained as a sociologist at UPV/EHU, with a Master's focused on applied research tools and a qualitative thesis on the resignification of university spaces. I'm particularly interested in research projects where the digital or AI is part of what we want to understand.",
+        deliverables: [],
       },
       {
         number: '02',
-        title: 'Digital product with AI',
+        title: 'Applied AI work',
         description:
-          'I build full-stack web products with integrated LLMs, from idea to production. Under Bercay Studio I have launched TÖCA and Mozkor with real users.',
-        deliverables: [
-          'Architecture on the Next.js · Supabase stack',
-          'LLM integration (Claude · OpenAI · Gemini)',
-          'Stripe payments and authentication',
-          'Deployment, maintenance and iteration',
-        ],
+          "Integrating language models into real products, prompt engineering, practical evaluation of outputs, and following the AI safety and governance field as an active reader. I work daily with Claude, OpenAI and Gemini, and I'm especially interested in how AI products can be designed to make sense and remain sustainable beyond the hype.",
+        deliverables: [],
       },
       {
         number: '03',
-        title: 'Hybrid consulting',
+        title: 'Digital product',
         description:
-          'For organizations that need to critically understand how AI is affecting their users or society, and translate that understanding into product, policy or strategy decisions.',
-        deliverables: [
-          'Applied research on AI and behavior',
-          'Critical analysis of AI products or features from a sociological lens',
-          'Rapid prototyping with AI',
-          'Strategic support',
-        ],
+          'Building full-stack web products with AI in production. Under Bercay Studio I have built and shipped TÖCA and Mozkor, owning the full cycle: architecture, LLM integration, payments, deployment and maintenance. The experience of actually building gives me the grounded perspective I bring to research on AI.',
+        deliverables: [],
       },
     ],
   },

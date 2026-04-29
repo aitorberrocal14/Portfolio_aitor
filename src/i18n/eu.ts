@@ -59,46 +59,31 @@ export const eu = {
   },
   services: {
     number: '02',
-    kicker: 'Nola lan egiten dut',
-    title: 'Elkarrekin lan egiteko hiru bide.',
+    kicker: 'Lan-arloak',
+    title: 'Zertan lan egiten dudan.',
     description:
-      'Gizarte ikerketa, AArekin lan aplikatua edo produktu digitalaren sorrera. Gizarte zientzien, metodo digitalen eta AAren elkargunean lan egiten duten taldeekin lankidetzarako prest.',
+      'Nire lana hiru arlotan mugitzen da, eta dirudien baino gehiago elkartzen dira: gizarte ikerketa, AArekin lan aplikatua eta produktu digitalen sorrera. Ez dira konpartimentu itxiak: proiektu gehienek bietan edo hiruretan eragiten dute.',
     items: [
       {
         number: '01',
         title: 'Gizarte ikerketa',
         description:
-          'Metodologia kuantitatibo, kualitatibo edo mistoekin azterlanak diseinatu eta gauzatzen ditut. Bereziki baliagarriak AA edo digitala bera aztertu nahi dugun fenomenoaren parte denean.',
-        deliverables: [
-          'Diseinu metodologikoa eta analisi-plana',
-          'Landa-lana (elkarrizketak, taldeak, kartografia, behaketa)',
-          'Analisi kuantitatiboa, kualitatiboa edo mistoa',
-          'Azken txosten soziologikoa edo paper-a',
-        ],
+          'Metodologia kuantitatibo, kualitatibo eta mistoekin azterlanak diseinatu eta gauzatzea. EHUn soziologo gisa formatu nintzen, ikerketa aplikatuko tresnetan masterra eginda eta unibertsitate-espazioen esanahi-berritzeari buruzko TFM kualitatibo bat. Bereziki interesatzen zaizkit digitalak edo AAk parte hartzen duten fenomenoak ikertzeko proiektuak.',
+        deliverables: [],
       },
       {
         number: '02',
-        title: 'AArekin produktu digitala',
+        title: 'AArekin lan aplikatua',
         description:
-          'LLMak integratuta, web produktu full-stack-ak eraikitzen ditut, ideiatik ekoizpenera. Bercay Studioren azpian TÖCA eta Mozkor abiarazi ditut benetako erabiltzaileekin.',
-        deliverables: [
-          'Arkitektura eta Next.js · Supabase stack',
-          'LLMen integrazioa (Claude · OpenAI · Gemini)',
-          'Stripe ordainketak eta autentifikazioa',
-          'Hedapena, mantentzea eta eboluzioa',
-        ],
+          'Hizkuntza-ereduen integrazioa benetako produktuetan, prompt engineering, outputen ebaluazio praktikoa eta AI safety eta governance arloen jarraipena irakurle aktibo gisa. Egunero Claude, OpenAI eta Geminirekin lan egiten dut, eta bereziki interesatzen zait nola diseinatu zentzuzko AA produktuak, hype-tik harago iraunkorrak izan daitezen.',
+        deliverables: [],
       },
       {
         number: '03',
-        title: 'Aholkularitza hibridoa',
+        title: 'Produktu digitala',
         description:
-          'AAk bere erabiltzaileei edo gizarteari nola eragiten dien modu kritikoan ulertu behar duten erakundeentzat, eta ulermen hori produktu, politika edo estrategia erabakietara itzultzeko.',
-        deliverables: [
-          'AA eta portaerari buruzko ikerketa aplikatua',
-          'AA produktu edo feature-en analisi kritikoa begirada soziologikoz',
-          'AArekin prototipo azkarra',
-          'Laguntza estrategikoa',
-        ],
+          'AArekin web produktu full-stack ekoizpenean garatzea. Bercay Studioren azpian TÖCA eta Mozkor eraiki eta abiarazi ditut, ziklo osoa kudeatuta: arkitektura, LLMen integrazioa, ordainketak, hedapena eta mantentzea. Eraikitzeko esperientziak ematen dit AAri buruzko ikerketa lurretik egiteko irizpidea.',
+        deliverables: [],
       },
     ],
   },

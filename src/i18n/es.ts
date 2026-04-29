@@ -58,46 +58,31 @@ export const es = {
   },
   services: {
     number: '02',
-    kicker: 'Formas de colaborar',
-    title: 'Tres formas de trabajar juntos.',
+    kicker: 'Áreas de trabajo',
+    title: 'En qué trabajo.',
     description:
-      'Investigación social, trabajo aplicado con IA o creación de producto digital. Abierto a colaboraciones con equipos que trabajan en el cruce entre ciencias sociales, métodos digitales e IA.',
+      'Mi trabajo se mueve entre tres áreas que se cruzan más de lo que parece: la investigación social, el trabajo aplicado con IA y la creación de productos digitales. No son compartimentos: cada proyecto suele activar dos o las tres a la vez.',
     items: [
       {
         number: '01',
         title: 'Investigación social',
         description:
-          'Diseño y ejecuto estudios con metodologías cuantitativas, cualitativas o mixtas. Especialmente útil en proyectos donde la IA o lo digital son parte del fenómeno a estudiar.',
-        deliverables: [
-          'Diseño metodológico y plan de análisis',
-          'Trabajo de campo (entrevistas, grupos, cartografía, observación)',
-          'Análisis cuantitativo, cualitativo o mixto',
-          'Informe sociológico final o paper',
-        ],
+          'Diseño y ejecución de estudios con metodologías cuantitativas, cualitativas y mixtas. Me formé como sociólogo en la UPV/EHU, con un máster centrado en herramientas de investigación aplicada y un TFM cualitativo sobre la resignificación de espacios universitarios. Me interesa especialmente la investigación en proyectos donde lo digital o la IA forman parte del fenómeno a estudiar.',
+        deliverables: [],
       },
       {
         number: '02',
-        title: 'Producto digital con IA',
+        title: 'Trabajo aplicado con IA',
         description:
-          'Construyo productos web full-stack con LLMs integrados, desde la idea hasta producción. Bajo Bercay Studio he lanzado TÖCA y Mozkor con usuarios reales.',
-        deliverables: [
-          'Arquitectura y stack Next.js · Supabase',
-          'Integración de LLMs (Claude · OpenAI · Gemini)',
-          'Pagos con Stripe y autenticación',
-          'Despliegue, mantenimiento y evolución',
-        ],
+          'Integración de modelos de lenguaje en productos reales, prompt engineering, evaluación práctica de outputs y seguimiento del campo de AI safety y governance como lector activo. Trabajo a diario con Claude, OpenAI y Gemini, y me interesa especialmente cómo se diseñan productos con IA que tienen sentido y son sostenibles más allá del hype.',
+        deliverables: [],
       },
       {
         number: '03',
-        title: 'Consultoría híbrida',
+        title: 'Producto digital',
         description:
-          'Para organizaciones que necesitan entender críticamente cómo la IA afecta a sus usuarios o a la sociedad, y traducir ese análisis a decisiones de producto, política o estrategia.',
-        deliverables: [
-          'Investigación aplicada sobre IA y comportamiento',
-          'Análisis crítico de productos o features con IA desde una mirada sociológica',
-          'Prototipado rápido con IA',
-          'Acompañamiento estratégico',
-        ],
+          'Desarrollo de productos web full-stack con IA en producción. Bajo Bercay Studio he construido y lanzado TÖCA y Mozkor, gestionando todo el ciclo: arquitectura, integración de LLMs, pagos, despliegue y mantenimiento. La experiencia construyendo productos reales es la que me da criterio para investigar la IA con los pies en el suelo.',
+        deliverables: [],
       },
     ],
   },
