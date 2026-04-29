@@ -61,7 +61,7 @@ export const en = {
     kicker: 'Ways to work together',
     title: 'Three ways to work together.',
     description:
-      'Social research, applied AI work or digital product building. Open to in-house roles in research, governance and safety, and to selected collaborations.',
+      'Social research, applied AI work or digital product building. Open to collaborations with teams working at the intersection of social science, digital methods and AI.',
     items: [
       {
         number: '01',
@@ -94,7 +94,7 @@ export const en = {
           'For organizations that need to critically understand how AI is affecting their users or society, and translate that understanding into product, policy or strategy decisions.',
         deliverables: [
           'Applied research on AI and behavior',
-          'Critical evaluation of AI systems or features',
+          'Critical analysis of AI products or features from a sociological lens',
           'Rapid prototyping with AI',
           'Strategic support',
         ],
@@ -201,7 +201,7 @@ export const en = {
         role: 'Founder',
         org: 'Bercay Studio · Own brand',
         description:
-          'Own brand under which I develop AI-powered digital products and offer social research and consulting services. TÖCA and Mozkor as current products in production. End-to-end ownership: design, development, deployment, marketing and business model.',
+          'Own brand under which I develop AI-powered digital products and applied social research projects, available for research and consulting services. TÖCA and Mozkor as current products in production. End-to-end ownership: design, development, deployment, marketing and business model.',
       },
       {
         period: 'Oct. 2024 — Oct. 2025',

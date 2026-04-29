@@ -61,7 +61,7 @@ export const es = {
     kicker: 'Formas de colaborar',
     title: 'Tres formas de trabajar juntos.',
     description:
-      'Investigación social, trabajo aplicado con IA o creación de producto digital. Disponible para roles internos en research, governance y safety, y para colaboraciones puntuales.',
+      'Investigación social, trabajo aplicado con IA o creación de producto digital. Abierto a colaboraciones con equipos que trabajan en el cruce entre ciencias sociales, métodos digitales e IA.',
     items: [
       {
         number: '01',
@@ -94,7 +94,7 @@ export const es = {
           'Para organizaciones que necesitan entender críticamente cómo la IA afecta a sus usuarios o a la sociedad, y traducir ese análisis a decisiones de producto, política o estrategia.',
         deliverables: [
           'Investigación aplicada sobre IA y comportamiento',
-          'Evaluación crítica de sistemas o features de IA',
+          'Análisis crítico de productos o features con IA desde una mirada sociológica',
           'Prototipado rápido con IA',
           'Acompañamiento estratégico',
         ],
@@ -205,7 +205,7 @@ export const es = {
         role: 'Fundador',
         org: 'Bercay Studio · Marca propia',
         description:
-          'Marca propia bajo la que desarrollo productos digitales con IA y servicios de investigación social y consultoría. TÖCA y Mozkor como productos actuales en producción. Gestión integral: diseño, desarrollo, despliegue, marketing y modelo de negocio.',
+          'Marca propia bajo la que desarrollo productos digitales con IA y proyectos de investigación social aplicada, con disponibilidad para servicios de investigación y consultoría. TÖCA y Mozkor como productos actuales en producción. Gestión integral: diseño, desarrollo, despliegue, marketing y modelo de negocio.',
       },
       {
         period: 'Oct. 2024 — Oct. 2025',

@@ -62,7 +62,7 @@ export const eu = {
     kicker: 'Nola lan egiten dut',
     title: 'Elkarrekin lan egiteko hiru bide.',
     description:
-      'Gizarte ikerketa, AArekin lan aplikatua edo produktu digitalaren sorrera. AA laborategi, governance eta safety arloetako barneko lanpostuetarako prest, eta lankidetza puntualetarako.',
+      'Gizarte ikerketa, AArekin lan aplikatua edo produktu digitalaren sorrera. Gizarte zientzien, metodo digitalen eta AAren elkargunean lan egiten duten taldeekin lankidetzarako prest.',
     items: [
       {
         number: '01',
@@ -95,7 +95,7 @@ export const eu = {
           'AAk bere erabiltzaileei edo gizarteari nola eragiten dien modu kritikoan ulertu behar duten erakundeentzat, eta ulermen hori produktu, politika edo estrategia erabakietara itzultzeko.',
         deliverables: [
           'AA eta portaerari buruzko ikerketa aplikatua',
-          'AA sistemen edo feature-en ebaluazio kritikoa',
+          'AA produktu edo feature-en analisi kritikoa begirada soziologikoz',
           'AArekin prototipo azkarra',
           'Laguntza estrategikoa',
         ],
@@ -206,7 +206,7 @@ export const eu = {
         role: 'Sortzailea',
         org: 'Bercay Studio · Marka propioa',
         description:
-          'Marka propioa, AArekin produktu digitalak garatu eta gizarte ikerketa eta aholkularitza zerbitzuak eskaintzen dituena. TÖCA eta Mozkor egungo produktu gisa, ekoizpenean. Kudeaketa integrala: diseinua, garapena, hedapena, marketina eta negozio eredua.',
+          'Marka propioa, AArekin produktu digitalak eta gizarte ikerketa aplikatuko proiektuak garatzen ditudana, ikerketa eta aholkularitza zerbitzuetarako prest. TÖCA eta Mozkor egungo produktu gisa, ekoizpenean. Kudeaketa integrala: diseinua, garapena, hedapena, marketina eta negozio eredua.',
       },
       {
         period: '2024ko urr. — 2025eko urr.',
