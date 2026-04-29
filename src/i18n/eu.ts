@@ -1,11 +1,11 @@
 // Euskara: lehenengo zirriborro errebisatu hartuta. Astiro berrikusi.
 export const eu = {
   meta: {
-    role: 'Soziologoa · Gizarte ikertzailea · Produktu digitalen garatzailea',
+    role: 'Soziologoa · Gizarte ikertzailea · AAn aditua · Produktu digitalen sortzailea',
     tagline:
-      'Soziologiaren begirada kritiko eta analitikoa eta produktu digitalak AArekin eraikitzeko gaitasun teknikoa uztartzen ditut.',
+      'Gizarte ikerketa zorrotza, AAren ezagutza aplikatua eta LLMekin produktuak ekoizpenean ateratzeko gaitasuna.',
     keywords:
-      'soziologoa, gizarte ikerketa, AA garapena, Next.js, Bilbo, portfolioa, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+      'soziologoa, gizarte ikerketa, AI research, AI policy, AI governance, AI safety, prompt engineering, LLM, metodo digitalak, think tank, Bilbo, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
   nav: {
     about: 'Niri buruz',
@@ -25,13 +25,15 @@ export const eu = {
     availability: 'Lan egiteko prest',
     titleA: 'Gizartea ikertu eta',
     titleB: 'AArekin',
-    titleC: 'eraiki',
+    titleC: 'lan egiten dut.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' naiz. Soziologoa, gizarte ikertzailea eta AArekin produktu digitalen garatzailea. ' },
+      { kind: 'text', value: ' naiz. Soziologoa eta gizarte ikertzailea, AAn aditua eta LLMekin produktu digitalen sortzailea. ' },
       { kind: 'em', value: 'Zorroztasun metodologikoa' },
+      { kind: 'text', value: ', ' },
+      { kind: 'em', value: 'AAri buruzko irizpidea' },
       { kind: 'text', value: ' eta ' },
-      { kind: 'em', value: 'exekutatzeko abiadura' },
+      { kind: 'em', value: 'exekutatzeko gaitasuna' },
       { kind: 'text', value: ' uztartzen ditut.' },
     ],
     ctaPrimary: 'Proiektuak ikusi',
@@ -40,18 +42,19 @@ export const eu = {
   about: {
     number: '01',
     kicker: 'Niri buruz',
-    title: 'Bi hizkuntza, jakin-min bera.',
+    title: 'Gizarte ikerketa, AA eta produktua.',
     description:
-      'Oin bat gizarte ikerketan eta bestea AArekin produktua garatzen — eta bien artean gertatzen dena interesatzen zait bereziki.',
+      'Elkar indartzen duten hiru alderdi: soziologoaren begirada, AAri buruzko irizpide aplikatua eta produktua eraikitzeko praktika.',
     paragraphs: [
-      '**Gizarte ikerketan espezializatutako soziologoa** naiz, metodologia kuantitatibo, kualitatibo eta mistoetan eskarmentuduna. EHUko Gizarte Zientzien eta Komunikazioaren Fakultateko _espazioen esanahi-berritzeari_ buruzko Master Amaierako Lanaren egilea.',
-      'Aldi berean, **AArekin web aplikazio full-stack** diseinatu eta garatzen ditut: TÖCA eta Mozkor, [Bercay Studio](https://bercay.studio) marka propioaren azpian.',
-      'Nire lana gizarte zientzien eta teknologiaren arteko elkargunean eraikitzen da: begirada kritikoa + exekuzio gaitasuna.',
+      '**Gizarte ikerketan trebatutako soziologoa** naiz, ikerketa aplikatuko tresnetan masterra eginda (EHU) eta metodologia kuantitatibo, kualitatibo eta mistoetan eskarmentuduna. Gizarte Zientzien Fakultateko _espazioen esanahi-berritzeari_ buruzko TFMaren egilea.',
+      'Aldi berean, **AAn aditu aplikatu** gisa lan egiten dut: prompt engineering, LLMen integrazioa (Claude, OpenAI, Gemini), outputen ebaluazioa eta AI safety eta governance arloen jarraipena.',
+      'Eta eraikitzen dut: **TÖCA, Mozkor eta beste produktu batzuk** AArekin, [Bercay Studio](https://bercay.studio) marka propioaren azpian. Benetako produktuak, ekoizpenean, benetako erabiltzaileekin.',
+      'Bereziki interesatzen zaizkit **AA laborategietako, governance think tanketako eta teknologiaren gizarte-eraginari buruzko institutuetako gizarte-ikerketako lanpostuak**, hiru alderdi hauek elkartzen direnean.',
     ],
     cards: [
-      { k: 'A', title: 'Ikertu', body: 'Diseinu metodologikoa, landa-lana, analisia eta txostenak.' },
-      { k: 'B', title: 'Aztertu', body: 'SPSS, Jamovi, Power BI, QGIS. Kartografiak eta bistaratzeak.' },
-      { k: 'C', title: 'Eraiki', body: 'Next.js, Supabase, Stripe eta LLMak (Claude · OpenAI · Gemini).' },
+      { k: 'A', title: 'Ikertu', body: 'Metodo mistoak, landa-lana, analisia eta txostenak zorroztasun akademikoz.' },
+      { k: 'B', title: 'AA aplikatu', body: 'Prompt engineering, LLMak, outputen ebaluazioa eta AI safety irizpidea.' },
+      { k: 'C', title: 'Eraiki', body: 'AArekin web produktu full-stack ekoizpenean: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbo · 2026',
     cvLabel: 'CV deskargatu (PDF)',
@@ -59,43 +62,43 @@ export const eu = {
   services: {
     number: '02',
     kicker: 'Nola lan egiten dut',
-    title: 'Elkarlanerako hiru bide.',
+    title: 'Elkarrekin lan egiteko hiru bide.',
     description:
-      'Abiapuntuaren arabera, ate batetik edo bestetik sartzen naiz: ikerketa, produktua, edo biak.',
+      'Gizarte ikerketa, AArekin lan aplikatua edo produktu digitalaren sorrera. AA laborategi, governance eta safety arloetako barneko lanpostuetarako prest, eta lankidetza puntualetarako.',
     items: [
       {
         number: '01',
         title: 'Gizarte ikerketa',
         description:
-          'Metodologia kuantitatibo, kualitatibo edo mistoekin azterlanak diseinatu eta gauzatzen ditut. Diseinu metodologikotik txosten finalera arte.',
+          'Metodologia kuantitatibo, kualitatibo edo mistoekin azterlanak diseinatu eta gauzatzen ditut. Bereziki baliagarriak AA edo digitala bera aztertu nahi dugun fenomenoaren parte denean.',
         deliverables: [
-          'Diseinu metodologikoa',
-          'Landa-lana (elkarrizketak, taldeak, kartografia)',
-          'Analisia eta interpretazioa',
-          'Azken txosten soziologikoa',
+          'Diseinu metodologikoa eta analisi-plana',
+          'Landa-lana (elkarrizketak, taldeak, kartografia, behaketa)',
+          'Analisi kuantitatiboa, kualitatiboa edo mistoa',
+          'Azken txosten soziologikoa edo paper-a',
         ],
       },
       {
         number: '02',
-        title: 'Produktu digitala AArekin',
+        title: 'AArekin produktu digitala',
         description:
-          'Hizkuntza-ereduak integratuta, web aplikazio full-stack-ak eraikitzen ditut, ideiatik ekoizpenera eta mantentze-lanetara arte.',
+          'LLMak integratuta, web produktu full-stack-ak eraikitzen ditut, ideiatik ekoizpenera. Bercay Studioren azpian TÖCA eta Mozkor abiarazi ditut benetako erabiltzaileekin.',
         deliverables: [
           'Arkitektura eta Next.js · Supabase stack',
           'LLMen integrazioa (Claude · OpenAI · Gemini)',
           'Stripe ordainketak eta autentifikazioa',
-          'Hedapena eta mantentzea',
+          'Hedapena, mantentzea eta eboluzioa',
         ],
       },
       {
         number: '03',
         title: 'Aholkularitza hibridoa',
         description:
-          'Arazoak bi begirada eskatzen dituenean: pertsonak ulertzea zorroztasun metodologikoarekin eta soluzioa teknologiarekin eraikitzea.',
+          'AAk bere erabiltzaileei edo gizarteari nola eragiten dien modu kritikoan ulertu behar duten erakundeentzat, eta ulermen hori produktu, politika edo estrategia erabakietara itzultzeko.',
         deliverables: [
-          'Ikerketa operatiboa',
-          'Produkturako itzulpena',
-          'Prototipo azkarra AArekin',
+          'AA eta portaerari buruzko ikerketa aplikatua',
+          'AA sistemen edo feature-en ebaluazio kritikoa',
+          'AArekin prototipo azkarra',
           'Laguntza estrategikoa',
         ],
       },
@@ -205,7 +208,7 @@ export const eu = {
         role: 'Sortzailea',
         org: 'Bercay Studio · Marka propioa',
         description:
-          'Produktu digitalean eta ikerketan proiektu propioak eta komertzialak garatzen ditudan marka aterkia. TÖCA eta Mozkor egungo produktu gisa. Kudeaketa integrala: diseinua, garapena, hedapena eta negozio eredua.',
+          'Marka propioa, AArekin produktu digitalak garatu eta gizarte ikerketa eta aholkularitza zerbitzuak eskaintzen dituena. TÖCA eta Mozkor egungo produktu gisa, ekoizpenean. Kudeaketa integrala: diseinua, garapena, hedapena, marketina eta negozio eredua.',
       },
       {
         period: '2024ko urr. — 2025eko urr.',
@@ -232,7 +235,7 @@ export const eu = {
       { label: 'Bistaratzea eta kartografia', items: ['Power BI', 'QGIS'] },
       { label: 'Kualitatiboa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Garapena', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'AA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLMen ebaluazioa', 'AI safety/governance'] },
       { label: 'Kudeaketa', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },

@@ -1,10 +1,10 @@
 export const en = {
   meta: {
-    role: 'Sociologist · Social researcher · Digital product developer',
+    role: 'Sociologist · Social researcher · AI expert · Digital product builder',
     tagline:
-      "I pair sociology's critical, analytical lens with the technical skills to build AI-powered digital products.",
+      'Rigorous social research, applied AI expertise and the ability to ship LLM-powered products in production.',
     keywords:
-      'sociologist, social research, AI development, Next.js, Bilbao, portfolio, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+      'sociologist, social research, AI research, AI policy, AI governance, AI safety, prompt engineering, LLMs, digital methods, think tank, Bilbao, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
   nav: {
     about: 'About',
@@ -23,14 +23,16 @@ export const en = {
   hero: {
     availability: 'Available for work',
     titleA: 'I study society.',
-    titleB: 'I build',
-    titleC: 'with AI',
+    titleB: 'I work',
+    titleC: 'with AI.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' — sociologist, social researcher and digital product developer working with AI. I combine ' },
+      { kind: 'text', value: ' — sociologist and social researcher, AI expert and builder of digital products powered by LLMs. I combine ' },
       { kind: 'em', value: 'methodological rigor' },
-      { kind: 'text', value: ' with ' },
-      { kind: 'em', value: 'execution speed' },
+      { kind: 'text', value: ', ' },
+      { kind: 'em', value: 'AI judgment' },
+      { kind: 'text', value: ' and ' },
+      { kind: 'em', value: 'shipping ability' },
       { kind: 'text', value: '.' },
     ],
     ctaPrimary: 'See projects',
@@ -39,18 +41,19 @@ export const en = {
   about: {
     number: '01',
     kicker: 'About',
-    title: 'Two languages, one curiosity.',
+    title: 'Social research, AI and product.',
     description:
-      "One foot in social research and the other in AI product development — and I'm especially interested in what happens between them.",
+      'Three sides that reinforce each other: the sociologist’s lens, applied AI judgment, and real-world building practice.',
     paragraphs: [
-      "I'm a **sociologist specialized in social research**, with hands-on experience in quantitative, qualitative and mixed methods. Author of a Master's Thesis on the _resignification of spaces_ at the Faculty of Social Sciences of UPV/EHU.",
-      'In parallel, I design and build **full-stack web applications with AI integration**: TÖCA and Mozkor, under my own brand [Bercay Studio](https://bercay.studio).',
-      'My work lives at the intersection of social science and technology — critical thinking and shipping ability in equal measure.',
+      "I'm a **sociologist trained in social research**, with a Master's in applied research methods (UPV/EHU) and hands-on experience in quantitative, qualitative and mixed methods. Author of a Master's Thesis on the _resignification of spaces_ at the Faculty of Social Sciences.",
+      'I also work as an **applied AI expert**: prompt engineering, LLM integration (Claude, OpenAI, Gemini), output evaluation and active engagement with the AI safety and governance field.',
+      "And I build: **TÖCA, Mozkor and other products** with AI under my own brand [Bercay Studio](https://bercay.studio). Real products, in production, with real users.",
+      "I'm especially interested in **social-research roles at AI labs, governance think tanks and institutes studying the societal impact of technology**, where these three sides come together.",
     ],
     cards: [
-      { k: 'A', title: 'Research', body: 'Research design, fieldwork, analysis and reporting.' },
-      { k: 'B', title: 'Analyze', body: 'SPSS, Jamovi, Power BI, QGIS. Mapping and data visualization.' },
-      { k: 'C', title: 'Build', body: 'Next.js, Supabase, Stripe and LLMs (Claude · OpenAI · Gemini).' },
+      { k: 'A', title: 'Research', body: 'Mixed methods, fieldwork, analysis and reporting with academic rigor.' },
+      { k: 'B', title: 'Apply AI', body: 'Prompt engineering, LLMs, output evaluation and AI safety judgment.' },
+      { k: 'C', title: 'Build', body: 'Full-stack web products with AI in production: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbao · 2026',
     cvLabel: 'Download CV (PDF)',
@@ -58,42 +61,42 @@ export const en = {
   services: {
     number: '02',
     kicker: 'Ways to work together',
-    title: 'Three ways to collaborate.',
+    title: 'Three ways to work together.',
     description:
-      'Depending on the starting point, I come in through one door or the other: research, product, or both.',
+      'Social research, applied AI work or digital product building. Open to in-house roles in research, governance and safety, and to selected collaborations.',
     items: [
       {
         number: '01',
         title: 'Social research',
         description:
-          'I design and run studies with quantitative, qualitative or mixed methods — from research design to the final report.',
+          'I design and run studies with quantitative, qualitative or mixed methods. Especially useful when AI or the digital is itself part of what we want to understand.',
         deliverables: [
-          'Research design',
-          'Fieldwork (interviews, focus groups, mapping)',
-          'Analysis and interpretation',
-          'Final sociological report',
+          'Research design and analysis plan',
+          'Fieldwork (interviews, focus groups, mapping, observation)',
+          'Quantitative, qualitative or mixed analysis',
+          'Final sociological report or paper',
         ],
       },
       {
         number: '02',
         title: 'Digital product with AI',
         description:
-          'I build full-stack web apps with language-model integration — from idea to production and ongoing maintenance.',
+          'I build full-stack web products with integrated LLMs, from idea to production. Under Bercay Studio I have launched TÖCA and Mozkor with real users.',
         deliverables: [
           'Architecture on the Next.js · Supabase stack',
           'LLM integration (Claude · OpenAI · Gemini)',
           'Stripe payments and authentication',
-          'Deployment and maintenance',
+          'Deployment, maintenance and iteration',
         ],
       },
       {
         number: '03',
         title: 'Hybrid consulting',
         description:
-          'For problems that demand both lenses: understanding people with methodological rigor and building the solution with technology.',
+          'For organizations that need to critically understand how AI is affecting their users or society, and translate that understanding into product, policy or strategy decisions.',
         deliverables: [
-          'Applied research',
-          'From research to product',
+          'Applied research on AI and behavior',
+          'Critical evaluation of AI systems or features',
           'Rapid prototyping with AI',
           'Strategic support',
         ],
@@ -200,7 +203,7 @@ export const en = {
         role: 'Founder',
         org: 'Bercay Studio · Own brand',
         description:
-          'Umbrella brand under which I develop personal and client projects in digital product and research. TÖCA and Mozkor as current products. End-to-end ownership: design, development, deployment and business model.',
+          'Own brand under which I develop AI-powered digital products and offer social research and consulting services. TÖCA and Mozkor as current products in production. End-to-end ownership: design, development, deployment, marketing and business model.',
       },
       {
         period: 'Oct. 2024 — Oct. 2025',
@@ -227,7 +230,7 @@ export const en = {
       { label: 'Visualization & mapping', items: ['Power BI', 'QGIS'] },
       { label: 'Qualitative', items: ['Whisper', 'Otter.ai'] },
       { label: 'Development', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'AI', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'AI', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'LLM evaluation', 'AI safety/governance'] },
       { label: 'Productivity', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },

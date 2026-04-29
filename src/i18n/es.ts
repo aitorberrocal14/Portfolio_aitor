@@ -1,10 +1,10 @@
 export const es = {
   meta: {
-    role: 'Sociólogo · Investigador social · Desarrollador de productos digitales',
+    role: 'Sociólogo · Investigador social · Experto en IA · Creador de productos digitales',
     tagline:
-      'Combino la mirada crítica y analítica de la sociología con la capacidad técnica para construir productos digitales con IA.',
+      'Investigación social rigurosa, conocimiento aplicado de IA y capacidad real de construir productos con LLMs en producción.',
     keywords:
-      'sociólogo, investigación social, desarrollo IA, Next.js, Bilbao, portfolio, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
+      'sociólogo, investigación social, AI research, AI policy, AI governance, AI safety, prompt engineering, LLMs, métodos digitales, think tank, Bilbao, Aitor Berrocal, Bercay Studio, TÖCA, Mozkor',
   },
   nav: {
     about: 'Sobre mí',
@@ -23,14 +23,16 @@ export const es = {
   hero: {
     availability: 'Disponible para colaborar',
     titleA: 'Investigo lo social.',
-    titleB: 'Construyo',
-    titleC: 'con IA',
+    titleB: 'Trabajo',
+    titleC: 'con IA.',
     lead: [
       { kind: 'name', value: 'Aitor Berrocal Lorda' },
-      { kind: 'text', value: ' — sociólogo, investigador social y desarrollador de productos digitales con IA. Combino ' },
+      { kind: 'text', value: ' — sociólogo e investigador social, experto en IA y creador de productos digitales con LLMs. Combino ' },
       { kind: 'em', value: 'rigor metodológico' },
-      { kind: 'text', value: ' con ' },
-      { kind: 'em', value: 'velocidad de ejecución' },
+      { kind: 'text', value: ', ' },
+      { kind: 'em', value: 'criterio sobre IA' },
+      { kind: 'text', value: ' y ' },
+      { kind: 'em', value: 'capacidad de ejecución' },
       { kind: 'text', value: '.' },
     ],
     ctaPrimary: 'Ver proyectos',
@@ -39,18 +41,19 @@ export const es = {
   about: {
     number: '01',
     kicker: 'Sobre mí',
-    title: 'Dos lenguajes, una misma curiosidad.',
+    title: 'Investigación social, IA y producto.',
     description:
-      'Un pie en la investigación social y otro en el desarrollo de producto con IA — y me interesa especialmente lo que pasa entre los dos.',
+      'Tres facetas que se refuerzan: la mirada del sociólogo, el criterio sobre IA y la práctica real de construir con ella.',
     paragraphs: [
-      'Soy **sociólogo especializado en investigación social**, con experiencia en metodologías cuantitativas, cualitativas y mixtas. Autor de un TFM sobre la _resignificación de los espacios_ de la Facultad de Ciencias Sociales de la UPV/EHU.',
-      'En paralelo, diseño y desarrollo **aplicaciones web full-stack con integración de IA**: TÖCA y Mozkor, bajo la marca propia [Bercay Studio](https://bercay.studio).',
-      'Mi trabajo se mueve en la intersección entre ciencias sociales y tecnología: mirada crítica y capacidad de ejecución a partes iguales.',
+      'Soy **sociólogo formado en investigación social**, con un máster en herramientas de investigación aplicada (UPV/EHU) y experiencia en metodologías cuantitativas, cualitativas y mixtas. Autor de un TFM sobre la _resignificación de los espacios_ de la Facultad de Ciencias Sociales.',
+      'En paralelo trabajo como **experto aplicado en IA**: prompt engineering, integración de LLMs (Claude, OpenAI, Gemini), evaluación de outputs y seguimiento del campo de AI safety y governance.',
+      'Y construyo: **TÖCA, Mozkor y otros productos** con IA bajo la marca propia [Bercay Studio](https://bercay.studio). Productos reales, en producción, con usuarios.',
+      'Me interesan especialmente los puestos de **investigación social en laboratorios de IA, think tanks de governance e institutos de impacto social de la tecnología**, donde estas tres facetas se cruzan.',
     ],
     cards: [
-      { k: 'A', title: 'Investigar', body: 'Diseño metodológico, trabajo de campo, análisis e informes.' },
-      { k: 'B', title: 'Analizar', body: 'SPSS, Jamovi, Power BI, QGIS. Cartografías y visualizaciones.' },
-      { k: 'C', title: 'Construir', body: 'Next.js, Supabase, Stripe y LLMs (Claude · OpenAI · Gemini).' },
+      { k: 'A', title: 'Investigar', body: 'Métodos mixtos, trabajo de campo, análisis e informes con rigor académico.' },
+      { k: 'B', title: 'Aplicar IA', body: 'Prompt engineering, LLMs, evaluación de outputs y criterio sobre AI safety.' },
+      { k: 'C', title: 'Construir', body: 'Productos web full-stack con IA en producción: Next.js, Supabase, Stripe.' },
     ],
     photoBadgeNow: 'Bilbao · 2026',
     cvLabel: 'Descargar CV (PDF)',
@@ -58,42 +61,42 @@ export const es = {
   services: {
     number: '02',
     kicker: 'Formas de colaborar',
-    title: 'Tres formas de colaborar.',
+    title: 'Tres formas de trabajar juntos.',
     description:
-      'Según el punto de partida, abordo el proyecto desde la investigación, desde el producto o desde ambas.',
+      'Investigación social, trabajo aplicado con IA o creación de producto digital. Disponible para roles internos en research, governance y safety, y para colaboraciones puntuales.',
     items: [
       {
         number: '01',
         title: 'Investigación social',
         description:
-          'Diseño y ejecuto estudios con metodologías cuantitativas, cualitativas o mixtas, desde el diseño metodológico hasta el informe final.',
+          'Diseño y ejecuto estudios con metodologías cuantitativas, cualitativas o mixtas. Especialmente útil en proyectos donde la IA o lo digital son parte del fenómeno a estudiar.',
         deliverables: [
-          'Diseño metodológico',
-          'Trabajo de campo (entrevistas, grupos, cartografía)',
-          'Análisis e interpretación',
-          'Informe sociológico final',
+          'Diseño metodológico y plan de análisis',
+          'Trabajo de campo (entrevistas, grupos, cartografía, observación)',
+          'Análisis cuantitativo, cualitativo o mixto',
+          'Informe sociológico final o paper',
         ],
       },
       {
         number: '02',
         title: 'Producto digital con IA',
         description:
-          'Construyo aplicaciones web full-stack con integración de modelos de lenguaje, desde la idea hasta producción y mantenimiento.',
+          'Construyo productos web full-stack con LLMs integrados, desde la idea hasta producción. Bajo Bercay Studio he lanzado TÖCA y Mozkor con usuarios reales.',
         deliverables: [
           'Arquitectura y stack Next.js · Supabase',
           'Integración de LLMs (Claude · OpenAI · Gemini)',
           'Pagos con Stripe y autenticación',
-          'Despliegue y mantenimiento',
+          'Despliegue, mantenimiento y evolución',
         ],
       },
       {
         number: '03',
         title: 'Consultoría híbrida',
         description:
-          'Cuando un problema requiere las dos miradas: entender a las personas con rigor metodológico y construir la solución con tecnología.',
+          'Para organizaciones que necesitan entender críticamente cómo la IA afecta a sus usuarios o a la sociedad, y traducir ese análisis a decisiones de producto, política o estrategia.',
         deliverables: [
-          'Investigación aplicada',
-          'De la investigación al producto',
+          'Investigación aplicada sobre IA y comportamiento',
+          'Evaluación crítica de sistemas o features de IA',
           'Prototipado rápido con IA',
           'Acompañamiento estratégico',
         ],
@@ -204,7 +207,7 @@ export const es = {
         role: 'Fundador',
         org: 'Bercay Studio · Marca propia',
         description:
-          'Marca paraguas bajo la que desarrollo proyectos propios y encargos de cliente en producto digital e investigación. TÖCA y Mozkor como productos actuales. Gestión integral: diseño, desarrollo, despliegue y modelo de negocio.',
+          'Marca propia bajo la que desarrollo productos digitales con IA y servicios de investigación social y consultoría. TÖCA y Mozkor como productos actuales en producción. Gestión integral: diseño, desarrollo, despliegue, marketing y modelo de negocio.',
       },
       {
         period: 'Oct. 2024 — Oct. 2025',
@@ -231,7 +234,7 @@ export const es = {
       { label: 'Visualización y cartografía', items: ['Power BI', 'QGIS'] },
       { label: 'Cualitativa', items: ['Whisper', 'Otter.ai'] },
       { label: 'Desarrollo', items: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Vercel', 'Stripe'] },
-      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering'] },
+      { label: 'IA', items: ['Claude', 'ChatGPT', 'Gemini', 'Prompt engineering', 'Evaluación de LLMs', 'AI safety/governance'] },
       { label: 'Gestión', items: ['Notion', 'Trello', 'Slack', 'MS Teams'] },
     ],
   },
