@@ -9,7 +9,6 @@ export interface ProjectItem {
   tags: readonly string[] | string[];
   highlights: readonly string[] | string[];
   cover: { tagline: string; urlLabel: string };
-  // From projectMeta
   url?: string;
   year: string;
   bg: string;
@@ -28,6 +27,9 @@ export interface Props {
 }
 
 const { title, kicker, items, countLabel, openLabel, visitLabel, noUrlLabel }: Props = Astro.props;
+
+// Unique id per carousel for scroll/dot wiring.
+const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).slice(2, 7)}`;
 ---
 
 <div class="mt-12" data-reveal>
@@ -36,15 +38,45 @@ const { title, kicker, items, countLabel, openLabel, visitLabel, noUrlLabel }: P
       <p class="section-number">{kicker}</p>
       <h3 class="font-display text-xl sm:text-2xl text-navy tracking-tight mt-1.5">{title}</h3>
     </div>
-    <span class="text-xs text-slate-400 uppercase tracking-widest">{countLabel}</span>
+    <div class="flex items-center gap-3">
+      <span class="hidden sm:inline-flex items-center gap-2 text-xs text-slate-500 mr-1">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 12h10M11 6l-5 6 5 6M13 6l5 6-5 6" />
+        </svg>
+        {countLabel}
+      </span>
+      <button
+        type="button"
+        data-scroll={cid}
+        data-dir="-1"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+        aria-label="Anterior"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 4L7 10l6 6" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-scroll={cid}
+        data-dir="1"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+        aria-label="Siguiente"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 4l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
   </div>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div
+    id={cid}
+    class="h-scroll overflow-x-auto flex gap-4 sm:gap-5 scroll-smooth pb-4 -mx-[max(1rem,calc((100vw-1120px)/2+1rem))] px-[max(1rem,calc((100vw-1120px)/2+1rem))] cursor-grab active:cursor-grabbing"
+  >
     {items.map((p, i) => (
       <article
-        class="group relative flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white transition duration-300 hover:shadow-xl hover:shadow-navy/10 hover:-translate-y-0.5"
-        data-reveal
-        style={`--reveal-delay: ${i * 70}ms`}
+        class="snap-start group relative flex-none w-[85%] sm:w-[360px] lg:w-[400px] flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white transition duration-300 hover:shadow-xl hover:shadow-navy/10 hover:-translate-y-0.5"
       >
         <div class="relative h-36 overflow-hidden">
           <BrowserMock
@@ -107,5 +139,68 @@ const { title, kicker, items, countLabel, openLabel, visitLabel, noUrlLabel }: P
         </div>
       </article>
     ))}
+
+    <div class="flex-none w-2" aria-hidden="true"></div>
+  </div>
+
+  <div class="mt-3 flex items-center gap-1.5" aria-hidden="true">
+    {items.map((_, i) => (
+      <span data-dot={cid} data-index={i} class={`h-1 rounded-full transition-all duration-300 ${i === 0 ? 'w-6 bg-navy' : 'w-3 bg-slate-300'}`}></span>
+    ))}
   </div>
 </div>
+
+<script is:inline data-cid={cid}>
+  (function () {
+    const cid = document.currentScript.getAttribute('data-cid');
+    const el = document.getElementById(cid);
+    if (!el) return;
+    const dots = document.querySelectorAll(`[data-dot="${cid}"]`);
+
+    // Arrow buttons
+    document.querySelectorAll(`[data-scroll="${cid}"]`).forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = Number(btn.getAttribute('data-dir') || '1');
+        const card = el.querySelector('article');
+        const step = card ? card.getBoundingClientRect().width + 20 : 380;
+        el.scrollBy({ left: step * dir, behavior: 'smooth' });
+      });
+    });
+
+    // Drag-to-scroll
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    el.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', () => (isDown = false));
+    el.addEventListener('mouseup', () => (isDown = false));
+    el.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      el.scrollLeft = scrollLeft - (x - startX);
+    });
+
+    // Dot sync
+    if (dots.length) {
+      el.addEventListener(
+        'scroll',
+        () => {
+          const card = el.querySelector('article');
+          if (!card) return;
+          const cardWidth = card.getBoundingClientRect().width + 20;
+          const active = Math.round(el.scrollLeft / cardWidth);
+          dots.forEach((d, i) => {
+            const isActive = i === active;
+            d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-6 bg-navy' : 'w-3 bg-slate-300'}`;
+          });
+        },
+        { passive: true }
+      );
+    }
+  })();
+</script>
