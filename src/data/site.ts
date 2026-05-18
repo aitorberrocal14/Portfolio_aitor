@@ -69,4 +69,10 @@ export const projectMeta: Record<string, { url?: string; year: string; bg: strin
     fg: '#e0f3f7',
     monogram: 'BI',
   },
+  'porra-mundial': {
+    year: '2026',
+    bg: '#2d7d46',
+    fg: '#f0fdf4',
+    monogram: 'PM',
+  },
 };

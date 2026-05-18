@@ -132,6 +132,20 @@ export const es = {
         cover: { tagline: 'Registra. Entiende. Decide.', urlLabel: 'mozkor-app.bercay.studio' },
       },
       {
+        id: 'porra-mundial',
+        title: 'Porra Mundial 2026',
+        subtitle: 'Quiniela colaborativa · FIFA World Cup 2026',
+        description:
+          'Aplicación web para hacer porras amistosas del Mundial de Fútbol 2026. Predicciones por partido y por fase, ranking en vivo entre participantes y scoring automático configurable. En desarrollo activo bajo Bercay Studio.',
+        tags: ['Next.js', 'Supabase', 'Real-time', 'TypeScript'],
+        highlights: [
+          'Predicciones por partido y por fase',
+          'Ranking en vivo entre participantes',
+          'Scoring automático con reglas configurables',
+        ],
+        cover: { tagline: 'Tu porra para el Mundial.', urlLabel: 'En desarrollo' },
+      },
+      {
         id: 'bercay',
         title: 'Bercay Studio',
         subtitle: 'Marca paraguas para proyectos propios',

@@ -132,6 +132,20 @@ export const en = {
         cover: { tagline: 'Track. Understand. Decide.', urlLabel: 'mozkor-app.bercay.studio' },
       },
       {
+        id: 'porra-mundial',
+        title: 'Porra Mundial 2026',
+        subtitle: 'Collaborative pool · FIFA World Cup 2026',
+        description:
+          'Web app for friendly pools on the 2026 FIFA World Cup. Per-match and per-stage predictions, live leaderboard among participants and automatic, configurable scoring. Currently in active development under Bercay Studio.',
+        tags: ['Next.js', 'Supabase', 'Real-time', 'TypeScript'],
+        highlights: [
+          'Per-match and per-stage predictions',
+          'Live leaderboard among participants',
+          'Automatic scoring with configurable rules',
+        ],
+        cover: { tagline: 'Your pool for the World Cup.', urlLabel: 'In development' },
+      },
+      {
         id: 'bercay',
         title: 'Bercay Studio',
         subtitle: 'Umbrella brand for personal projects',

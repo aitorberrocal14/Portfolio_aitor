@@ -133,6 +133,20 @@ export const eu = {
         cover: { tagline: 'Jarraitu. Ulertu. Erabaki.', urlLabel: 'mozkor-app.bercay.studio' },
       },
       {
+        id: 'porra-mundial',
+        title: 'Porra Mundial 2026',
+        subtitle: 'Lankidetzazko porra · 2026ko FIFA Munduko Kopa',
+        description:
+          'Web aplikazioa 2026ko FIFA Munduko Koparako lagunarteko porrak egiteko. Partidako eta fase bakoitzeko iragarpenak, parte-hartzaileen arteko sailkapena denbora errealean eta puntuazio automatiko konfiguragarria. Bercay Studioren azpian garapen aktiboan.',
+        tags: ['Next.js', 'Supabase', 'Real-time', 'TypeScript'],
+        highlights: [
+          'Partida eta fase bakoitzeko iragarpenak',
+          'Parte-hartzaileen arteko sailkapena denbora errealean',
+          'Puntuazio automatikoa arau konfiguragarriekin',
+        ],
+        cover: { tagline: 'Zure porra Munduko Koparako.', urlLabel: 'Garapenean' },
+      },
+      {
         id: 'bercay',
         title: 'Bercay Studio',
         subtitle: 'Proiektu propioen marka aterkia',
