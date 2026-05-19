@@ -11,7 +11,7 @@ const { bg, fg, tagline, monogram, urlLabel = '' }: Props = Astro.props;
 ---
 
 <div class="relative h-full w-full flex flex-col" style={`background-color: ${bg}; color: ${fg};`}>
-  <div class="flex items-center gap-1.5 px-3 py-2 border-b" style={`border-color: ${fg}22; background-color: ${fg}10;`}>
+  <div class="flex items-center gap-1.5 px-3 py-2 border-b" style={`border-color: ${fg}22; background-color: ${fg}0d;`}>
     <span class="h-2 w-2 rounded-full" style="background-color: rgba(255,255,255,0.35)"></span>
     <span class="h-2 w-2 rounded-full" style="background-color: rgba(255,255,255,0.25)"></span>
     <span class="h-2 w-2 rounded-full" style="background-color: rgba(255,255,255,0.15)"></span>
@@ -25,33 +25,18 @@ const { bg, fg, tagline, monogram, urlLabel = '' }: Props = Astro.props;
 
   <div class="relative flex-1 overflow-hidden">
     <div
-      class="absolute inset-0 pointer-events-none opacity-30"
-      style={`background-image: radial-gradient(${fg}40 1px, transparent 1px); background-size: 14px 14px;`}
+      class="absolute inset-0 pointer-events-none opacity-40"
+      style={`background-image: radial-gradient(${fg}33 1px, transparent 1px); background-size: 14px 14px;`}
     ></div>
-    <div class="absolute -bottom-12 -right-8 h-36 w-36 rounded-full opacity-15" style={`background-color: ${fg};`}></div>
-    <div class="absolute -top-6 -left-6 h-24 w-24 rounded-full opacity-10" style={`background-color: ${fg};`}></div>
+    <div class="absolute -bottom-8 -right-8 h-28 w-28 rounded-full opacity-20" style={`background-color: ${fg};`}></div>
 
-    <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-      <div class="flex items-start justify-between">
-        <div class="flex items-center gap-1.5">
-          <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider" style={`background-color: ${fg}15; color: ${fg};`}>
-            <span class="h-1 w-1 rounded-full" style={`background-color: ${fg};`}></span>
-            Live
-          </span>
-          <span class="rounded-full px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider" style={`background-color: ${fg}10; color: ${fg}cc;`}>
-            Preview
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <p class="font-display leading-[0.9] tracking-tight" style={`color: ${fg}; font-size: clamp(1.875rem, 5vw, 2.75rem);`}>
-          {monogram}
-        </p>
-        <p class="mt-1.5 text-xs sm:text-sm font-medium leading-snug max-w-[90%]" style={`color: ${fg}d0;`}>
-          {tagline}
-        </p>
-      </div>
+    <div class="relative h-full flex flex-col justify-end p-3.5 sm:p-4">
+      <p class="font-display text-[clamp(1.75rem,6vw,2.75rem)] leading-none tracking-tight" style={`color: ${fg};`}>
+        {monogram}
+      </p>
+      <p class="mt-1.5 text-xs sm:text-sm font-medium leading-tight" style={`color: ${fg}cc;`}>
+        {tagline}
+      </p>
     </div>
   </div>
 </div>
