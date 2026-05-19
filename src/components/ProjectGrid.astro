@@ -49,7 +49,7 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
         type="button"
         data-scroll={cid}
         data-dir="-1"
-        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-25 disabled:pointer-events-none"
         aria-label="Anterior"
       >
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,7 +60,7 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
         type="button"
         data-scroll={cid}
         data-dir="1"
-        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-25 disabled:pointer-events-none"
         aria-label="Siguiente"
       >
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -72,11 +72,15 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
 
   <div
     id={cid}
-    class="h-scroll overflow-x-auto flex gap-4 sm:gap-5 scroll-smooth pb-4 -mx-4 px-4 cursor-grab active:cursor-grabbing"
+    tabindex="0"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label={title}
+    class="proj-track h-scroll overflow-x-auto flex gap-4 sm:gap-5 scroll-smooth pb-4 -mx-4 px-4 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4 focus-visible:ring-offset-paper rounded-xl"
   >
     {items.map((p, i) => (
       <article
-        class="snap-start group relative flex-none w-[85%] sm:w-[360px] lg:w-[400px] flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white transition duration-300 hover:shadow-xl hover:shadow-navy/10 hover:-translate-y-0.5"
+        class="proj-card snap-start group relative flex-none w-[85%] sm:w-[360px] lg:w-[400px] flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white hover:shadow-xl hover:shadow-navy/10 hover:-translate-y-0.5"
       >
         <div class="relative h-36 overflow-hidden">
           <BrowserMock
@@ -150,22 +154,92 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
   </div>
 </div>
 
+<style is:global>
+  .proj-card {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .proj-card.is-active {
+    transform: scale(1.015);
+    box-shadow: 0 18px 36px -14px rgba(15, 42, 74, 0.18);
+    border-color: rgb(15 42 74 / 0.25);
+  }
+  .proj-card.is-active:hover {
+    transform: scale(1.02) translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .proj-card { transition: none; }
+    .proj-card.is-active { transform: none; }
+  }
+</style>
+
 <script is:inline data-cid={cid}>
   (function () {
     const cid = document.currentScript.getAttribute('data-cid');
     const el = document.getElementById(cid);
     if (!el) return;
-    const dots = document.querySelectorAll(`[data-dot="${cid}"]`);
 
-    // Arrow buttons
-    document.querySelectorAll(`[data-scroll="${cid}"]`).forEach((btn) => {
+    const cards = Array.from(el.querySelectorAll('article'));
+    const dots = document.querySelectorAll(`[data-dot="${cid}"]`);
+    const arrows = document.querySelectorAll(`[data-scroll="${cid}"]`);
+
+    const stepWidth = () => {
+      const card = el.querySelector('article');
+      return card ? card.getBoundingClientRect().width + 20 : 380;
+    };
+
+    // (C) Disabled state on arrows when at boundaries
+    const updateArrows = () => {
+      const atStart = el.scrollLeft <= 4;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      arrows.forEach((btn) => {
+        const dir = Number(btn.getAttribute('data-dir') || '1');
+        if (dir < 0) btn.toggleAttribute('disabled', atStart);
+        if (dir > 0) btn.toggleAttribute('disabled', atEnd);
+      });
+    };
+
+    arrows.forEach((btn) => {
       btn.addEventListener('click', () => {
         const dir = Number(btn.getAttribute('data-dir') || '1');
-        const card = el.querySelector('article');
-        const step = card ? card.getBoundingClientRect().width + 20 : 380;
-        el.scrollBy({ left: step * dir, behavior: 'smooth' });
+        el.scrollBy({ left: stepWidth() * dir, behavior: 'smooth' });
       });
     });
+
+    // (A) Keyboard navigation when carousel is focused
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        el.scrollBy({ left: stepWidth(), behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        el.scrollBy({ left: -stepWidth(), behavior: 'smooth' });
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+      }
+    });
+
+    // (B) Active card emphasis based on visibility within carousel
+    const vis = new Map();
+    const visObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => vis.set(e.target, e.intersectionRatio));
+        let best = null;
+        let max = 0;
+        cards.forEach((c) => {
+          const v = vis.get(c) || 0;
+          if (v > max) { max = v; best = c; }
+        });
+        cards.forEach((c) => c.classList.toggle('is-active', c === best && max > 0.5));
+      },
+      { root: el, threshold: [0, 0.25, 0.5, 0.75, 0.9, 1] }
+    );
+    cards.forEach((c) => visObserver.observe(c));
 
     // Drag-to-scroll
     let isDown = false;
@@ -186,21 +260,18 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
     });
 
     // Dot sync
-    if (dots.length) {
-      el.addEventListener(
-        'scroll',
-        () => {
-          const card = el.querySelector('article');
-          if (!card) return;
-          const cardWidth = card.getBoundingClientRect().width + 20;
-          const active = Math.round(el.scrollLeft / cardWidth);
-          dots.forEach((d, i) => {
-            const isActive = i === active;
-            d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-6 bg-navy' : 'w-3 bg-slate-300'}`;
-          });
-        },
-        { passive: true }
-      );
-    }
+    const updateDots = () => {
+      if (!dots.length) return;
+      const active = Math.round(el.scrollLeft / stepWidth());
+      dots.forEach((d, i) => {
+        const isActive = i === active;
+        d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-6 bg-navy' : 'w-3 bg-slate-300'}`;
+      });
+    };
+
+    el.addEventListener('scroll', () => { updateDots(); updateArrows(); }, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+    updateDots();
   })();
 </script>
