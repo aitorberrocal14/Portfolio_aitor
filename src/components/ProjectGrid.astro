@@ -31,7 +31,7 @@ const { title, kicker, items, countLabel, openLabel, visitLabel, noUrlLabel }: P
 const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).slice(2, 7)}`;
 ---
 
-<div class="mt-14" data-reveal>
+<div class="mt-14 proj-carousel" data-reveal>
   <div class="flex items-end justify-between gap-4 mb-7">
     <div>
       <p class="section-number">{kicker}</p>
@@ -68,21 +68,21 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
 
   <div class="relative">
     <div
-      class="pointer-events-none absolute left-0 top-0 bottom-4 w-12 z-10 bg-gradient-to-r from-paper to-transparent"
+      class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-paper via-paper/80 to-transparent"
       aria-hidden="true"
     ></div>
     <div
-      class="pointer-events-none absolute right-0 top-0 bottom-4 w-12 z-10 bg-gradient-to-l from-paper to-transparent"
+      class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-paper via-paper/80 to-transparent"
       aria-hidden="true"
     ></div>
 
     <div
       id={cid}
-      class="h-scroll overflow-x-auto flex gap-5 sm:gap-6 scroll-smooth pb-4 -mx-[max(1rem,calc((100vw-1120px)/2+1rem))] px-[max(1rem,calc((100vw-1120px)/2+1rem))] cursor-grab active:cursor-grabbing"
+      class="proj-track h-scroll overflow-x-auto flex gap-5 sm:gap-7 scroll-smooth py-3 -mx-[max(1rem,calc((100vw-1120px)/2+1rem))] px-[max(1rem,calc((100vw-1120px)/2+1rem))] cursor-grab active:cursor-grabbing"
     >
       {items.map((p, i) => (
         <article
-          class="snap-start group relative flex-none w-[88%] sm:w-[440px] lg:w-[500px] flex flex-col rounded-3xl overflow-hidden border border-slate-200 bg-white transition duration-500 hover:shadow-2xl hover:shadow-navy/15 hover:-translate-y-1 hover:border-navy/30"
+          class="proj-card snap-start group relative flex-none w-[88%] sm:w-[420px] lg:w-[460px] flex flex-col rounded-3xl overflow-hidden border border-slate-200 bg-white"
         >
           <div class="relative h-44 sm:h-52 overflow-hidden">
             <BrowserMock
@@ -150,30 +150,77 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
     </div>
   </div>
 
-  <div class="mt-5 flex items-center gap-1.5" aria-hidden="true">
-    {items.map((_, i) => (
-      <span data-dot={cid} data-index={i} class={`h-1 rounded-full transition-all duration-300 ${i === 0 ? 'w-8 bg-navy' : 'w-3 bg-slate-300'}`}></span>
-    ))}
+  <div class="mt-6 flex items-center gap-4">
+    <div class="flex-1 h-[2px] rounded-full bg-slate-200 overflow-hidden">
+      <div
+        data-progress={cid}
+        class="h-full bg-navy rounded-full origin-left transition-transform duration-200 ease-out"
+        style="width: 30%; transform: translateX(0%)"
+      ></div>
+    </div>
+    <span data-counter={cid} class="text-[10px] font-mono text-slate-400 tracking-wider whitespace-nowrap">01 / {String(items.length).padStart(2, '0')}</span>
   </div>
 </div>
+
+<style is:global>
+  .proj-card {
+    --vis: 1;
+    transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity: calc(0.45 + var(--vis) * 0.55);
+    transform: scale(calc(0.94 + var(--vis) * 0.06));
+    will-change: opacity, transform;
+  }
+  .proj-card:hover {
+    --vis: 1;
+    box-shadow: 0 25px 50px -12px rgba(15, 42, 74, 0.18);
+    border-color: rgb(15 42 74 / 0.3);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .proj-card { transition: none; opacity: 1; transform: none; }
+  }
+</style>
 
 <script is:inline data-cid={cid}>
   (function () {
     const cid = document.currentScript.getAttribute('data-cid');
     const el = document.getElementById(cid);
     if (!el) return;
-    const dots = document.querySelectorAll(`[data-dot="${cid}"]`);
+
+    const cards = el.querySelectorAll('article');
+    const progress = document.querySelector(`[data-progress="${cid}"]`);
+    const counter = document.querySelector(`[data-counter="${cid}"]`);
     const arrows = document.querySelectorAll(`[data-scroll="${cid}"]`);
 
+    // Visibility-based opacity/scale per card
+    const visObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          const r = Math.max(0, Math.min(1, e.intersectionRatio));
+          e.target.style.setProperty('--vis', r.toFixed(2));
+        });
+      },
+      {
+        root: el,
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      }
+    );
+    cards.forEach((c) => visObserver.observe(c));
+
+    // Progress bar + counter + arrow state
     const updateState = () => {
+      const max = el.scrollWidth - el.clientWidth;
+      const ratio = max > 0 ? el.scrollLeft / max : 0;
+      if (progress) {
+        progress.style.width = `${Math.max(8, ratio * 100)}%`;
+      }
       const card = el.querySelector('article');
-      if (!card) return;
-      const cardWidth = card.getBoundingClientRect().width + 24;
-      const active = Math.round(el.scrollLeft / cardWidth);
-      dots.forEach((d, i) => {
-        const isActive = i === active;
-        d.className = `h-1 rounded-full transition-all duration-300 ${isActive ? 'w-8 bg-navy' : 'w-3 bg-slate-300'}`;
-      });
+      if (card && counter) {
+        const cardWidth = card.getBoundingClientRect().width + 28;
+        const active = Math.min(cards.length, Math.round(el.scrollLeft / cardWidth) + 1);
+        counter.textContent = `${String(active).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+      }
       const atStart = el.scrollLeft <= 4;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
       arrows.forEach((btn) => {
@@ -187,27 +234,67 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
       btn.addEventListener('click', () => {
         const dir = Number(btn.getAttribute('data-dir') || '1');
         const card = el.querySelector('article');
-        const step = card ? card.getBoundingClientRect().width + 24 : 480;
+        const step = card ? card.getBoundingClientRect().width + 28 : 480;
         el.scrollBy({ left: step * dir, behavior: 'smooth' });
       });
     });
 
+    // Drag-to-scroll with momentum
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
+    let velocity = 0;
+    let lastX = 0;
+    let lastT = 0;
+    let raf = 0;
+
     el.addEventListener('mousedown', (e) => {
       isDown = true;
       startX = e.pageX - el.offsetLeft;
       scrollLeft = el.scrollLeft;
+      lastX = e.pageX;
+      lastT = performance.now();
+      velocity = 0;
+      cancelAnimationFrame(raf);
     });
-    el.addEventListener('mouseleave', () => (isDown = false));
-    el.addEventListener('mouseup', () => (isDown = false));
+    const stop = () => {
+      if (!isDown) return;
+      isDown = false;
+      // momentum
+      const decel = 0.94;
+      const animate = () => {
+        velocity *= decel;
+        if (Math.abs(velocity) < 0.4) return;
+        el.scrollLeft -= velocity;
+        raf = requestAnimationFrame(animate);
+      };
+      raf = requestAnimationFrame(animate);
+    };
+    el.addEventListener('mouseleave', stop);
+    el.addEventListener('mouseup', stop);
     el.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - el.offsetLeft;
       el.scrollLeft = scrollLeft - (x - startX);
+      const now = performance.now();
+      const dt = now - lastT;
+      if (dt > 0) velocity = (e.pageX - lastX) / dt * 16;
+      lastX = e.pageX;
+      lastT = now;
     });
+
+    // Vertical wheel → horizontal scroll (when this carousel is the focus)
+    el.addEventListener(
+      'wheel',
+      (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          el.scrollLeft += e.deltaY;
+        }
+      },
+      { passive: false }
+    );
 
     el.addEventListener('scroll', updateState, { passive: true });
     window.addEventListener('resize', updateState);
