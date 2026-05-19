@@ -45,7 +45,7 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
         type="button"
         data-scroll={cid}
         data-dir="-1"
-        class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-30 disabled:pointer-events-none"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-25 disabled:pointer-events-none"
         aria-label="Anterior"
       >
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,7 +56,7 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
         type="button"
         data-scroll={cid}
         data-dir="1"
-        class="grid h-11 w-11 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-30 disabled:pointer-events-none"
+        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white disabled:opacity-25 disabled:pointer-events-none"
         aria-label="Siguiente"
       >
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -66,96 +66,85 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
     </div>
   </div>
 
-  <div class="relative">
-    <div
-      class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-paper via-paper/80 to-transparent"
-      aria-hidden="true"
-    ></div>
-    <div
-      class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-paper via-paper/80 to-transparent"
-      aria-hidden="true"
-    ></div>
+  <div
+    id={cid}
+    class="proj-track h-scroll overflow-x-auto flex gap-4 sm:gap-5 scroll-smooth py-2 -mx-[max(1rem,calc((100vw-1120px)/2+1rem))] px-[max(1rem,calc((100vw-1120px)/2+1rem))] cursor-grab active:cursor-grabbing"
+  >
+    {items.map((p, i) => (
+      <article
+        class="proj-card snap-start group relative flex-none w-[80%] sm:w-[320px] lg:w-[340px] flex flex-col rounded-2xl overflow-hidden border border-slate-200 bg-white"
+      >
+        <div class="relative h-36 overflow-hidden">
+          <BrowserMock
+            bg={p.bg}
+            fg={p.fg}
+            tagline={p.cover.tagline}
+            monogram={p.monogram}
+            urlLabel={p.cover.urlLabel}
+          />
+          <div class="absolute top-2.5 right-2.5 rounded-full bg-black/25 backdrop-blur px-2 py-0.5 text-[9px] font-mono font-medium text-white tracking-wider">
+            {p.year}
+          </div>
+          {p.url && (
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener"
+              class="absolute inset-0 flex items-end justify-end p-2.5 opacity-0 group-hover:opacity-100 transition duration-300"
+              aria-label={`${openLabel} ${p.title}`}
+            >
+              <span class="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-navy shadow-lg">
+                {openLabel}
+                <svg class="h-2.5 w-2.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 13L13 7M7 7h6v6" />
+                </svg>
+              </span>
+            </a>
+          )}
+        </div>
 
-    <div
-      id={cid}
-      class="proj-track h-scroll overflow-x-auto flex gap-5 sm:gap-7 scroll-smooth py-3 -mx-[max(1rem,calc((100vw-1120px)/2+1rem))] px-[max(1rem,calc((100vw-1120px)/2+1rem))] cursor-grab active:cursor-grabbing"
-    >
-      {items.map((p, i) => (
-        <article
-          class="proj-card snap-start group relative flex-none w-[88%] sm:w-[420px] lg:w-[460px] flex flex-col rounded-3xl overflow-hidden border border-slate-200 bg-white"
-        >
-          <div class="relative h-44 sm:h-52 overflow-hidden">
-            <BrowserMock
-              bg={p.bg}
-              fg={p.fg}
-              tagline={p.cover.tagline}
-              monogram={p.monogram}
-              urlLabel={p.cover.urlLabel}
-            />
-            <div class="absolute top-3 right-3 rounded-full bg-black/25 backdrop-blur px-2.5 py-1 text-[10px] font-mono font-medium text-white tracking-wider">
-              {p.year}
-            </div>
-            {p.url && (
+        <div class="p-4 sm:p-5 flex-1 flex flex-col">
+          <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-medium">{p.subtitle}</p>
+          <h4 class="mt-1 font-display text-lg text-navy leading-tight">{p.title}</h4>
+          <p class="mt-2 text-[13px] text-slate-600 leading-relaxed line-clamp-3">{p.description}</p>
+
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            {p.tags.slice(0, 4).map((tag) => (
+              <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] text-slate-600">{tag}</span>
+            ))}
+          </div>
+
+          <div class="mt-auto pt-4 flex items-center justify-between gap-2 border-t border-slate-100 mt-4">
+            {p.url ? (
               <a
                 href={p.url}
                 target="_blank"
                 rel="noopener"
-                class="absolute inset-0 flex items-end justify-end p-3 opacity-0 group-hover:opacity-100 transition duration-300"
-                aria-label={`${openLabel} ${p.title}`}
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-navy hover:gap-2.5 transition-all"
               >
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-navy shadow-lg">
-                  {openLabel}
-                  <svg class="h-3 w-3" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7 13L13 7M7 7h6v6" />
-                  </svg>
-                </span>
+                {visitLabel}
+                <svg class="h-3 w-3" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 13L13 7M7 7h6v6" />
+                </svg>
               </a>
+            ) : (
+              <span class="text-[10px] text-slate-400 font-mono">{p.cover.urlLabel || noUrlLabel}</span>
             )}
+            <span class="text-[10px] font-mono text-slate-300 tracking-wider">{String(i + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}</span>
           </div>
+        </div>
+      </article>
+    ))}
 
-          <div class="p-5 sm:p-6 flex-1 flex flex-col">
-            <p class="text-[10px] uppercase tracking-[0.22em] text-slate-400 font-medium">{p.subtitle}</p>
-            <h4 class="mt-1.5 font-display text-xl sm:text-2xl text-navy leading-tight">{p.title}</h4>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed line-clamp-3">{p.description}</p>
-
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              {p.tags.slice(0, 4).map((tag) => (
-                <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] text-slate-600">{tag}</span>
-              ))}
-            </div>
-
-            <div class="mt-auto pt-5 flex items-center justify-between gap-2 border-t border-slate-100 mt-5">
-              {p.url ? (
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener"
-                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:gap-2.5 transition-all"
-                >
-                  {visitLabel}
-                  <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7 13L13 7M7 7h6v6" />
-                  </svg>
-                </a>
-              ) : (
-                <span class="text-xs text-slate-400 font-mono">{p.cover.urlLabel || noUrlLabel}</span>
-              )}
-              <span class="text-[10px] font-mono text-slate-300 tracking-wider">{String(i + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}</span>
-            </div>
-          </div>
-        </article>
-      ))}
-
-      <div class="flex-none w-2" aria-hidden="true"></div>
-    </div>
+    <div class="flex-none w-2" aria-hidden="true"></div>
   </div>
 
-  <div class="mt-6 flex items-center gap-4">
+  <div class="mt-5 flex items-center gap-4">
     <div class="flex-1 h-[2px] rounded-full bg-slate-200 overflow-hidden">
       <div
         data-progress={cid}
-        class="h-full bg-navy rounded-full origin-left transition-transform duration-200 ease-out"
-        style="width: 30%; transform: translateX(0%)"
+        class="h-full bg-navy rounded-full origin-left transition-[width] duration-200 ease-out"
+        style="width: 20%"
       ></div>
     </div>
     <span data-counter={cid} class="text-[10px] font-mono text-slate-400 tracking-wider whitespace-nowrap">01 / {String(items.length).padStart(2, '0')}</span>
@@ -164,21 +153,14 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
 
 <style is:global>
   .proj-card {
-    --vis: 1;
-    transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-                transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
-                box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
-    opacity: calc(0.45 + var(--vis) * 0.55);
-    transform: scale(calc(0.94 + var(--vis) * 0.06));
-    will-change: opacity, transform;
+    transition: box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .proj-card:hover {
-    --vis: 1;
-    box-shadow: 0 25px 50px -12px rgba(15, 42, 74, 0.18);
+    box-shadow: 0 20px 40px -12px rgba(15, 42, 74, 0.18);
     border-color: rgb(15 42 74 / 0.3);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .proj-card { transition: none; opacity: 1; transform: none; }
+    transform: translateY(-2px);
   }
 </style>
 
@@ -193,32 +175,20 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
     const counter = document.querySelector(`[data-counter="${cid}"]`);
     const arrows = document.querySelectorAll(`[data-scroll="${cid}"]`);
 
-    // Visibility-based opacity/scale per card
-    const visObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          const r = Math.max(0, Math.min(1, e.intersectionRatio));
-          e.target.style.setProperty('--vis', r.toFixed(2));
-        });
-      },
-      {
-        root: el,
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-      }
-    );
-    cards.forEach((c) => visObserver.observe(c));
+    const gap = 20;
+    const cardStep = () => {
+      const card = el.querySelector('article');
+      return card ? card.getBoundingClientRect().width + gap : 340;
+    };
 
-    // Progress bar + counter + arrow state
     const updateState = () => {
       const max = el.scrollWidth - el.clientWidth;
       const ratio = max > 0 ? el.scrollLeft / max : 0;
       if (progress) {
         progress.style.width = `${Math.max(8, ratio * 100)}%`;
       }
-      const card = el.querySelector('article');
-      if (card && counter) {
-        const cardWidth = card.getBoundingClientRect().width + 28;
-        const active = Math.min(cards.length, Math.round(el.scrollLeft / cardWidth) + 1);
+      const active = Math.min(cards.length, Math.round(el.scrollLeft / cardStep()) + 1);
+      if (counter) {
         counter.textContent = `${String(active).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
       }
       const atStart = el.scrollLeft <= 4;
@@ -233,16 +203,15 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
     arrows.forEach((btn) => {
       btn.addEventListener('click', () => {
         const dir = Number(btn.getAttribute('data-dir') || '1');
-        const card = el.querySelector('article');
-        const step = card ? card.getBoundingClientRect().width + 28 : 480;
-        el.scrollBy({ left: step * dir, behavior: 'smooth' });
+        el.scrollBy({ left: cardStep() * dir, behavior: 'smooth' });
       });
     });
 
-    // Drag-to-scroll with momentum
+    // Drag-to-scroll with momentum + snap on release
     let isDown = false;
+    let dragged = false;
     let startX = 0;
-    let scrollLeft = 0;
+    let startScroll = 0;
     let velocity = 0;
     let lastX = 0;
     let lastT = 0;
@@ -250,41 +219,66 @@ const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).sli
 
     el.addEventListener('mousedown', (e) => {
       isDown = true;
-      startX = e.pageX - el.offsetLeft;
-      scrollLeft = el.scrollLeft;
+      dragged = false;
+      startX = e.pageX;
+      startScroll = el.scrollLeft;
       lastX = e.pageX;
       lastT = performance.now();
       velocity = 0;
       cancelAnimationFrame(raf);
     });
-    const stop = () => {
+
+    const snapToNearest = () => {
+      const step = cardStep();
+      const target = Math.round(el.scrollLeft / step) * step;
+      el.scrollTo({ left: target, behavior: 'smooth' });
+    };
+
+    const release = () => {
       if (!isDown) return;
       isDown = false;
-      // momentum
-      const decel = 0.94;
+      const decel = 0.93;
+      let v = velocity;
       const animate = () => {
-        velocity *= decel;
-        if (Math.abs(velocity) < 0.4) return;
-        el.scrollLeft -= velocity;
+        v *= decel;
+        if (Math.abs(v) < 0.5) {
+          snapToNearest();
+          return;
+        }
+        el.scrollLeft -= v;
         raf = requestAnimationFrame(animate);
       };
-      raf = requestAnimationFrame(animate);
+      if (Math.abs(v) > 1) {
+        raf = requestAnimationFrame(animate);
+      } else {
+        snapToNearest();
+      }
     };
-    el.addEventListener('mouseleave', stop);
-    el.addEventListener('mouseup', stop);
+
+    el.addEventListener('mouseleave', release);
+    el.addEventListener('mouseup', release);
     el.addEventListener('mousemove', (e) => {
       if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - el.offsetLeft;
-      el.scrollLeft = scrollLeft - (x - startX);
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 3) dragged = true;
+      el.scrollLeft = startScroll - dx;
       const now = performance.now();
       const dt = now - lastT;
-      if (dt > 0) velocity = (e.pageX - lastX) / dt * 16;
+      if (dt > 0) velocity = ((e.pageX - lastX) / dt) * 16;
       lastX = e.pageX;
       lastT = now;
     });
 
-    // Vertical wheel → horizontal scroll (when this carousel is the focus)
+    // Prevent clicks while dragging
+    el.addEventListener('click', (e) => {
+      if (dragged) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragged = false;
+      }
+    }, true);
+
+    // Vertical wheel → horizontal scroll
     el.addEventListener(
       'wheel',
       (e) => {
