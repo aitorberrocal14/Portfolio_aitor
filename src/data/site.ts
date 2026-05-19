@@ -70,6 +70,7 @@ export const projectMeta: Record<string, { url?: string; year: string; bg: strin
     monogram: 'BI',
   },
   'porra-mundial': {
+    url: 'https://porra-mundial.bercay.studio',
     year: '2026',
     bg: '#2d7d46',
     fg: '#f0fdf4',

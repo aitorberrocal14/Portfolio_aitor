@@ -143,7 +143,7 @@ export const es = {
           'Ranking en vivo entre participantes',
           'Scoring automático con reglas configurables',
         ],
-        cover: { tagline: 'Tu porra para el Mundial.', urlLabel: 'En desarrollo' },
+        cover: { tagline: 'Tu porra para el Mundial.', urlLabel: 'porra-mundial.bercay.studio' },
       },
       {
         id: 'bercay',

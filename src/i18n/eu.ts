@@ -144,7 +144,7 @@ export const eu = {
           'Parte-hartzaileen arteko sailkapena denbora errealean',
           'Puntuazio automatikoa arau konfiguragarriekin',
         ],
-        cover: { tagline: 'Zure porra Munduko Koparako.', urlLabel: 'Garapenean' },
+        cover: { tagline: 'Zure porra Munduko Koparako.', urlLabel: 'porra-mundial.bercay.studio' },
       },
       {
         id: 'bercay',

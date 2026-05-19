@@ -143,7 +143,7 @@ export const en = {
           'Live leaderboard among participants',
           'Automatic scoring with configurable rules',
         ],
-        cover: { tagline: 'Your pool for the World Cup.', urlLabel: 'In development' },
+        cover: { tagline: 'Your pool for the World Cup.', urlLabel: 'porra-mundial.bercay.studio' },
       },
       {
         id: 'bercay',
