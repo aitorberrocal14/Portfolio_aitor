@@ -56,6 +56,7 @@ export const en = {
     ],
     photoBadgeNow: 'Bilbao · 2026',
     cvLabel: 'Download CV (PDF)',
+    cvOther: 'Also in',
   },
   services: {
     number: '02',

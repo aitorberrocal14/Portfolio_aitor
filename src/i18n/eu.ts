@@ -57,6 +57,7 @@ export const eu = {
     ],
     photoBadgeNow: 'Bilbo · 2026',
     cvLabel: 'CV deskargatu (PDF)',
+    cvOther: 'Hauetan ere',
   },
   services: {
     number: '02',
