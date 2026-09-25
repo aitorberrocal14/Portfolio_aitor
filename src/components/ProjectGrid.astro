@@ -68,20 +68,7 @@ const cid = `pc-${(kicker || title || 'grid').replace(/[^\w]/g, '')}-${Math.rand
     </button>
   </div>
 
-  <div class="relative" data-fade-wrap={cid}>
-    <!-- Fade solo cuando hay contenido oculto a la izquierda -->
-    <div
-      data-fade-left={cid}
-      class="pointer-events-none absolute inset-y-0 left-0 w-10 z-10 bg-gradient-to-r from-paper to-transparent opacity-0 transition-opacity duration-300"
-      aria-hidden="true"
-    ></div>
-    <!-- Fade solo cuando hay contenido oculto a la derecha (siguiente proyecto difuminado) -->
-    <div
-      data-fade-right={cid}
-      class="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 z-10 bg-gradient-to-l from-paper via-paper/70 to-transparent opacity-0 transition-opacity duration-300"
-      aria-hidden="true"
-    ></div>
-
+  <div class="relative">
     <div
       id={cid}
       class="h-scroll overflow-x-auto flex gap-4 sm:gap-5 scroll-smooth pb-4 -mx-4 px-4 cursor-grab active:cursor-grabbing"
@@ -239,8 +226,6 @@ const cid = `pc-${(kicker || title || 'grid').replace(/[^\w]/g, '')}-${Math.rand
     if (!el) return;
     const progress = document.querySelector(`[data-progress="${cid}"]`);
     const counter = document.querySelector(`[data-counter="${cid}"]`);
-    const fadeLeft = document.querySelector(`[data-fade-left="${cid}"]`);
-    const fadeRight = document.querySelector(`[data-fade-right="${cid}"]`);
     const total = el.querySelectorAll('article').length;
 
     document.querySelectorAll(`[data-scroll="${cid}"]`).forEach((btn) => {
@@ -284,17 +269,6 @@ const cid = `pc-${(kicker || title || 'grid').replace(/[^\w]/g, '')}-${Math.rand
           const totalPadded = String(total).padStart(2, '0');
           counter.innerHTML = `${padded} <span class="text-slate-300 mx-0.5">/</span> ${totalPadded}`;
         }
-      }
-      // Fades solo cuando hay contenido oculto — se atenúan cerca del borde.
-      const threshold = 8;
-      if (fadeLeft) {
-        const opacity = Math.min(1, Math.max(0, (el.scrollLeft - threshold) / 60));
-        fadeLeft.style.opacity = String(opacity);
-      }
-      if (fadeRight) {
-        const remaining = max - el.scrollLeft;
-        const opacity = max <= 0 ? 0 : Math.min(1, Math.max(0, (remaining - threshold) / 60));
-        fadeRight.style.opacity = String(opacity);
       }
     };
 
