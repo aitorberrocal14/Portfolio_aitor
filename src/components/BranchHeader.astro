@@ -13,7 +13,7 @@ const target = String(count).padStart(2, '0');
 ---
 
 <div
-  class="branch-header flex items-end justify-between gap-6 mb-6 pb-6 border-b border-slate-200/80"
+  class="branch-header flex items-end justify-between gap-6 mb-4 pb-4 border-b border-slate-200/80"
   data-reveal
   data-branch={cidBH}
 >
@@ -22,11 +22,11 @@ const target = String(count).padStart(2, '0');
       <span class="inline-block h-px w-6 bg-slate-400/70"></span>
       Rama {index}
     </p>
-    <h3 class="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[-0.015em] leading-[1.05] truncate">
+    <h3 class="mt-1.5 font-display text-2xl sm:text-3xl lg:text-4xl text-navy tracking-[-0.015em] leading-[1.05] truncate">
       {title}
     </h3>
     {context && (
-      <p class="mt-3 font-display italic text-base sm:text-lg text-slate-500 leading-snug max-w-xl">
+      <p class="mt-2 font-display italic text-sm sm:text-base text-slate-500 leading-snug max-w-xl">
         {context}
       </p>
     )}
@@ -34,7 +34,7 @@ const target = String(count).padStart(2, '0');
   <div class="text-right flex-none pb-0.5">
     <p class="font-mono text-[10px] tracking-[0.28em] text-slate-400 uppercase">{countLabel}</p>
     <p
-      class="mt-1 font-display text-4xl sm:text-5xl lg:text-6xl text-navy tabular-nums leading-none tracking-tight"
+      class="mt-1 font-display text-3xl sm:text-4xl lg:text-5xl text-navy tabular-nums leading-none tracking-tight"
       data-count-target={target}
     >
       {target}

@@ -24,16 +24,23 @@ const research = (['tfm', 'turismo-bilbao'] as const)
 const countNoun = t.countLabel(2).replace(/^\d+\s*/, '');
 ---
 
-<section id="proyectos" class="section section-divide">
+<section id="proyectos" class="section-tight section-divide">
   <div class="container">
-    <SectionHeader
-      number={t.number}
-      label={t.kicker}
-      title={t.title}
-      description={t.description}
-    />
+    <div class="flex flex-col gap-3" data-reveal>
+      <div class="flex items-center gap-4">
+        <span class="section-number">{t.number}</span>
+        <span class="h-px w-10 bg-slate-300"></span>
+        <span class="eyebrow">{t.kicker}</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[-0.015em] leading-[1.05] max-w-3xl">
+        {t.title}
+      </h2>
+      <p class="max-w-2xl text-sm sm:text-base text-slate-600 leading-relaxed">
+        {t.description}
+      </p>
+    </div>
 
-    <div class="mt-16 sm:mt-20">
+    <div class="mt-10 sm:mt-12">
       <BranchHeader
         index="01"
         title={t.softwareTitle}
@@ -51,7 +58,7 @@ const countNoun = t.countLabel(2).replace(/^\d+\s*/, '');
       />
     </div>
 
-    <div class="my-20 sm:my-28 grid grid-cols-[1fr_auto_1fr] items-center gap-5 sm:gap-8" aria-hidden="true" data-reveal>
+    <div class="my-14 sm:my-20 grid grid-cols-[1fr_auto_1fr] items-center gap-5 sm:gap-8" aria-hidden="true" data-reveal>
       <div class="h-px w-full bg-gradient-to-r from-transparent via-navy/25 to-navy/25"></div>
       <div class="flex flex-col items-center gap-1.5">
         <span class="font-mono text-[9px] uppercase tracking-[0.4em] text-slate-400 whitespace-nowrap">
