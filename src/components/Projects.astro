@@ -1,18 +1,18 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
-import BranchHeader from '~/components/BranchHeader.astro';
 import ProjectGrid from '~/components/ProjectGrid.astro';
-import ResearchList from '~/components/ResearchList.astro';
 import { getDict } from '~/i18n';
 import { projectMeta } from '~/data/site';
 
 const t = getDict(Astro.url).projects;
 const merge = (item: typeof t.items[number]) => ({ ...item, ...projectMeta[item.id] });
 
-const software = (['toca', 'mozkor', 'porra-mundial', 'match-bilbao', 'bercay'] as const)
-  .map((id) => t.items.find((i) => i.id === id)!)
-  .map(merge);
-const research = (['tfm', 'turismo-bilbao'] as const)
+// Escaparate unificado: Match Bilbao primero (recién publicado),
+// después productos propios en producción, marca paraguas, y por
+// último las investigaciones (aún sin página de detalle propia).
+const projects = (
+  ['match-bilbao', 'toca', 'mozkor', 'porra-mundial', 'bercay', 'tfm', 'turismo-bilbao'] as const
+)
   .map((id) => t.items.find((i) => i.id === id)!)
   .map(merge);
 ---
@@ -26,36 +26,14 @@ const research = (['tfm', 'turismo-bilbao'] as const)
       description={t.description}
     />
 
-    <div class="mt-16 sm:mt-20">
-      <BranchHeader
-        index="01"
-        title={t.softwareTitle}
-        countLabel={t.countLabel(software.length)}
-      />
+    <div class="mt-14">
       <ProjectGrid
-        items={software}
-        countLabel={t.countLabel(software.length)}
+        items={projects}
+        countLabel={t.countLabel(projects.length)}
         openLabel={t.openLabel}
         visitLabel={t.visitLabel}
         noUrlLabel={t.noUrlLabel}
       />
-    </div>
-
-    <div class="my-20 sm:my-28 flex items-center gap-5" aria-hidden="true">
-      <div class="h-px flex-1 bg-navy/15"></div>
-      <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">
-        ⁂
-      </span>
-      <div class="h-px flex-1 bg-navy/15"></div>
-    </div>
-
-    <div>
-      <BranchHeader
-        index="02"
-        title={t.researchTitle}
-        countLabel={t.countLabel(research.length)}
-      />
-      <ResearchList items={research} visitLabel={t.visitLabel} />
     </div>
   </div>
 </section>
