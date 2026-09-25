@@ -14,7 +14,6 @@ export const en = {
     tools: 'Tools',
     education: 'Education',
     contact: 'Contact',
-    notes: 'Notes',
     cta: 'Get in touch',
     skipToContent: 'Skip to content',
     openMenu: 'Open menu',
@@ -102,7 +101,6 @@ export const en = {
     openLabel: 'Open',
     visitLabel: 'Visit site',
     noUrlLabel: 'No link',
-    notesCta: 'My notes and writing →',
     items: [
       {
         id: 'toca',
@@ -145,6 +143,20 @@ export const en = {
           'Automatic scoring with configurable rules',
         ],
         cover: { tagline: 'Your pool for the World Cup.', urlLabel: 'porra-mundial.bercay.studio' },
+      },
+      {
+        id: 'match-bilbao',
+        title: 'Match Bilbao Bizkaia 2026',
+        subtitle: 'Event website · Static HTML',
+        description:
+          'Official website of the Match Bilbao Bizkaia 2026 event. End-to-end design and development in pure HTML, CSS and JavaScript, already live in production.',
+        tags: ['HTML', 'CSS', 'JavaScript', 'Web'],
+        highlights: [
+          'Official website of the event',
+          'End-to-end design and development',
+          'Static HTML deployed',
+        ],
+        cover: { tagline: 'The event website.', urlLabel: 'matchbilbaobizkaia.eus' },
       },
       {
         id: 'bercay',
@@ -289,17 +301,6 @@ export const en = {
     tagline: 'Social research + AI product.',
     rights: 'All rights reserved.',
     builtWith: 'Built with Astro, Tailwind and a lot of Fraunces.',
-    notesLink: 'Notes',
-  },
-  notesPage: {
-    kicker: 'Notes',
-    title: 'Notes and writing.',
-    description:
-      'Loose notes on social research, AI and product. My way of thinking out loud.',
-    empty: 'Content coming soon.',
-    backToList: '← All notes',
-    backToHome: '← Back to home',
-    readMore: 'Read →',
   },
   projectsData: {
     online: 'Online',

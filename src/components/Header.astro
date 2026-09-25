@@ -1,12 +1,11 @@
 ---
 import LanguageSwitcher from '~/components/LanguageSwitcher.astro';
-import { getDict, getLang, notesUrl } from '~/i18n';
+import { getDict, getLang } from '~/i18n';
 
 const t = getDict(Astro.url).nav;
 const lang = getLang(Astro.url);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const root = lang === 'es' ? base : `${base}${lang}/`;
-const notesHref = notesUrl(lang, base);
 
 const nav = [
   { href: `${root}#sobre-mi`, label: t.about, number: '01', target: 'sobre-mi' },
@@ -15,7 +14,6 @@ const nav = [
   { href: `${root}#experiencia`, label: t.experience, number: '04', target: 'experiencia' },
   { href: `${root}#herramientas`, label: t.tools, number: '05', target: 'herramientas' },
   { href: `${root}#formacion`, label: t.education, number: '06', target: 'formacion' },
-  { href: notesHref, label: t.notes, number: '07', target: null as string | null },
 ];
 ---
 

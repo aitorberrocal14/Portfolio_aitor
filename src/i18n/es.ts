@@ -14,7 +14,6 @@ export const es = {
     tools: 'Herramientas',
     education: 'Formación',
     contact: 'Contacto',
-    notes: 'Notas',
     cta: 'Hablemos',
     skipToContent: 'Saltar al contenido',
     openMenu: 'Abrir menú',
@@ -102,7 +101,6 @@ export const es = {
     openLabel: 'Abrir',
     visitLabel: 'Visitar sitio',
     noUrlLabel: 'Sin enlace',
-    notesCta: 'Mis notas y escritos →',
     items: [
       {
         id: 'toca',
@@ -145,6 +143,20 @@ export const es = {
           'Scoring automático con reglas configurables',
         ],
         cover: { tagline: 'Tu porra para el Mundial.', urlLabel: 'porra-mundial.bercay.studio' },
+      },
+      {
+        id: 'match-bilbao',
+        title: 'Match Bilbao Bizkaia 2026',
+        subtitle: 'Web del evento · HTML estático',
+        description:
+          'Sitio web oficial del evento Match Bilbao Bizkaia 2026. Diseño y desarrollo end-to-end en HTML, CSS y JavaScript puros, ya publicado y en producción.',
+        tags: ['HTML', 'CSS', 'JavaScript', 'Web'],
+        highlights: [
+          'Web oficial del evento',
+          'Diseño y desarrollo end-to-end',
+          'HTML estático desplegado',
+        ],
+        cover: { tagline: 'La web del evento.', urlLabel: 'matchbilbaobizkaia.eus' },
       },
       {
         id: 'bercay',
@@ -294,17 +306,6 @@ export const es = {
     tagline: 'Investigación social + producto con IA.',
     rights: 'Todos los derechos reservados.',
     builtWith: 'Hecho con Astro, Tailwind y mucho Fraunces.',
-    notesLink: 'Notas',
-  },
-  notesPage: {
-    kicker: 'Notas',
-    title: 'Apuntes y escritos.',
-    description:
-      'Notas sueltas sobre investigación social, IA y producto. Mi forma de pensar en voz alta.',
-    empty: 'Pronto habrá contenido aquí.',
-    backToList: '← Todas las notas',
-    backToHome: '← Volver al inicio',
-    readMore: 'Leer →',
   },
   projectsData: {
     online: 'Online',

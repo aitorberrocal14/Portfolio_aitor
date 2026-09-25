@@ -15,7 +15,6 @@ export const eu = {
     tools: 'Tresnak',
     education: 'Ikasketak',
     contact: 'Kontaktua',
-    notes: 'Oharrak',
     cta: 'Hitz egin dezagun',
     skipToContent: 'Edukira jauzi',
     openMenu: 'Menua ireki',
@@ -103,7 +102,6 @@ export const eu = {
     openLabel: 'Ireki',
     visitLabel: 'Webgunea bisitatu',
     noUrlLabel: 'Esteka gabe',
-    notesCta: 'Nire oharrak eta idatziak →',
     items: [
       {
         id: 'toca',
@@ -146,6 +144,20 @@ export const eu = {
           'Puntuazio automatikoa arau konfiguragarriekin',
         ],
         cover: { tagline: 'Zure porra Munduko Koparako.', urlLabel: 'porra-mundial.bercay.studio' },
+      },
+      {
+        id: 'match-bilbao',
+        title: 'Match Bilbao Bizkaia 2026',
+        subtitle: 'Ekitaldiaren webgunea · HTML estatikoa',
+        description:
+          'Match Bilbao Bizkaia 2026 ekitaldiaren webgune ofiziala. HTML, CSS eta JavaScript hutsean egindako diseinu eta garapena, jada argitaratua eta ekoizpenean.',
+        tags: ['HTML', 'CSS', 'JavaScript', 'Web'],
+        highlights: [
+          'Ekitaldiaren webgune ofiziala',
+          'Diseinua eta garapena end-to-end',
+          'HTML estatikoa hedatua',
+        ],
+        cover: { tagline: 'Ekitaldiaren webgunea.', urlLabel: 'matchbilbaobizkaia.eus' },
       },
       {
         id: 'bercay',
@@ -294,17 +306,6 @@ export const eu = {
     tagline: 'Gizarte ikerketa + AArekin produktua.',
     rights: 'Eskubide guztiak erreserbatuta.',
     builtWith: 'Astro, Tailwind eta Fraunces-ekin, gogoz egina.',
-    notesLink: 'Oharrak',
-  },
-  notesPage: {
-    kicker: 'Oharrak',
-    title: 'Oharrak eta idatziak.',
-    description:
-      'Gizarte ikerketari, AAri eta produktuari buruzko ohar solteak. Ozenki pentsatzeko nire modua.',
-    empty: 'Edukia laster hemen.',
-    backToList: '← Ohar guztiak',
-    backToHome: '← Hasierara itzuli',
-    readMore: 'Irakurri →',
   },
   projectsData: {
     online: 'Online',

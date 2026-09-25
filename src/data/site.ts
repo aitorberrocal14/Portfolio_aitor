@@ -80,4 +80,11 @@ export const projectMeta: Record<string, { url?: string; year: string; bg: strin
     fg: '#f0fdf4',
     monogram: 'PM',
   },
+  'match-bilbao': {
+    url: 'https://matchbilbaobizkaia.eus',
+    year: '2026',
+    bg: '#c1443b',
+    fg: '#fdf1ef',
+    monogram: 'MBB',
+  },
 };
