@@ -101,6 +101,7 @@ export const en = {
     openLabel: 'Open',
     visitLabel: 'Visit site',
     noUrlLabel: 'No link',
+    researchBadge: 'Research',
     items: [
       {
         id: 'toca',

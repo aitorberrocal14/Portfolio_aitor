@@ -102,6 +102,7 @@ export const eu = {
     openLabel: 'Ireki',
     visitLabel: 'Webgunea bisitatu',
     noUrlLabel: 'Esteka gabe',
+    researchBadge: 'Ikerketa',
     items: [
       {
         id: 'toca',
