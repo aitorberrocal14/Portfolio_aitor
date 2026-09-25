@@ -34,7 +34,13 @@ const countNoun = t.countLabel(2).replace(/^\d+\s*/, '');
     />
 
     <div class="mt-16 sm:mt-20">
-      <BranchHeader index="01" title={t.softwareTitle} count={software.length} countLabel={countNoun} />
+      <BranchHeader
+        index="01"
+        title={t.softwareTitle}
+        count={software.length}
+        countLabel={countNoun}
+        context={t.softwareContext}
+      />
       <ProjectGrid
         items={software}
         countLabel={t.countLabel(software.length)}
@@ -45,16 +51,25 @@ const countNoun = t.countLabel(2).replace(/^\d+\s*/, '');
       />
     </div>
 
-    <div class="my-20 sm:my-28 flex items-center gap-5" aria-hidden="true">
-      <div class="h-px flex-1 bg-navy/15"></div>
-      <span class="font-mono text-[10px] uppercase tracking-[0.32em] text-slate-400 whitespace-nowrap">
-        ⁂
-      </span>
-      <div class="h-px flex-1 bg-navy/15"></div>
+    <div class="my-20 sm:my-28 grid grid-cols-[1fr_auto_1fr] items-center gap-5 sm:gap-8" aria-hidden="true" data-reveal>
+      <div class="h-px w-full bg-gradient-to-r from-transparent via-navy/25 to-navy/25"></div>
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-[0.4em] text-slate-400 whitespace-nowrap">
+          {t.branchSwitchLabel}
+        </span>
+        <span class="font-display italic text-xl text-navy/60 leading-none">⁂</span>
+      </div>
+      <div class="h-px w-full bg-gradient-to-l from-transparent via-navy/25 to-navy/25"></div>
     </div>
 
     <div>
-      <BranchHeader index="02" title={t.researchTitle} count={research.length} countLabel={countNoun} />
+      <BranchHeader
+        index="02"
+        title={t.researchTitle}
+        count={research.length}
+        countLabel={countNoun}
+        context={t.researchContext}
+      />
       <ProjectGrid
         items={research}
         countLabel={t.countLabel(research.length)}
