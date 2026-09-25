@@ -1,0 +1,25 @@
+---
+export interface Props {
+  index: string;
+  title: string;
+  count: number;
+  countLabel?: string;
+}
+
+const { index, title, count, countLabel = 'Proyectos' }: Props = Astro.props;
+---
+
+<div class="flex items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-200/80" data-reveal>
+  <div class="min-w-0">
+    <p class="font-mono text-[11px] tracking-[0.28em] text-slate-500 uppercase">Rama {index}</p>
+    <h3 class="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[-0.015em] leading-[1.05] truncate">
+      {title}
+    </h3>
+  </div>
+  <div class="text-right flex-none pb-0.5">
+    <p class="font-mono text-[10px] tracking-[0.28em] text-slate-400 uppercase">{countLabel}</p>
+    <p class="mt-1 font-display text-4xl sm:text-5xl lg:text-6xl text-navy tabular-nums leading-none tracking-tight">
+      {count.toString().padStart(2, '0')}
+    </p>
+  </div>
+</div>
