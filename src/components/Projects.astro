@@ -1,6 +1,8 @@
 ---
 import SectionHeader from '~/components/SectionHeader.astro';
+import BranchHeader from '~/components/BranchHeader.astro';
 import ProjectGrid from '~/components/ProjectGrid.astro';
+import ResearchList from '~/components/ResearchList.astro';
 import { getDict } from '~/i18n';
 import { projectMeta } from '~/data/site';
 
@@ -24,24 +26,36 @@ const research = (['tfm', 'turismo-bilbao'] as const)
       description={t.description}
     />
 
-    <ProjectGrid
-      kicker={t.softwareKicker}
-      title={t.softwareTitle}
-      items={software}
-      countLabel={t.countLabel(software.length)}
-      openLabel={t.openLabel}
-      visitLabel={t.visitLabel}
-      noUrlLabel={t.noUrlLabel}
-    />
+    <div class="mt-16 sm:mt-20">
+      <BranchHeader
+        index="01"
+        title={t.softwareTitle}
+        countLabel={t.countLabel(software.length)}
+      />
+      <ProjectGrid
+        items={software}
+        countLabel={t.countLabel(software.length)}
+        openLabel={t.openLabel}
+        visitLabel={t.visitLabel}
+        noUrlLabel={t.noUrlLabel}
+      />
+    </div>
 
-    <ProjectGrid
-      kicker={t.researchKicker}
-      title={t.researchTitle}
-      items={research}
-      countLabel={t.countLabel(research.length)}
-      openLabel={t.openLabel}
-      visitLabel={t.visitLabel}
-      noUrlLabel={t.noUrlLabel}
-    />
+    <div class="my-20 sm:my-28 flex items-center gap-5" aria-hidden="true">
+      <div class="h-px flex-1 bg-navy/15"></div>
+      <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400 whitespace-nowrap">
+        ⁂
+      </span>
+      <div class="h-px flex-1 bg-navy/15"></div>
+    </div>
+
+    <div>
+      <BranchHeader
+        index="02"
+        title={t.researchTitle}
+        countLabel={t.countLabel(research.length)}
+      />
+      <ResearchList items={research} visitLabel={t.visitLabel} />
+    </div>
   </div>
 </section>

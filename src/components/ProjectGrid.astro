@@ -17,8 +17,8 @@ export interface ProjectItem {
 }
 
 export interface Props {
-  title: string;
-  kicker: string;
+  title?: string;
+  kicker?: string;
   items: ProjectItem[];
   countLabel: string;
   openLabel: string;
@@ -26,48 +26,42 @@ export interface Props {
   noUrlLabel: string;
 }
 
-const { title, kicker, items, countLabel, openLabel, visitLabel, noUrlLabel }: Props = Astro.props;
+const { title = '', kicker = '', items, countLabel, openLabel, visitLabel, noUrlLabel }: Props = Astro.props;
 
 // Unique id per carousel for scroll/dot wiring.
-const cid = `pc-${kicker.replace(/[^\w]/g, '')}-${Math.random().toString(36).slice(2, 7)}`;
+const cid = `pc-${(kicker || title || 'grid').replace(/[^\w]/g, '')}-${Math.random().toString(36).slice(2, 7)}`;
 ---
 
-<div class="mt-12" data-reveal>
-  <div class="flex items-end justify-between gap-4 mb-6">
-    <div>
-      <p class="section-number">{kicker}</p>
-      <h3 class="font-display text-xl sm:text-2xl text-navy tracking-tight mt-1.5">{title}</h3>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="hidden sm:inline-flex items-center gap-2 text-xs text-slate-500 mr-1">
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 12h10M11 6l-5 6 5 6M13 6l5 6-5 6" />
-        </svg>
-        {countLabel}
-      </span>
-      <button
-        type="button"
-        data-scroll={cid}
-        data-dir="-1"
-        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
-        aria-label="Anterior"
-      >
-        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M13 4L7 10l6 6" />
-        </svg>
-      </button>
-      <button
-        type="button"
-        data-scroll={cid}
-        data-dir="1"
-        class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
-        aria-label="Siguiente"
-      >
-        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 4l6 6-6 6" />
-        </svg>
-      </button>
-    </div>
+<div class="mt-2" data-reveal>
+  <div class="flex items-center justify-end gap-3 mb-5">
+    <span class="hidden sm:inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-400 mr-1">
+      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 12h10M11 6l-5 6 5 6M13 6l5 6-5 6" />
+      </svg>
+      {countLabel}
+    </span>
+    <button
+      type="button"
+      data-scroll={cid}
+      data-dir="-1"
+      class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+      aria-label="Anterior"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 4L7 10l6 6" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      data-scroll={cid}
+      data-dir="1"
+      class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+      aria-label="Siguiente"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 4l6 6-6 6" />
+      </svg>
+    </button>
   </div>
 
   <div
